@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from '@material-ui/core';
 
 class FollowUs extends React.Component {
   constructor(props) {
@@ -8,12 +9,19 @@ class FollowUs extends React.Component {
 
   render() {
     return (
-      <div className='FollowUp'>
-        <p>
-         “Esquiar entre bosques vírgenes
-          rodeado de personas que viven la
-          experiencia al límite ha sido épico.”
-        </p>
+      <div className='FollowUs'>
+        <div className='FollowUs__container'>
+          <p className='FollowUs__container--quotes'>
+           “Esquiar entre bosques vírgenes
+            rodeado de personas que viven la
+            experiencia al límite ha sido épico.”
+          </p>
+          <Button className='FollowUs__container--btn' variant="outlined" color="primary">
+            Contáctanos
+          </Button>
+        </div>
+
+
       </div>
     )
   }

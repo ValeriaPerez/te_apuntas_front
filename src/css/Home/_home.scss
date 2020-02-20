@@ -4,23 +4,29 @@
 }
 
 .Home {
- background: url('./../assets/images/foto23.png');
+ background: linear-gradient(to right,rgba(0,0,0,.4) 0%,rgba(0,0,0,.4) 100%),url('./../assets/images/foto23.png');
  background-size: cover;
  height: 100vh;
 }
 
-.Home__body {
+.Body {
+  border: 1px solid purple;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  height: 50%;
+  height: 60%;
   padding: 0px 35px;
   width: 100%;
 
-  .Home__bodyColumns {
-    align-items: center;
+  .Body__Columns {
+    border: 1px solid orange;
+    align-items: flex-start;
     display: flex;
-
+    flex-direction: column;
+    justify-content: center;
     width: 50%;
+  }
+  .Body__Columns:nth-of-type(2) {
+    align-items: center;
   }
 }

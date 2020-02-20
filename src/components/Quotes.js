@@ -9,11 +9,13 @@ class Quotes extends React.Component {
   render() {
     return (
       <div className='Quotes'>
-        <p>
-          Bienvenido a Te Apuntas, si has llegado sin invitación
-          escríbenos y cuéntanos por qué quieres ser parte de esto
-          para que podamos enviarte una invitación personalizada.
+        <p className='Quotes__text'>
+          “Esquiar entre bosques vírgenes rodeado de personas que viven la experiencia al límite ha sido épico.”
         </p>
+        <div className='Quotes__links'>
+          <p className='Quotes__links--username'>Lolita Davis, México</p>
+          <p className='Quotes__links--destiny'><span></span>Heliski, Canadá 2018</p>
+        </div>
       </div>
     )
   }

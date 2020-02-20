@@ -8,8 +8,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className='Header'>
-        <div className='HeaderGroup'>
+      <section className='Header'>
           {
             //<Link to="/"><img src={require('../images/logo_w.png')} /></Link>
           }
@@ -19,8 +18,7 @@ class Header extends React.Component {
             //<Link to="/"></Link>
           //</div>
           }
-        </div>
-      </div>
+      </section>
     )
   }
 }
