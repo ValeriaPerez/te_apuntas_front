@@ -3,7 +3,8 @@ import React, { Component } from "react";
 // Components
 import Header from '../components/Header';
 import Quotes from '../components/Quotes';
-import FollowUs from '../components/FollowUs'
+import FollowUs from '../components/FollowUs';
+import Footer from '../components/Footer';
 
 export default class Home extends Component {
 
@@ -15,23 +16,18 @@ export default class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <section className='Home__menu'>
-          <Header />
-        </section>
-        <section className='Home__body'>
-          <div className='Home__bodyColumns'>
+        <Header />
+        <section className='Body'>
+          <div className='Body__Columns'>
             <FollowUs />
           </div>
-          <div className='Home__bodyColumns'>
+          <div className='Body__Columns'>
             <Quotes />
           </div>
         </section>
-        <footer>
-          <p>Iniciar Session</p>
-        </footer>
+        <Footer />
       </div>
     );
   }
-
 
 }
