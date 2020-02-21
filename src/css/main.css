@@ -1,3 +1,6 @@
+body {
+  font-family: FiraSans; }
+
 /* - - - - - Colors - - - - - */
 .Footer {
   align-items: center;
@@ -22,8 +25,7 @@
       text-decoration: none; }
 
 .FollowUs {
-  width: 350px;
-  border: 1px solid pink; }
+  width: 350px; }
   .FollowUs .FollowUs__container--quotes {
     color: #FFFFFF; }
   .FollowUs .FollowUs__container--btn {
@@ -44,7 +46,6 @@
   height: 100vh; }
 
 .Body {
-  border: 1px solid purple;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -52,17 +53,15 @@
   padding: 0px 35px;
   width: 100%; }
   .Body .Body__Columns {
-    border: 1px solid orange;
     align-items: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%; }
+    flex: 1; }
   .Body .Body__Columns:nth-of-type(2) {
     align-items: center; }
 
 .Header {
-  border: 1px solid green;
   align-items: center;
   box-sizing: border-box;
   display: flex;
@@ -72,6 +71,41 @@
   color: white;
   font-size: 18px;
   width: 100%; }
+
+.LoginView {
+  justify-content: center;
+  align-items: center !important; }
+  .LoginView .Login {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    height: 400px; }
+    .LoginView .Login__Title {
+      color: white;
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 40px; }
+    .LoginView .Login__SocialMedia {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 60%; }
+      .LoginView .Login__SocialMedia--btn {
+        border-color: white;
+        border-radius: 50px;
+        color: white;
+        height: 60px;
+        max-width: 60px;
+        min-width: 60px;
+        overflow: hidden;
+        padding: 5px;
+        width: 60px; }
+        .LoginView .Login__SocialMedia--btn:hover {
+          border-color: #081f2d;
+          background: #081f2d;
+          color: #FFFFFF; }
 
 .Quotes {
   width: 400px; }

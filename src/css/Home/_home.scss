@@ -10,7 +10,6 @@
 }
 
 .Body {
-  border: 1px solid purple;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -19,12 +18,11 @@
   width: 100%;
 
   .Body__Columns {
-    border: 1px solid orange;
     align-items: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
+    flex: 1;
   }
   .Body__Columns:nth-of-type(2) {
     align-items: center;

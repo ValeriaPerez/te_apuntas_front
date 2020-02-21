@@ -1,0 +1,42 @@
+.LoginView {
+  justify-content: center;
+  align-items: center !important;
+
+  .Login {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    height: 400px;
+    &__Title {
+      color: white;
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+    &__SocialMedia {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 60%;
+
+      &--btn {
+        border-color: white;
+        border-radius: 50px;
+        color: white;
+        height: 60px;
+        max-width: 60px;
+        min-width: 60px;
+        overflow: hidden;
+        padding: 5px;
+        width: 60px;
+       &:hover {
+         border-color: #081f2d;
+         background: #081f2d;
+         color: $white;
+       }
+      }
+    }
+  }
+}

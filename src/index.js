@@ -9,11 +9,13 @@ import './css/main.css';
 // Views
 import App from './App';
 import Home from './views/Home';
+import SignIn from './views/SignIn';
 
 const routing = (
   <Router>
     <div id="siteWrapper">
       <Route exact path="/" component={Home} />
+      <Route path="/SignIn" component={SignIn} />
     </div>
   </Router>
 )
