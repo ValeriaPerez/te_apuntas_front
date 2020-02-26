@@ -2,10 +2,11 @@ import React, { Component } from "react";
 
 // Components
 import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Login from '../components/Login';
+import Quotes from '../components/Quotes';
+import FollowUs from '../components/FollowUs';
+import Modal from '../components/Modal';
 
-export default class Home extends Component {
+export default class HomeLogged extends Component {
 
   // - - - - - Declare Initial State for this.props. - - - - -
   constructor(props) {
@@ -15,14 +16,15 @@ export default class Home extends Component {
   render() {
     return (
       <div className='Home'>
+        <Modal />
         <Header />
         <section className='Body'>
-          <div className='Body__Columns LoginView'>
-            <Login />
+          <div className='Body__Columns'>
+            <FollowUs />
           </div>
         </section>
       </div>
-    );
+    )
   }
 
 }
