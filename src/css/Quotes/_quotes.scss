@@ -1,5 +1,9 @@
 .Quotes {
   width: 400px;
+  @media (max-width: 800px) {
+    width: 100%;
+    padding: 20px 0px;
+  }
   &__text {
     color: $white;
     font-size: 24px;

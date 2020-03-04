@@ -10,22 +10,28 @@
 }
 
 .Body {
-  border: 1px solid purple;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  height: 60%;
+  height: 70%;
   padding: 0px 35px;
   width: 100%;
 
+
+  @media( max-width: 800px ) {
+    flex-direction: column;
+
+  }
+
   .Body__Columns {
-    border: 1px solid orange;
     align-items: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
+    flex: 1;
+
   }
+
   .Body__Columns:nth-of-type(2) {
     align-items: center;
   }

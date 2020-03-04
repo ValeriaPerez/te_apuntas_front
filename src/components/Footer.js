@@ -10,7 +10,9 @@ class Footer extends React.Component {
     return (
       <footer className='Footer'>
         <div className='Footer__login'>
-          <p className='Footer__login--text'>¿Ya eres usuario?<button>Iniciar Sesion</button></p>
+          <Link className='Link' to="/SignIn">
+            <p className='Footer__login--text'>¿Ya eres usuario?<button>Iniciar Sesion</button></p>
+          </Link>
         </div>
       </footer>
     )
