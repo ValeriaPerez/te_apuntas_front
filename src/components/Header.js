@@ -9,10 +9,8 @@ class Header extends React.Component {
   render() {
     return (
       <section className='Header'>
-          {
-            //<Link to="/"><img src={require('../images/logo_w.png')} /></Link>
-          }
-          <p>Te apuntas</p>
+          <Link to="/"><img className='Header--Icon' src={require('../assets/images/teApuntas.png')} /></Link>
+
           {
           //<div className="HeaderGroup-Links">
             //<Link to="/"></Link>

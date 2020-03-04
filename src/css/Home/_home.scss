@@ -13,9 +13,15 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  height: 60%;
+  height: 70%;
   padding: 0px 35px;
   width: 100%;
+
+
+  @media( max-width: 800px ) {
+    flex-direction: column;
+
+  }
 
   .Body__Columns {
     align-items: flex-start;
@@ -23,8 +29,9 @@
     flex-direction: column;
     justify-content: center;
     flex: 1;
+
   }
-  
+
   .Body__Columns:nth-of-type(2) {
     align-items: center;
   }

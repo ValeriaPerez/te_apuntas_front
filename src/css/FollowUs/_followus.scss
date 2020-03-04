@@ -1,14 +1,27 @@
 .FollowUs {
   width:350px;
-  .FollowUs__container--quotes {
-    color: $white;
+  &__container {
+    &--title {
+      color: $white;
+      font-size: 24px;
+    }
+    &--description {
+      color: $white;
+      font-size: 13px;
+      margin: 10px 0px;
+    }
+
+    &__Form {
+      display: flex;
+      flex-direction: column;
+      .InputComponent, .TextAreaComponent {
+        .MuiFormLabel-root {
+          color: $lightGrey;
+          font-size: 12px;
+        }
+      }
+
+    }
   }
-  .FollowUs__container--btn {
-    margin-bottom:20px;
-    margin-top:20px;
-    border: 1px solid $white;
-    color: $white;
-    font-size: 14px;
-    padding: 5px 25px;
-  }
+
 }

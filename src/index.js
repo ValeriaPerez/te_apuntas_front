@@ -17,7 +17,7 @@ const routing = (
     <div id="siteWrapper">
       <Route exact path="/" component={Home} />
       <Route path="/SignIn" component={SignIn} />
-      <Route payh="/HomeLogged" component={HomeLogged} />
+      <Route path="/HomeLogged" component={HomeLogged} />
     </div>
   </Router>
 )

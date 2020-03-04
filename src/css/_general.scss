@@ -5,3 +5,44 @@ body {
 /* - - - - - Colors - - - - - */
 
 $white: #FFFFFF;
+$lightGrey: #DDDDDD;
+
+/* - - - - - Botones - - - - - */
+
+.btn--grey {
+  color: $lightGrey !important;
+  font-size: 14px !important;
+  margin-bottom:20px !important;
+  margin-top:20px !important;
+  border: 1px solid $lightGrey !important;
+  padding: 5px 25px !important;
+  min-width: 100px;
+}
+
+/* - - - - - Links - - - - - */
+
+.Link {
+  text-decoration: none;
+}
+
+/* - - - - - Input - - - - - */
+
+.InputComponent {
+  border-bottom: 1px solid $lightGrey !important;
+  &:hover {
+    border-bottom: 1px solid $lightGrey !important;
+  }
+  &:focus {
+    outline: 0;
+  }
+}
+.TextAreaComponent {
+  border: 1px solid $lightGrey !important;
+  margin: 15px 0px !important;
+  &:hover {
+    border: 1px solid $lightGrey !important;
+  }
+  &:focus {
+    outline: 0;
+  }
+}

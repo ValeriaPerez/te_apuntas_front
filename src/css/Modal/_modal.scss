@@ -1,0 +1,19 @@
+.ModalTA {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &___body {
+
+    &--title {
+
+    }
+    &--body {
+
+    }
+  }
+
+  &__body > div {
+    max-width: 600px;
+  }
+}

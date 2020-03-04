@@ -16,9 +16,9 @@ export default class HomeLogged extends Component {
   render() {
     return (
       <div className='Home'>
-        <Modal />
         <Header />
         <section className='Body'>
+          <Modal />
           <div className='Body__Columns'>
             <FollowUs />
           </div>

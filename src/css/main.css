@@ -2,6 +2,36 @@ body {
   font-family: FiraSans; }
 
 /* - - - - - Colors - - - - - */
+/* - - - - - Botones - - - - - */
+.btn--grey {
+  color: #DDDDDD !important;
+  font-size: 14px !important;
+  margin-bottom: 20px !important;
+  margin-top: 20px !important;
+  border: 1px solid #DDDDDD !important;
+  padding: 5px 25px !important;
+  min-width: 100px; }
+
+/* - - - - - Links - - - - - */
+.Link {
+  text-decoration: none; }
+
+/* - - - - - Input - - - - - */
+.InputComponent {
+  border-bottom: 1px solid #DDDDDD !important; }
+  .InputComponent:hover {
+    border-bottom: 1px solid #DDDDDD !important; }
+  .InputComponent:focus {
+    outline: 0; }
+
+.TextAreaComponent {
+  border: 1px solid #DDDDDD !important;
+  margin: 15px 0px !important; }
+  .TextAreaComponent:hover {
+    border: 1px solid #DDDDDD !important; }
+  .TextAreaComponent:focus {
+    outline: 0; }
+
 .Footer {
   align-items: center;
   bottom: 0;
@@ -25,15 +55,19 @@ body {
 
 .FollowUs {
   width: 350px; }
-  .FollowUs .FollowUs__container--quotes {
-    color: #FFFFFF; }
-  .FollowUs .FollowUs__container--btn {
-    margin-bottom: 20px;
-    margin-top: 20px;
-    border: 1px solid #FFFFFF;
+  .FollowUs__container--title {
     color: #FFFFFF;
-    font-size: 14px;
-    padding: 5px 25px; }
+    font-size: 24px; }
+  .FollowUs__container--description {
+    color: #FFFFFF;
+    font-size: 13px;
+    margin: 10px 0px; }
+  .FollowUs__container__Form {
+    display: flex;
+    flex-direction: column; }
+    .FollowUs__container__Form .InputComponent .MuiFormLabel-root, .FollowUs__container__Form .TextAreaComponent .MuiFormLabel-root {
+      color: #DDDDDD;
+      font-size: 12px; }
 
 * {
   margin: 0;
@@ -48,9 +82,12 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  height: 60%;
+  height: 70%;
   padding: 0px 35px;
   width: 100%; }
+  @media (max-width: 800px) {
+    .Body {
+      flex-direction: column; } }
   .Body .Body__Columns {
     align-items: flex-start;
     display: flex;
@@ -70,6 +107,8 @@ body {
   color: white;
   font-size: 18px;
   width: 100%; }
+  .Header--Icon {
+    width: 120px; }
 
 .LoginView {
   justify-content: center;
@@ -79,35 +118,54 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 600px;
-    height: 400px; }
-    .LoginView .Login__Title {
-      color: white;
-      font-size: 24px;
-      margin-top: 20px;
-      margin-bottom: 40px; }
-    .LoginView .Login__SocialMedia {
+    width: 100%; }
+    .LoginView .Login__container {
+      align-items: center;
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 60%; }
-      .LoginView .Login__SocialMedia--btn {
-        border-color: white;
-        border-radius: 50px;
+      flex-direction: column;
+      width: 100%; }
+      .LoginView .Login__container--Title {
         color: white;
-        height: 60px;
-        max-width: 60px;
-        min-width: 60px;
-        overflow: hidden;
-        padding: 5px;
-        width: 60px; }
-        .LoginView .Login__SocialMedia--btn:hover {
-          border-color: #081f2d;
-          background: #081f2d;
-          color: #FFFFFF; }
+        font-size: 24px;
+        margin-top: 20px;
+        margin-bottom: 40px; }
+      .LoginView .Login__container__SocialMedia {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        box-sizing: border-box;
+        width: 100%; }
+        .LoginView .Login__container__SocialMedia--btn {
+          border-color: white;
+          border-radius: 50px;
+          color: white;
+          height: 60px;
+          margin-right: 2%;
+          margin-left: 2%;
+          max-width: 60px;
+          min-width: 60px;
+          overflow: hidden;
+          padding: 5px;
+          width: 60px;
+          box-sizing: border-box; }
+          .LoginView .Login__container__SocialMedia--btn:hover {
+            border-color: #081f2d;
+            background: #081f2d;
+            color: #FFFFFF; }
+
+.ModalTA {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .ModalTA__body > div {
+    max-width: 600px; }
 
 .Quotes {
   width: 400px; }
+  @media (max-width: 800px) {
+    .Quotes {
+      width: 100%;
+      padding: 20px 0px; } }
   .Quotes__text {
     color: #FFFFFF;
     font-size: 24px; }
