@@ -1,0 +1,41 @@
+.Destination {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width:100%;
+
+  .DestinationData {
+    width: 50%;
+
+    &__info {
+      display: flex;
+      flex-direction: row;
+
+    }
+  }
+  .DestinationPeople {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+
+    &__container {
+      &--avatar {
+        background: transparent;
+        border: 1px solid $lightGrey;
+
+        &.counter {
+          background: transparent;
+          border: 0;
+
+        }
+      }
+    }
+
+    &__link {
+      button {
+        
+      }
+    }
+
+  }
+}

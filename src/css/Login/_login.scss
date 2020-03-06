@@ -27,24 +27,28 @@
         box-sizing: border-box;
         width:100%;
 
-        &--btn {
-          border-color: white;
-          border-radius: 50px;
-          color: white;
-          height: 60px;
+        div {
           margin-right: 2%;
           margin-left: 2%;
-          max-width: 60px;
-          min-width: 60px;
-          overflow: hidden;
-          padding: 5px;
-          width: 60px;
-          box-sizing: border-box;
-         &:hover {
-           border-color: #081f2d;
-           background: #081f2d;
-           color: $white;
-         }
+
+          button {
+            border-color: white;
+            border-radius: 50px;
+            color: white;
+            height: 60px;
+            max-width: 60px;
+            min-width: 60px;
+            overflow: hidden;
+            padding: 5px;
+            width: 60px;
+            box-sizing: border-box;
+
+            &:hover {
+              border-color: #081f2d;
+              background: #081f2d;
+              color: $white;
+            }
+          }
         }
       }
     }

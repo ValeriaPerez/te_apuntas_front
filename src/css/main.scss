@@ -1,11 +1,14 @@
 // General styles
 @import "./general";
+@import "./variables";
 
 // Components Styles
 @import "./Footer/footer";
 @import "./FollowUs/followus";
+@import "./Destination/destination";
 @import "./Home/home";
 @import "./Header/header";
 @import "./Login/login";
 @import "./Modal/modal";
+@import "./Stepper/stepper";
 @import "./Quotes/quotes";

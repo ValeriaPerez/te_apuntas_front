@@ -1,7 +1,7 @@
+/* - - - - - Colors - - - - - */
 body {
   font-family: FiraSans; }
 
-/* - - - - - Colors - - - - - */
 /* - - - - - Botones - - - - - */
 .btn--grey {
   color: #DDDDDD !important;
@@ -32,6 +32,7 @@ body {
   .TextAreaComponent:focus {
     outline: 0; }
 
+/* - - - - - Colors - - - - - */
 .Footer {
   align-items: center;
   bottom: 0;
@@ -54,7 +55,7 @@ body {
       text-decoration: none; }
 
 .FollowUs {
-  width: 350px; }
+  width: 70%; }
   .FollowUs__container--title {
     color: #FFFFFF;
     font-size: 24px; }
@@ -68,6 +69,27 @@ body {
     .FollowUs__container__Form .InputComponent .MuiFormLabel-root, .FollowUs__container__Form .TextAreaComponent .MuiFormLabel-root {
       color: #DDDDDD;
       font-size: 12px; }
+
+.Destination {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%; }
+  .Destination .DestinationData {
+    width: 50%; }
+    .Destination .DestinationData__info {
+      display: flex;
+      flex-direction: row; }
+  .Destination .DestinationPeople {
+    display: flex;
+    flex-direction: column;
+    width: 25%; }
+    .Destination .DestinationPeople__container--avatar {
+      background: transparent;
+      border: 1px solid #DDDDDD; }
+      .Destination .DestinationPeople__container--avatar.counter {
+        background: transparent;
+        border: 0; }
 
 * {
   margin: 0;
@@ -135,30 +157,81 @@ body {
         justify-content: center;
         box-sizing: border-box;
         width: 100%; }
-        .LoginView .Login__container__SocialMedia--btn {
-          border-color: white;
-          border-radius: 50px;
-          color: white;
-          height: 60px;
+        .LoginView .Login__container__SocialMedia div {
           margin-right: 2%;
-          margin-left: 2%;
-          max-width: 60px;
-          min-width: 60px;
-          overflow: hidden;
-          padding: 5px;
-          width: 60px;
-          box-sizing: border-box; }
-          .LoginView .Login__container__SocialMedia--btn:hover {
-            border-color: #081f2d;
-            background: #081f2d;
-            color: #FFFFFF; }
+          margin-left: 2%; }
+          .LoginView .Login__container__SocialMedia div button {
+            border-color: white;
+            border-radius: 50px;
+            color: white;
+            height: 60px;
+            max-width: 60px;
+            min-width: 60px;
+            overflow: hidden;
+            padding: 5px;
+            width: 60px;
+            box-sizing: border-box; }
+            .LoginView .Login__container__SocialMedia div button:hover {
+              border-color: #081f2d;
+              background: #081f2d;
+              color: #FFFFFF; }
 
 .ModalTA {
   display: flex;
   align-items: center;
   justify-content: center; }
-  .ModalTA__body > div {
-    max-width: 600px; }
+  .ModalTA__body:focus {
+    outline: 0 !important; }
+
+.Stepper {
+  border-radius: 30px;
+  outline: 0; }
+  .Stepper .StepperHeader {
+    background: #CC764E;
+    border-radius: 5px 5px 0px 0px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px; }
+    .Stepper .StepperHeader .closeModalIcon {
+      height: 10px;
+      width: 10px; }
+  .Stepper .StepperBody {
+    align-items: center;
+    background: #CC764E;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    height: 300px;
+    width: 500px; }
+    .Stepper .StepperBody__Container {
+      align-items: center;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center; }
+      .Stepper .StepperBody__Container--title {
+        font-size: 18px; }
+      .Stepper .StepperBody__Container--icon {
+        margin: 10px;
+        height: 20px;
+        width: 20px; }
+      .Stepper .StepperBody__Container--label {
+        font-size: 18px; }
+      .Stepper .StepperBody__Container--span {
+        font-size: 10px;
+        margin: 7px 0; }
+  .Stepper .StepperFooter {
+    background: #CC764E;
+    border-radius: 0px 0px 5px 5px;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    padding-bottom: 30px; }
+    .Stepper .StepperFooter .MuiMobileStepper-dots .MuiMobileStepper-dot {
+      background: white; }
+      .Stepper .StepperFooter .MuiMobileStepper-dots .MuiMobileStepper-dot.MuiMobileStepper-dotActive {
+        background: #081f2d; }
 
 .Quotes {
   width: 400px; }

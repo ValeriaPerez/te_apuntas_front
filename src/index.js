@@ -10,14 +10,14 @@ import './css/main.css';
 import App from './App';
 import Home from './views/Home';
 import SignIn from './views/SignIn';
-import HomeLogged from './views/HomeLogged';
+import Welcome from './views/Welcome';
 
 const routing = (
   <Router>
     <div id="siteWrapper">
       <Route exact path="/" component={Home} />
       <Route path="/SignIn" component={SignIn} />
-      <Route path="/HomeLogged" component={HomeLogged} />
+      <Route path="/Welcome" component={Welcome} />
     </div>
   </Router>
 )
