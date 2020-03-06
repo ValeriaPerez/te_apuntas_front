@@ -13,30 +13,29 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const tutorialSteps = [
   {
-    label: 'San Francisco – Oakland Bay Bridge, United States',
-    info:
-      'Mi info 1',
+    label: 'Tuto1',
+    icon: '',
+    info:'Escoge una aventura del carroussel que se adapte a tus preferencias de viaje.',
+    instruction:'Desliza hacia la izquierda.',
   },
   {
-    label: 'Bird',
-    info:
-      'Mi info 2',
+    label: 'Tuto2',
+    icon: '',
+    info:'Escoge una aventura del carroussel que se adapte a tus preferencias de viaje.',
+    instruction:'Desliza hacia la izquierda.',
   },
   {
-    label: 'Bali, Indonesia',
-    info:
-      'Mi info 3',
+    label: 'Tuto3',
+    icon: '',
+    info:'Escoge una aventura del carroussel que se adapte a tus preferencias de viaje.',
+    instruction:'Desliza hacia la izquierda.',
   },
   {
-    label: 'NeONBRAND Digital Marketing, Las Vegas, United States',
-    info:
-      'Mi info 4',
-  },
-  {
-    label: 'Goč, Serbia',
-    info:
-      'Mi info 5',
-  },
+    label: 'Tuto4',
+    icon: '',
+    info:'Escoge una aventura del carroussel que se adapte a tus preferencias de viaje.',
+    instruction:'Desliza hacia la izquierda.',
+  }
 ];
 
 const useStyles = makeStyles(theme => ({
@@ -77,42 +76,39 @@ function SwipeableTextMobileStepper() {
   };
 
   return (
-    <div className={classes.root}>
-      <Paper square elevation={0} className={classes.header}>
-        <Typography>{tutorialSteps[activeStep].label}</Typography>
+    <div className='Stepper'>
+      <Paper square elevation={0} className='StepperHeader'>
+        <img className='closeModalIcon' src={require('../assets/images/close.png')} />
       </Paper>
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+        className='StepperBody'
         index={activeStep}
         onChangeIndex={handleStepChange}
-        enableMouseEvents
-      >
+        enableMouseEvents>
         {tutorialSteps.map((step, index) => (
-          <div key={step.label}>
+          <div className='StepperBody__Container' key={step.label}>
+            <p className='StepperBody__Container--title' >Tutorial</p>
+            <img class='StepperBody__Container--icon' src={require('../assets/images/rocket.png')} />
             {Math.abs(activeStep - index) <= 2 ? (
-              <Typography>{step.info}</Typography>
+              <div>
+                <Typography className='StepperBody__Container--label'>{step.info}</Typography>
+                <Typography className='StepperBody__Container--span'>{step.instruction}</Typography>
+              </div>
+
             ) : null}
           </div>
         ))}
       </AutoPlaySwipeableViews>
+      {
+        // Dots
+      }
       <MobileStepper
         variant="dots"
-        steps={5}
+        steps={4}
         position="static"
         activeStep={activeStep}
-        className={classes.root}
-        nextButton={
-          <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
-            Next
-            {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-            Back
-          </Button>
-        }
+        className='StepperFooter'
       />
     </div>
   );

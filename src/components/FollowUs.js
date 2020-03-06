@@ -58,10 +58,9 @@ class FollowUs extends React.Component {
               <p className='FollowUs__container--description'>
                Bienvenido a Te Apuntas, si has llegado sin invitación escríbenos y cuéntanos por qué quieres ser parte de esto para que podamos enviarte una invitación personalizada.
               </p>
-              <Button className='btn--grey ' variant='outlined' color='primary' onClick={this.handleOpenForm}>
+              <Button className='btn--grey' variant='outlined' color='primary' onClick={this.handleOpenForm}>
                 Contáctanos
               </Button>
-
             </div>
           }
 

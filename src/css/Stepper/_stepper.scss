@@ -1,0 +1,70 @@
+.Stepper {
+  border-radius: 30px;
+  outline: 0;
+
+  .StepperHeader {
+    background: $orange;
+    border-radius: 5px 5px 0px 0px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    .closeModalIcon {
+      height: 10px;
+      width: 10px;
+    }
+  }
+
+  .StepperBody {
+    align-items: center;
+    background: $orange;
+    box-sizing: border-box;
+    color: $white;
+    display: flex;
+    height: 300px;
+    width: 500px;
+
+    &__Container {
+      align-items: center;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+
+      &--title {
+        font-size: 18px;
+      }
+      &--icon {
+        margin: 10px;
+        height: 20px;
+        width: 20px;
+      }
+      &--label {
+        font-size: 18px;
+      }
+      &--span {
+        font-size: 10px;
+        margin: 7px 0;
+      }
+    }
+
+  }
+
+  .StepperFooter {
+    background: $orange;
+    border-radius: 0px 0px 5px 5px;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    padding-bottom: 30px;
+
+    .MuiMobileStepper-dots {
+      .MuiMobileStepper-dot {
+        background: white;
+        &.MuiMobileStepper-dotActive {
+          background: $black;
+        }
+      }
+    }
+  }
+}

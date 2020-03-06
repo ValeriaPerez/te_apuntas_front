@@ -3,17 +3,9 @@
   align-items: center;
   justify-content: center;
 
-  &___body {
-
-    &--title {
-
+  &__body {
+    &:focus {
+      outline: 0 !important;
     }
-    &--body {
-
-    }
-  }
-
-  &__body > div {
-    max-width: 600px;
   }
 }
