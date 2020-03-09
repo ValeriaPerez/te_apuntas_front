@@ -4,9 +4,13 @@
 }
 
 .Home {
- background: linear-gradient(to right,rgba(0,0,0,.4) 0%,rgba(0,0,0,.4) 100%),url('./../assets/images/foto23.png');
- background-size: cover;
- height: 100vh;
+
+}
+
+.BG-img {
+  background: linear-gradient(to right,rgba(0,0,0,.4) 0%,rgba(0,0,0,.4) 100%),url('./../assets/images/foto23.png');
+  background-size: cover;
+  height: 100vh;
 }
 
 .Body {
@@ -29,6 +33,10 @@
     flex-direction: column;
     justify-content: center;
     flex: 1;
+
+    &.welcomeColumns {
+      justify-content: flex-end;
+    }
 
   }
 

@@ -22,14 +22,18 @@ class Login extends React.Component {
             <SocialLogin
               provider='facebook'
               appId='796860273846597'
+              key={'facebook'}
               callback={SocialLogin}>
               <Button className='SocialMediaEvent' variant='outlined' color='primary'>
                 F
               </Button>
             </SocialLogin>
             <SocialLogin
+              autoCleanUri
               provider='instagram'
-              appId=''
+              appId='afdf675d26214280ac9a792afea5651c'
+              redirect={process.env.INSTAGRAM_REDIRECT}
+              key={'instagram'}
               callback={SocialLogin}>
               <Button className='SocialMediaEvent' variant='outlined' color='primary'>
                 I
@@ -45,7 +49,7 @@ class Login extends React.Component {
             </SocialLogin>
             <div className='SocialMediaEvent'>
               <Button className='SocialMediaEvent' variant='outlined' color='primary'>
-                L
+                P
               </Button>
             </div>
           </div>
