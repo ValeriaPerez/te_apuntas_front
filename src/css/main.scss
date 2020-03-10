@@ -1,6 +1,10 @@
 // General styles
-@import "./general";
-@import "./variables";
+
+@import "./Utilities/variables";
+@import "./Utilities/base";
+@import "./Utilities/mixins";
+@import "./Utilities/general";
+@import "./Utilities/icons";
 
 // Components Styles
 @import "./Footer/footer";
@@ -12,3 +16,4 @@
 @import "./Modal/modal";
 @import "./Stepper/stepper";
 @import "./Quotes/quotes";
+

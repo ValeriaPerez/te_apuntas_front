@@ -1,0 +1,67 @@
+/* --------------------------------
+  "Mixins" styles
+-------------------------------- */
+@mixin fontSize($font){
+  font-size: ($font / $font-size-base) * 1em;
+}
+
+@mixin container(){
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: $desktop-container;
+}
+
+@mixin clearButton(){
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+@mixin clearLink(){
+  text-decoration: none;
+  color: $black;
+}
+
+@mixin fullContainer(){
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  @media (min-width: ($tablet + 1)) {
+    min-height: 610px;
+  }
+}
+
+@mixin absoluteFullContainer() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@mixin centeredImage(){
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+}
+
+@mixin fullBackground(){
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+@mixin setImg(){
+  display: block;
+  width: 100%;
+}

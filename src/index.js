@@ -7,7 +7,6 @@ import * as serviceWorker from './serviceWorker';
 import './css/main.css';
 
 // Views
-import App from './App';
 import Home from './views/Home';
 import SignIn from './views/SignIn';
 import Welcome from './views/Welcome';
