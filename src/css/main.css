@@ -80,17 +80,30 @@ body {
   position: absolute;
   width: 100%;
 }
+.Footer__container {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
 .Footer__login--text {
   color: #FFFFFF;
-  font-size: 12px;
+  font-size: 0.8571428571em;
 }
 .Footer__login--text button {
+  font-size: 1.4285714286em;
   background: transparent;
   border: 0;
   color: #FFFFFF;
   font-size: 12px;
   padding: 0px 5px;
   text-decoration: none;
+}
+@media (min-width: 959px) {
+  .Footer__login--text button {
+    font-size: 1em;
+  }
 }
 
 .FollowUs {
@@ -167,15 +180,20 @@ body {
 
 .Body {
   box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  height: 70%;
-  padding: 0px 35px;
+  position: relative;
+  margin: 0 auto;
   width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  width: 100%;
+  padding: 0px 2em;
 }
-@media (max-width: 800px) {
+@media (min-width: 959px) {
   .Body {
-    flex-direction: column;
+    flex-direction: row;
+    padding: 0;
   }
 }
 .Body .Body__Columns {
@@ -193,23 +211,39 @@ body {
 }
 
 .Header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 99px;
+  color: #FFFFFF;
+  font-size: 18px;
+  padding: 0 2em;
+}
+@media (min-width: 959px) {
+  .Header {
+    padding: 0 1em;
+  }
+}
+.Header__container {
   box-sizing: border-box;
   position: relative;
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
-  align-items: center;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: flex-start;
-  height: 100px;
-  padding: 0px 35px;
-  color: white;
-  font-size: 18px;
-  width: 100%;
 }
-.Header--Icon {
-  width: 120px;
+.Header__icon {
+  display: block;
+  width: 100%;
+  max-width: 100px;
+}
+@media (min-width: 959px) {
+  .Header__icon {
+    transition: all 0.55s;
+    max-width: 170px;
+  }
+  .Header__icon:hover {
+    max-width: 175px;
+  }
 }
 
 .LoginView {

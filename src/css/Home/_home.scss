@@ -3,10 +3,6 @@
   padding: 0;
 }
 
-.Home {
-
-}
-
 .BG-img {
   background: linear-gradient(to right,rgba(0,0,0,.4) 0%,rgba(0,0,0,.4) 100%),url('./../assets/images/foto23.png');
   background-size: cover;
@@ -14,17 +10,16 @@
 }
 
 .Body {
-  box-sizing: border-box;
+  @include container();
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 70%;
-  padding: 0px 35px;
   width: 100%;
+  padding: 0px 2em;
 
-
-  @media( max-width: 800px ) {
-    flex-direction: column;
-
+  @media (min-width: $tablet) {
+    flex-direction: row;
+    padding: 0;
   }
 
   .Body__Columns {
@@ -37,7 +32,6 @@
     &.welcomeColumns {
       justify-content: flex-end;
     }
-
   }
 
   .Body__Columns:nth-of-type(2) {

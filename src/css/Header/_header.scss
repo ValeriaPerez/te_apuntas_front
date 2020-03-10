@@ -1,16 +1,31 @@
 .Header {
-  @include container();
-
-  align-items: center;
-  box-sizing: border-box;
   display: flex;
+  align-items: center;
   justify-content: flex-start;
-  height: 100px;
-  padding: 0px 35px;
-  color: white;
+  height: $desktop-header;
+  color: $white;
   font-size: 18px;
-  width: 100%;
-  &--Icon {
-    width: 120px;
+  padding: 0 2em;
+
+  @media (min-width: $tablet){
+    padding: 0 1em;
+  }
+
+  &__container{
+    @include container();
+  }
+
+  &__icon {
+    @include setImg();
+    max-width: 100px;
+
+    @media (min-width: $tablet){
+      transition: all 0.55s;
+      max-width: 170px;
+
+      &:hover {
+        max-width: 175px; 
+      }
+    }
   }
 }
