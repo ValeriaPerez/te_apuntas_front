@@ -28,10 +28,6 @@ body {
 /* --------------------------------
   "Mixins" styles
 -------------------------------- */
-body {
-  font-family: FiraSans;
-}
-
 /* - - - - - Botones - - - - - */
 .btn--grey {
   color: #DDDDDD !important;
