@@ -10,7 +10,10 @@ export default class DestinationDetail extends Component {
   render() {
     return (
       <div className='destination-detail'>
-        <Header />
+        <Header 
+          title='Volver a Home'
+          alt='Logo Header'
+          imageLogo={ require('../assets/images/teApuntasB.png') }/>
         <div className='destination-detail__container'>
           <div className='destination-detail__columns'>  
             <div className='destination-detail__column'>
