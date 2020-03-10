@@ -3,6 +3,7 @@
   color: $white;
   font-size: 18px;
   padding: 0 2em;
+  display: flex;
 
   @media (min-width: $tablet){
     padding: 0 1em;

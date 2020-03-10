@@ -289,6 +289,7 @@ body {
   color: #FFFFFF;
   font-size: 18px;
   padding: 0 2em;
+  display: flex;
 }
 @media (min-width: 959px) {
   .Header {
