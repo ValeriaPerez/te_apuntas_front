@@ -29,7 +29,10 @@ class Home extends Component {
     return (
       <div className='Home'>
         <div className='BG-img'>
-          <Header />
+          <Header 
+            title='Home'
+            alt='Logo'
+            imageLogo={ require('../assets/images/teApuntas.png') }/>
           <section className='Body'>
             <div className='Body__Columns'>
               <FollowUs />

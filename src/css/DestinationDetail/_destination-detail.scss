@@ -1,0 +1,13 @@
+.destination-detail {
+  &__container {
+    @include container();
+  }
+
+  &__columns {
+    display: flex;
+  }
+
+  &__column {
+    width: 100%;
+  }
+}

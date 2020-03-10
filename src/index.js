@@ -12,6 +12,7 @@ import './css/main.css';
 import Home from './views/Home';
 import SignIn from './views/SignIn';
 import Welcome from './views/Welcome';
+import DestinationDetail from './views/DestinationDetail';
 
 const routing = (
   <Provider store={store}>
@@ -20,6 +21,7 @@ const routing = (
         <Route exact path="/" component={Home} />
         <Route path="/SignIn" component={SignIn} />
         <Route path="/Welcome" component={Welcome} />
+        <Route path="/Travel" component={DestinationDetail} />
       </div>
     </Router>
   </Provider>
