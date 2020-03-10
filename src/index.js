@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store/index';
 import * as serviceWorker from './serviceWorker';
 
 // CSS
@@ -12,13 +14,15 @@ import SignIn from './views/SignIn';
 import Welcome from './views/Welcome';
 
 const routing = (
-  <Router>
-    <div id="siteWrapper">
-      <Route exact path="/" component={Home} />
-      <Route path="/SignIn" component={SignIn} />
-      <Route path="/Welcome" component={Welcome} />
-    </div>
-  </Router>
+  <Provider store={store}>
+    <Router>
+      <div id="siteWrapper">
+        <Route exact path="/" component={Home} />
+        <Route path="/SignIn" component={SignIn} />
+        <Route path="/Welcome" component={Welcome} />
+      </div>
+    </Router>
+  </Provider>
 )
 
 ReactDOM.render(routing, document.getElementById('root'))
