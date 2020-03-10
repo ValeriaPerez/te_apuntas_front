@@ -9,6 +9,7 @@ html, body {
   -webkit-text-size-adjust: 100%; }
 
 body {
+  font-family: 'Fira Sans', sans-serif;
   font-size: 14px;
   position: relative;
   background-color: #FFFFFF;
@@ -150,6 +151,52 @@ body {
       .Destination .DestinationPeople__link .btn--grey {
         text-decoration: none; }
 
+.destination-detail__container {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px; }
+.destination-detail__columns {
+  display: flex; }
+.destination-detail__column {
+  width: 100%; }
+
+.description {
+  width: 100%;
+  padding: 2em 0; }
+  .description__title {
+    font-size: 37px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.22;
+    letter-spacing: normal;
+    text-align: left;
+    color: #3f96b4;
+    display: flex;
+    justify-content: space-between; }
+  .description__span {
+    font-size: 30px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #081f2d; }
+  .description__text {
+    font-size: 24px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: left;
+    color: #081f2d; }
+  .description__icons {
+    color: red; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -190,9 +237,6 @@ body {
     align-items: center; }
 
 .Header {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
   height: 99px;
   color: #FFFFFF;
   font-size: 18px;
@@ -205,7 +249,10 @@ body {
     position: relative;
     margin: 0 auto;
     width: 100%;
-    max-width: 1200px; }
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
   .Header__icon {
     display: block;
     width: 100%;

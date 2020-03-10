@@ -37,7 +37,10 @@ export default class HomeLogged extends Component {
             width={this.state.width}
             height={this.state.height}
             showBullets={this.state.showBullets} />
-          <Header />
+          <Header
+            title='Home'
+            alt='Logo'
+            imageLogo={ require('../assets/images/teApuntas.png') }/>
           <section className='Body'>
             <Modal />
             <div className='Body__Columns welcomeColumns'>
