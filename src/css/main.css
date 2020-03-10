@@ -202,7 +202,7 @@ body {
 
 .description {
   width: 100%;
-  padding: 2em;
+  padding: 2em 0;
 }
 .description__title {
   font-size: 37px;
@@ -213,6 +213,18 @@ body {
   letter-spacing: normal;
   text-align: left;
   color: #3f96b4;
+  display: flex;
+  justify-content: space-between;
+}
+.description__span {
+  font-size: 30px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #081f2d;
 }
 .description__text {
   font-size: 24px;
@@ -224,6 +236,10 @@ body {
   text-align: left;
   color: #081f2d;
 }
+.description__icons {
+  color: red;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -268,9 +284,6 @@ body {
 }
 
 .Header {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
   height: 99px;
   color: #FFFFFF;
   font-size: 18px;
@@ -287,6 +300,9 @@ body {
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .Header__icon {
   display: block;
