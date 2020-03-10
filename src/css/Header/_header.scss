@@ -7,7 +7,7 @@
   font-size: 18px;
   padding: 0 2em;
 
-  @media (min-width: $desktop){
+  @media (min-width: $tablet){
     padding: 0 1em;
   }
 
@@ -19,8 +19,7 @@
     @include setImg();
     max-width: 100px;
 
-
-    @media (min-width: $desktop){
+    @media (min-width: $tablet){
       transition: all 0.55s;
       max-width: 170px;
 

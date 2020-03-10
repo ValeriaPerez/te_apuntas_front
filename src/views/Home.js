@@ -22,9 +22,7 @@ export default class Home extends Component {
           </section>
           <Footer />
         </div>
-
       </div>
     );
   }
-
 }
