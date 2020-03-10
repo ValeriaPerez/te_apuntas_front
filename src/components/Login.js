@@ -1,14 +1,10 @@
 import React from 'react';
-import { Link, ReactDOM } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { OldSocialLogin as SocialLogin } from 'react-social-login';
 import LinkedIn from "linkedin-login-for-react";
 import InstagramLogin from 'react-instagram-login';
 
 class Login extends React.Component {
-  constructor(props) {
-    super(props);
-  };
 
   callbackFacebook = (user, err) => {
     console.log(user)

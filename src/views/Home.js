@@ -7,12 +7,6 @@ import FollowUs from '../components/FollowUs';
 import Footer from '../components/Footer';
 
 export default class Home extends Component {
-
-  // - - - - - Declare Initial State for this.props. - - - - -
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className='Home'>
@@ -28,9 +22,7 @@ export default class Home extends Component {
           </section>
           <Footer />
         </div>
-
       </div>
     );
   }
-
 }
