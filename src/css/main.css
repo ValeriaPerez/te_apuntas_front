@@ -193,23 +193,39 @@ body {
 }
 
 .Header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 99px;
+  color: #FFFFFF;
+  font-size: 18px;
+  padding: 0 2em;
+}
+@media (min-width: 960px) {
+  .Header {
+    padding: 0 1em;
+  }
+}
+.Header__container {
   box-sizing: border-box;
   position: relative;
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
-  align-items: center;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: flex-start;
-  height: 100px;
-  padding: 0px 35px;
-  color: white;
-  font-size: 18px;
-  width: 100%;
 }
-.Header--Icon {
-  width: 120px;
+.Header__icon {
+  display: block;
+  width: 100%;
+  max-width: 100px;
+}
+@media (min-width: 960px) {
+  .Header__icon {
+    transition: all 0.55s;
+    max-width: 170px;
+  }
+  .Header__icon:hover {
+    max-width: 175px;
+  }
 }
 
 .LoginView {
