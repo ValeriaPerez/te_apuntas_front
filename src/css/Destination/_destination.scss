@@ -13,24 +13,30 @@
       flex-direction: row;
       justify-content: space-between;
       width: 150px;
-      margin: 10px 0px;
+      margin-bottom: 50px;
     }
     &__description {
       &--title {
-        dsplay: flex;
+        display: flex;
         flex-direction: row;
+        width: 325px;
         h1 {
 
         }
         p {
+          align-items: center;
           background: $greyBlue;
+          border-radius: 8px;
+          display: flex;
+          padding: 5px 10px;
+          margin-left: 10px;
         }
       }
       &--status {
         margin-bottom: 10px;
       }
-      &--description {
-
+      &--info {
+        margin-top: 10px;
       }
     }
   }
@@ -40,6 +46,7 @@
     width: 25%;
 
     &__container {
+      margin-bottom: 50px;
       &--avatar {
         background: transparent;
         border: 1px solid $lightGrey;
@@ -53,8 +60,10 @@
     }
 
     &__link {
-      button {
+      text-decoration: none;
+      .btn--grey {
 
+        text-decoration: none;
       }
     }
 

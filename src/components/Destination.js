@@ -41,7 +41,7 @@ class Destination extends React.Component {
               <h1>Helinski Canada</h1>
               <p>Privado</p>
             </div>
-            <p className='DestinationData__description--description'><span className='descriptionQuote'>“La experiencia definitiva: sin límites”</span> - El HeliSki es la experiencia definitiva para cualquier esquiador/rider sin ningún lugar a dudas. Todo aquello que has soñado o visto en películas y catálogos, donde los esquiadores disfrutan de interminables bajadas en laderas vírgenes de nieve polvo o entre bosques con tanto “powder” que quedan enterrados en cada giro ¡ES VERDAD! (…)</p>
+            <p className='DestinationData__description--info'><span className='descriptionQuote'>“La experiencia definitiva: sin límites”</span> - El HeliSki es la experiencia definitiva para cualquier esquiador/rider sin ningún lugar a dudas. Todo aquello que has soñado o visto en películas y catálogos, donde los esquiadores disfrutan de interminables bajadas en laderas vírgenes de nieve polvo o entre bosques con tanto “powder” que quedan enterrados en cada giro ¡ES VERDAD! (…)</p>
           </div>
         </div>
         <div className='DestinationPeople'>
@@ -49,6 +49,9 @@ class Destination extends React.Component {
             <AvatarGroup className='DestinationPeople__container'>
               <Avatar className='DestinationPeople__container--avatar' alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
               <Avatar className='DestinationPeople__container--avatar' alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+              <Avatar className='DestinationPeople__container--avatar' alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+              <Avatar className='DestinationPeople__container--avatar' alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+              <Avatar className='DestinationPeople__container--avatar' alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
               <Avatar className='DestinationPeople__container--avatar' alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
               <Tooltip className='DestinationPeople__container--avatar counter' title="Foo • Bar • Baz">
                 <Avatar>+3</Avatar>
