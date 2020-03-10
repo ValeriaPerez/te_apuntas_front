@@ -15,17 +15,20 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div className="Home">
-        <Header />
-        <section className='Body'>
-          <div className='Body__Columns'>
-            <FollowUs />
-          </div>
-          <div className='Body__Columns'>
-            <Quotes />
-          </div>
-        </section>
-        <Footer />
+      <div className='Home'>
+        <div className='BG-img'>
+          <Header />
+          <section className='Body'>
+            <div className='Body__Columns'>
+              <FollowUs />
+            </div>
+            <div className='Body__Columns'>
+              <Quotes />
+            </div>
+          </section>
+          <Footer />
+        </div>
+
       </div>
     );
   }

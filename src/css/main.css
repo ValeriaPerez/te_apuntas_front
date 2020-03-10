@@ -71,6 +71,7 @@ body {
       font-size: 12px; }
 
 .Destination {
+  color: #FFFFFF;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -79,7 +80,17 @@ body {
     width: 50%; }
     .Destination .DestinationData__info {
       display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 150px;
+      margin: 10px 0px; }
+    .Destination .DestinationData__description--title {
+      dsplay: flex;
       flex-direction: row; }
+      .Destination .DestinationData__description--title p {
+        background: #3f96b4; }
+    .Destination .DestinationData__description--status {
+      margin-bottom: 10px; }
   .Destination .DestinationPeople {
     display: flex;
     flex-direction: column;
@@ -95,7 +106,7 @@ body {
   margin: 0;
   padding: 0; }
 
-.Home {
+.BG-img {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("./../assets/images/foto23.png");
   background-size: cover;
   height: 100vh; }
@@ -116,6 +127,8 @@ body {
     flex-direction: column;
     justify-content: center;
     flex: 1; }
+    .Body .Body__Columns.welcomeColumns {
+      justify-content: flex-end; }
   .Body .Body__Columns:nth-of-type(2) {
     align-items: center; }
 

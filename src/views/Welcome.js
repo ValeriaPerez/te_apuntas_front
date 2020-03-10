@@ -17,13 +17,15 @@ export default class HomeLogged extends Component {
   render() {
     return (
       <div className='Home'>
-        <Header />
-        <section className='Body'>
-          <Modal />
-          <div className='Body__Columns'>
-            <Destination />
-          </div>
-        </section>
+        <div className='BG-img'>
+          <Header />
+          <section className='Body'>
+            <Modal />
+            <div className='Body__Columns welcomeColumns'>
+              <Destination />
+            </div>
+          </section>
+        </div>
       </div>
     )
   }

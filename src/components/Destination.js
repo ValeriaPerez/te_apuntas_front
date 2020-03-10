@@ -38,9 +38,11 @@ class Destination extends React.Component {
             </div>
           </div>
           <div className='DestinationData__description'>
-            <h1>Helinski Canada</h1>
-            <div><p>Privado</p></div>
-            <p><span>“La experiencia definitiva: sin límites”</span> - El HeliSki es la experiencia definitiva para cualquier esquiador/rider sin ningún lugar a dudas. Todo aquello que has soñado o visto en películas y catálogos, donde los esquiadores disfrutan de interminables bajadas en laderas vírgenes de nieve polvo o entre bosques con tanto “powder” que quedan enterrados en cada giro ¡ES VERDAD! (…)</p>
+            <div className='DestinationData__description--title'>
+              <h1>Helinski Canada</h1>
+              <p>Privado</p>
+            </div>
+            <p className='DestinationData__description--description'><span className='descriptionQuote'>“La experiencia definitiva: sin límites”</span> - El HeliSki es la experiencia definitiva para cualquier esquiador/rider sin ningún lugar a dudas. Todo aquello que has soñado o visto en películas y catálogos, donde los esquiadores disfrutan de interminables bajadas en laderas vírgenes de nieve polvo o entre bosques con tanto “powder” que quedan enterrados en cada giro ¡ES VERDAD! (…)</p>
           </div>
         </div>
         <div className='DestinationPeople'>
