@@ -1,13 +1,28 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
 import { OldSocialLogin as SocialLogin } from 'react-social-login';
+import LinkedIn from "linkedin-login-for-react";
+import InstagramLogin from 'react-instagram-login';
 
 class Login extends React.Component {
 
-  SocialLogin = (user, err) => {
+  callbackFacebook = (user, err) => {
     console.log(user)
     console.log(err)
-  }
+  };
+
+  callbackInstagram = (response) => {
+    console.log(response);
+  };
+
+  callbackLinkedIn = (error, code, redirectUri) => {
+     if (error) {
+       // signin failed
+     } else {
+       // Obtain authorization token from linkedin api
+       // see https://developer.linkedin.com/docs/oauth2 for more info
+     }
+   };
 
   render() {
     return (
@@ -19,35 +34,34 @@ class Login extends React.Component {
               provider='facebook'
               appId='796860273846597'
               key={'facebook'}
-              callback={SocialLogin}>
+              callback={this.callbackFacebook}>
               <Button className='SocialMediaEvent' variant='outlined' color='primary'>
                 F
               </Button>
             </SocialLogin>
-            <SocialLogin
-              autoCleanUri
-              provider='instagram'
-              appId='afdf675d26214280ac9a792afea5651c'
-              redirect={process.env.INSTAGRAM_REDIRECT}
-              key={'instagram'}
-              callback={SocialLogin}>
-              <Button className='SocialMediaEvent' variant='outlined' color='primary'>
-                I
-              </Button>
-            </SocialLogin>
-            <SocialLogin
-              provider='linkedin'
-              appId='796860273846597'
-              callback={SocialLogin}>
-              <Button className='SocialMediaEvent' variant='outlined' color='primary'>
-                L
-              </Button>
-            </SocialLogin>
+            <div>
+              <InstagramLogin
+                clientId="5fd2f11482844c5eba963747a5f34556"
+                onSuccess={this.callbackInstagram}
+                onFailure={this.callbackInstagram}
+                cssClass='SocialMediaEvent'>
+                <p>I</p>
+               </InstagramLogin>
+            </div>
+            <div>
+              <LinkedIn
+               clientId="xxx"
+               callback={this.callbackLinkedIn}
+               className='SocialMediaEvent'
+               text='L'>
+              </LinkedIn>
+            </div>
             <div className='SocialMediaEvent'>
               <Button className='SocialMediaEvent' variant='outlined' color='primary'>
                 P
               </Button>
             </div>
+
           </div>
         </div>
       </div>
