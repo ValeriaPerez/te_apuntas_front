@@ -1,7 +1,4 @@
 .Header {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
   height: $desktop-header;
   color: $white;
   font-size: 18px;
@@ -13,6 +10,9 @@
 
   &__container{
     @include container();
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   &__icon {

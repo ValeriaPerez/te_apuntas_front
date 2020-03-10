@@ -8,8 +8,8 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     '& > *': {
       margin: theme.spacing(1),
-      width: theme.spacing(7),
-      height: theme.spacing(7),
+      width: theme.spacing(5),
+      height: theme.spacing(5),
     },
   },
   name: {
@@ -25,7 +25,7 @@ function ImageAvatars(props) {
   return ( 
     <div className={ classes.root }>
       <Avatar alt={ props.alt } src={ props.image }/>
-      <p className={ classes.name }>Nombre</p>
+      { props.showName ? <p className={ classes.name }>Nombre</p> : null }
     </div>
   );
 }
@@ -33,6 +33,7 @@ function ImageAvatars(props) {
 ImageAvatars.defaultProps = {
   alt: '',
   image:'',
+  showName: false,
 }
 
 export default ImageAvatars

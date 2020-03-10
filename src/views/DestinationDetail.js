@@ -11,6 +11,7 @@ export default class DestinationDetail extends Component {
     return (
       <div className='destination-detail'>
         <Header 
+          login={ true }
           title='Volver a Home'
           alt='Logo Header'
           imageLogo={ require('../assets/images/teApuntasB.png') }/>
@@ -18,7 +19,7 @@ export default class DestinationDetail extends Component {
           <div className='destination-detail__columns'>  
             <div className='destination-detail__column'>
               <div className='description'>
-                <h4 className='description__title'>HeliSki Canadá</h4>
+                <h4 className='description__title'>HeliSki Canadá <span className='description__span'>7,980 € </span></h4>
                 <p className='description__text'>
                   “La experiencia definitiva: sin límites” - El HeliSki es la experiencia definitiva para cualquier esquiador/rider sin ningún lugar a dudas. Todo aquello que has soñado o visto en películas y catálogos, donde los esquiadores disfrutan de interminables bajadas en laderas vírgenes de nieve polvo o entre bosques con tanto “powder” que quedan enterrados en cada giro ¡ES VERDAD!
                 </p>
@@ -39,7 +40,7 @@ export default class DestinationDetail extends Component {
               </div>
               <div className='travelers'>
                 <h4>Apuntados al viaje</h4>
-                <Avatar />
+                <Avatar showName={ true }/>
               </div>
             </div>
           </div>

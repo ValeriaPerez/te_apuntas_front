@@ -1,6 +1,6 @@
 .description {
   width: 100%;
-  padding: 2em;
+  padding: 2em 0;
   
   &__title {
     font-size: 37px;
@@ -11,6 +11,19 @@
     letter-spacing: normal;
     text-align: left;
     color: $greyBlue;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__span {
+    font-size: 30px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: $black;
   }
 
   &__text {
@@ -25,6 +38,6 @@
   }
 
   &__icons {
-
+    color: red;
   }
 }
