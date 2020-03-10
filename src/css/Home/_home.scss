@@ -7,6 +7,12 @@
   background: linear-gradient(to right,rgba(0,0,0,.4) 0%,rgba(0,0,0,.4) 100%),url('./../assets/images/foto23.png');
   background-size: cover;
   height: 100vh;
+  &.welcomeContainer {
+    position: relative;
+  }
+  .image-slider {
+    position: absolute;
+  }
 }
 
 .Body {
