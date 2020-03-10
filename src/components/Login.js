@@ -1,12 +1,8 @@
 import React from 'react';
-import { Link, ReactDOM } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { OldSocialLogin as SocialLogin } from 'react-social-login';
 
 class Login extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   SocialLogin = (user, err) => {
     console.log(user)
