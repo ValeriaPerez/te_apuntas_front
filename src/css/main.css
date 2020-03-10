@@ -247,6 +247,12 @@ body {
   background-size: cover;
   height: 100vh;
 }
+.BG-img.welcomeContainer {
+  position: relative;
+}
+.BG-img .image-slider {
+  position: absolute;
+}
 
 .Body {
   box-sizing: border-box;
