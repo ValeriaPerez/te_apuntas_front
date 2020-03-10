@@ -83,24 +83,38 @@ body {
       flex-direction: row;
       justify-content: space-between;
       width: 150px;
-      margin: 10px 0px; }
+      margin-bottom: 50px; }
     .Destination .DestinationData__description--title {
-      dsplay: flex;
-      flex-direction: row; }
+      display: flex;
+      flex-direction: row;
+      width: 325px; }
       .Destination .DestinationData__description--title p {
-        background: #3f96b4; }
+        align-items: center;
+        background: #3f96b4;
+        border-radius: 8px;
+        display: flex;
+        padding: 5px 10px;
+        margin-left: 10px; }
     .Destination .DestinationData__description--status {
       margin-bottom: 10px; }
+    .Destination .DestinationData__description--info {
+      margin-top: 10px; }
   .Destination .DestinationPeople {
     display: flex;
     flex-direction: column;
     width: 25%; }
-    .Destination .DestinationPeople__container--avatar {
-      background: transparent;
-      border: 1px solid #DDDDDD; }
-      .Destination .DestinationPeople__container--avatar.counter {
+    .Destination .DestinationPeople__container {
+      margin-bottom: 50px; }
+      .Destination .DestinationPeople__container--avatar {
         background: transparent;
-        border: 0; }
+        border: 1px solid #DDDDDD; }
+        .Destination .DestinationPeople__container--avatar.counter {
+          background: transparent;
+          border: 0; }
+    .Destination .DestinationPeople__link {
+      text-decoration: none; }
+      .Destination .DestinationPeople__link .btn--grey {
+        text-decoration: none; }
 
 * {
   margin: 0;
@@ -172,8 +186,10 @@ body {
         width: 100%; }
         .LoginView .Login__container__SocialMedia div {
           margin-right: 2%;
-          margin-left: 2%; }
+          margin-left: 2%;
+          outline: 0; }
           .LoginView .Login__container__SocialMedia div button {
+            background: transparent;
             border-color: white;
             border-radius: 50px;
             color: white;
@@ -181,6 +197,7 @@ body {
             max-width: 60px;
             min-width: 60px;
             overflow: hidden;
+            outline: 0 !important;
             padding: 5px;
             width: 60px;
             box-sizing: border-box; }
