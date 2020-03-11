@@ -26,7 +26,7 @@ async function doRequest(endpoint, headersRequest = null, requestMethod = 'GET',
 }
 
 export async function getImagesHome() {
-  return await doRequest('http://localhost:8000/api/v1/imagenes-home/')
+  return await doRequest('http://192.168.100.234:8000/api/v1/imagenes-home/')
   .then(response => {
     return response;
   }).catch(error => {

@@ -8,20 +8,19 @@ class Slider extends React.Component {
     // No llames this.setState() aquí!
     this.state = {
       counter: 0,
-      width: window.innertWidth
+      width: window.innertWidth,
+      path: window.location.href
+
     };
   }
 
    render() {
-     console.log(this.props.width);
+     console.log(this.state.path);
      const images = [
-       { url: "images/1.jpg" },
-       { url: "images/2.jpg" },
+       { url: "https://images.pexels.com/photos/373892/pexels-photo-373892.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" },
+       { url: '../assets/destinyImage/destinyImage/bg2.png' },
        { url: "images/3.jpg" },
        { url: "images/4.jpg" },
-       { url: "images/5.jpg" },
-       { url: "images/6.jpg" },
-       { url: "images/7.jpg" },
      ];
 
      return (
