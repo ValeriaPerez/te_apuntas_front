@@ -35,7 +35,7 @@ class Slider extends React.Component {
          <SimpleImageSlider
            width={this.props.width}
            height={this.props.height}
-           images={images}
+           images={this.props.images}
            showBullets={this.props.showBullets}
            slideDuration={this.state.slideDuration}
          />
