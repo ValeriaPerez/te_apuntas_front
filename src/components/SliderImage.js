@@ -9,13 +9,20 @@ class Slider extends React.Component {
     this.state = {
       counter: 0,
       width: window.innertWidth,
-      path: window.location.href
+      path: window.location.href,
+      slideDuration: 1
 
     };
   }
 
    render() {
-     console.log(this.state.path);
+     console.log('slider', this.props.destinyInfo);
+     const destinyInfo = this.props.destinyInfo;
+     Object.keys(destinyInfo).map(obj, i) => {
+       console.log(obj),
+     };
+
+
      const images = [
        { url: "https://images.pexels.com/photos/373892/pexels-photo-373892.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" },
        { url: '../assets/destinyImage/destinyImage/bg2.png' },
@@ -30,6 +37,7 @@ class Slider extends React.Component {
            height={this.props.height}
            images={images}
            showBullets={this.props.showBullets}
+           slideDuration={this.state.slideDuration}
          />
        </div>
      );

@@ -33,3 +33,12 @@ export async function getImagesHome() {
     return error;
   });
 }
+
+export async function getDestinyInfo() {
+  return await doRequest('http://192.168.100.234:8000/api/v1/destino/')
+  .then(response => {
+    return response;
+  }).catch(error => {
+    return error;
+  });
+}

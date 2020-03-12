@@ -9,7 +9,9 @@ function Header(props){
         <Link to="/">
           <img className='Header__icon' src={ props.imageLogo } alt={ props.alt } title={ props.title } />
         </Link>
-        { props.login ? <Avatar /> : null }
+        <Link to="/Profile" token=''>
+          { props.login ? <Avatar /> : null }
+        </Link>
       </div>
     </section>
   )
@@ -19,7 +21,7 @@ Header.defaultProps = {
   title: 'Title',
   alt: 'Logo Header',
   imageLogo:'',
-  login: false,
+  login: true,
 }
 
 export default Header

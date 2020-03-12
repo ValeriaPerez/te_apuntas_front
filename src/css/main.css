@@ -65,6 +65,14 @@ body {
   padding: 0px 35px 0px;
   position: absolute;
   width: 100%; }
+  .Footer.isLogged {
+    background: #333333; }
+    .Footer.isLogged__container {
+      box-sizing: border-box;
+      position: relative;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1200px; }
   .Footer__container {
     box-sizing: border-box;
     position: relative;
@@ -365,6 +373,46 @@ body {
       background: white; }
       .Stepper .StepperFooter .MuiMobileStepper-dots .MuiMobileStepper-dot.MuiMobileStepper-dotActive {
         background: #081f2d; }
+
+.UserData {
+  width: 100%; }
+  .UserData__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%; }
+    .UserData__container--Card {
+      align-items: center;
+      border-radius: 1px solid #DDDDDD;
+      box-shadow: 0 3px 6px 0 rgba(80, 80, 80, 0.5);
+      display: flex;
+      flex-direction: column;
+      padding: 0px 20px;
+      width: 450px;
+      min-height: 300px; }
+      .UserData__container--Card .userInfo {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px; }
+        .UserData__container--Card .userInfo .editImage {
+          padding-bottom: 20px; }
+      .UserData__container--Card .userAbout {
+        align-items: center;
+        border-top: 1px solid #DDDDDD;
+        display: flex;
+        flex-direction: column;
+        padding: 20px; }
+        .UserData__container--Card .userAbout .editAbout {
+          padding-bottom: 15px; }
+        .UserData__container--Card .userAbout .editText {
+          padding-bottom: 15px; }
+    .UserData__container--DataUser {
+      border-bottom: 1px solid #DDDDDD;
+      min-height: 400px;
+      padding: 20px;
+      width: 650px; }
 
 .Quotes {
   width: 400px; }

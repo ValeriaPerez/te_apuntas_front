@@ -8,6 +8,12 @@
   padding: 0px 35px 0px;
   position: absolute;
   width: 100%;
+  &.isLogged {
+    background: $darkGrey;
+    &__container {
+      @include container();
+    }
+  }
 
   &__container {
     @include container();

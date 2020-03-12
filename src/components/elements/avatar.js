@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
 function ImageAvatars(props) {
   const classes = useStyles();
 
-  return ( 
+  return (
     <div className={ classes.root }>
       <Avatar alt={ props.alt } src={ props.image }/>
       { props.showName ? <p className={ classes.name }>Nombre</p> : null }
