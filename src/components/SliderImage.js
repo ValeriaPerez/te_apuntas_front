@@ -16,12 +16,6 @@ class Slider extends React.Component {
   }
 
    render() {
-     console.log('slider', this.props.destinyInfo);
-     const destinyInfo = this.props.destinyInfo;
-     Object.keys(destinyInfo).map(obj, i) => {
-       console.log(obj),
-     };
-
 
      const images = [
        { url: "https://images.pexels.com/photos/373892/pexels-photo-373892.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" },

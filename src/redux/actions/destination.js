@@ -1,10 +1,10 @@
 import asyncActionTypes from '../constants/action-types';
 import { getDestinyInfo } from '../../api-wrapper/api';
 
+
 export function retrieveDestinyInfo() {
   return function action(dispatch) {
     dispatch(retrieveDestinyInfoStart());
-
     const request = getDestinyInfo();
     request.then(response => {
         dispatch(retrieveDestinyInfoSucces(response));

@@ -39,20 +39,36 @@ class HomeDestiny extends Component {
   update = () => {
     this.setState({
       height: window.innerHeight,
-      width: window.innerWidth,
+      width: window.innerWidth
     });
   };
 
   render() {
-    console.log(this.props.destinyInfo);
+    let destinyArray = '';
+    const images = [];
+    const { destinyInfo } = this.props;
+    console.log('destinyInfo', destinyInfo);
+    if (destinyInfo !== null) {
+      destinyArray = destinyInfo.map(index => {
+        const imgData = index.imagenes;
+        console.log('imgData', imgData);
+          const img2 = imgData.map(img => {
+            images.push({'url': img.imagen});
+          });
+      });
+    }
+
+    console.log('wololo', destinyArray);
+    console.log('array', images);
+
     return (
       <div className='Home'>
         <div className='BG-img'>
           <Slider
             width={this.state.width}
             height={this.state.height}
+            images={images}
             showBullets={this.state.showBullets}
-            destinyInfo={this.props.destinyInfo}
              />
           <Header
             title='Home'

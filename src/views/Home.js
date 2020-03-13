@@ -48,6 +48,8 @@ class Home extends Component {
     const images = imagesHome.map(image => {
       return {'url': image.imagen};
     })
+
+    console.log(images);
     return (
       <div className='Home'>
         <div className='BG-img'>

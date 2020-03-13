@@ -22,7 +22,6 @@ class Destination extends React.Component {
   }
 
   render() {
-    console.log('ole mis cosas',this.props);
     return (
       <div className='Destination'>
         <div className='DestinationData'>
