@@ -7,16 +7,19 @@ import Footer from '../components/Footer';
 import Avatar from '../components/elements/avatar';
 
 export default class DestinationDetail extends Component {
+
+
   render() {
+    console.log('detination detail', this.props)
     return (
       <div className='destination-detail'>
-        <Header 
+        <Header
           login={ true }
           title='Volver a Home'
           alt='Logo Header'
           imageLogo={ require('../assets/images/teApuntasB.png') }/>
         <div className='destination-detail__container'>
-          <div className='destination-detail__columns'>  
+          <div className='destination-detail__columns'>
             <div className='destination-detail__column'>
               <div className='description'>
                 <h4 className='description__title'>HeliSki Canadá <span className='description__span'>7,980 € </span></h4>

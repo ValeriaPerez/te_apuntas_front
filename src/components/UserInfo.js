@@ -1,14 +1,43 @@
 import React from 'react';
-
 import Avatar from '../components/elements/avatar';
 
-function Header(props){
+function UserInfo(props) {
+
+  this.setState({
+    file: '',
+    imagePreviewUrl: '',
+  })
+
+  handleImageChange(e) {
+   e.preventDefault();
+   let reader = new FileReader();
+   let file = e.target.files[0];
+   reader.onloadend = () => {
+     this.setState({
+       file: file,
+       imagePreviewUrl: reader.result
+     });
+   }
+   reader.readAsDataURL(file)
+  };
+
+ let {imagePreviewUrl} = this.state;
+ let $imagePreview = null;
+
+ console.log(this.props);
+
   return (
     <section className='UserData'>
       <div className='UserData__container'>
         <div className='UserData__container--Card'>
           <div className='userInfo'>
-            <Avatar cssClass='AvatarL'/>
+            {
+              if (imagePreviewUrl) {
+                $imagePreview = (<Avatar cssClass='AvatarL'/>);
+              } else {
+                $imagePreview = (<Avatar cssClass='AvatarL'/>);
+              }
+            }
             <p className='editImage'>Cambiar foto</p>
             <p className='aliasText'>APP02</p>
           </div>
@@ -33,11 +62,11 @@ function Header(props){
   )
 }
 
-Header.defaultProps = {
+UserInfo.defaultProps = {
   title: 'Title',
   alt: 'Logo Header',
   imageLogo:'',
   login: true,
 }
 
-export default Header
+export default UserInfo

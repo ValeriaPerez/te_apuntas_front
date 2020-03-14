@@ -58,8 +58,6 @@ class HomeDestiny extends Component {
       });
     }
 
-    console.log('wololo', destinyArray);
-    console.log('array', images);
 
     return (
       <div className='Home'>
