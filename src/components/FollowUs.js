@@ -1,22 +1,75 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
+import { connect } from 'react-redux';
 
+import { submitContactanos } from '../redux/actions/home';
+import { loginPost } from '../redux/actions/login';
+
+const mapStateToProps = state => ({
+  /* --- Home states --- */
+  responseContactanos : state.Home.submitContactanos,
+  loadingSubmitContactanos : state.Home.loadingSubmitContactanos,
+  loadingLogin: state.Login.loading,
+  responseLogin: state.Login.dataLogin,
+  errorLogin: state.Login.errorLogin,
+});
 class FollowUs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showForm: false
+      showForm: false,
+      name: '',
+      email: '',
+      phone: '',
+      comment: '',
     }
 
     this.handleOpenForm = this.handleOpenForm.bind(this);
+    this.handleSendInfo = this.handleSendInfo.bind(this);
+  }
+
+  componentWillMount() {
+    const { dispatch } = this.props;
+    const dataLogin = {
+      username: 'enrique',
+      password: 'qwerty12345',
+    }
+    dispatch(loginPost(dataLogin));
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { loadingSubmitContactanos, responseContactanos } = this.props;
+    if (loadingSubmitContactanos && Object.keys(responseContactanos).length === 0 && !nextProps.loadingSubmitContactanos && Object.keys(nextProps.responseContactanos).length > 0 ){
+      alert('Se envió el formulario');
+      this.setState(state => ({
+        showForm: false
+      }));
+    } 
   }
 
   handleOpenForm() {
     this.setState(state => ({
       showForm: true
     }));
+  }
+
+  handleSendInfo() {
+    const { dispatch, responseLogin } = this.props;
+    const data = {
+      nombre_completo: document.getElementById('inp-name').value,
+      email: document.getElementById('inp-email').value,
+      telefono: document.getElementById('inp-phone').value,
+      razon: document.getElementById('inp-comment').value,
+    }
+    dispatch(submitContactanos(data, responseLogin.access));
+  }
+
+  resetForm() {
+    document.getElementById('inp-name').value = '';
+    document.getElementById('inp-email').value = ''
+    document.getElementById('inp-phone').value = '';
+    document.getElementById('inp-comment').value = '';
   }
 
   render() {
@@ -33,23 +86,24 @@ class FollowUs extends React.Component {
                 y nos pondremos en contacto contigo.
               </p>
               <form className='FollowUs__container__Form' noValidate autoComplete="off">
-                <TextField className='InputComponent' id='standard-basic' label='Nombre Completo' />
-                <TextField className='InputComponent' id='standard-basic' label='Correo Electrónico' />
-                <TextField className='InputComponent' id='standard-basic' label='Teléfono' />
+                <TextField
+                  required
+                  className='InputComponent' 
+                  id='inp-name'
+                  label='Nombre Completo' />
+                <TextField className='InputComponent' id='inp-email' label='Correo Electrónico' />
+                <TextField className='InputComponent' id='inp-phone' label='Teléfono' />
                 <TextField
                   className='TextAreaComponent'
-                  id='outlined-multiline-static'
+                  id='inp-comment'
                   label='Por qué quieres ser parte de Te Apuntas?'
                   multiline
                   rows='4'
                   variant='outlined'
                 />
-              <Link className='Link' to="/SignIn">
-                <Button className='btn--grey ' variant='outlined' color='primary' onClick={this.handleOpenForm}>
+                <Button className='btn--grey ' variant='outlined' color='primary' onClick={this.handleSendInfo}>
                   Enviar
                 </Button>
-              </Link>
-
               </form>
 
             </div>
@@ -73,4 +127,6 @@ class FollowUs extends React.Component {
   }
 }
 
-export default FollowUs
+FollowUs = connect(mapStateToProps)(FollowUs);
+
+export default FollowUs;
