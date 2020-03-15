@@ -1,5 +1,7 @@
 const allTypes = [
     'RETRIEVE_IMAGES_HOME',
+    'SAVE_DATA_CONTACT',
+    'LOGIN',
   ];
   
   /**
