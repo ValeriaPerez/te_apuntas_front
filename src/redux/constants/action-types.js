@@ -1,7 +1,9 @@
 const allTypes = [
     'RETRIEVE_IMAGES_HOME',
     'RETRIEVE_DESTINY_INFO',
-    'RETRIEVE_PROFILE_INFO'
+    'RETRIEVE_PROFILE_INFO',
+    'SAVE_DATA_CONTACT',
+    'LOGIN',
   ];
 
   /**

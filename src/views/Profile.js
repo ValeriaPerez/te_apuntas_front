@@ -25,8 +25,6 @@ class Profile extends Component {
     };
   }
 
-  doRequest();
-
   render() {
 
     console.log(this.props);
