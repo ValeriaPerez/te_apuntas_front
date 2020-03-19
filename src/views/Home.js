@@ -14,6 +14,7 @@ const mapStateToProps = state => ({
   /* --- Home states --- */
   imagesHome : state.Home.imagesHome,
   loadingImagesHome : state.Home.loadingImagesHome,
+  isLoading: state.Login.isLoading,
 });
 
 class Home extends Component {
@@ -44,7 +45,7 @@ class Home extends Component {
     }
 
   render() {
-    const { imagesHome } = this.props;
+    const { imagesHome, isLoading } = this.props;
     const images = imagesHome.map(image => {
       return {'url': image.imagen};
     })
@@ -54,16 +55,18 @@ class Home extends Component {
           <Header 
             title='Home'
             alt='Logo'
+            isLoading={isLoading}
             imageLogo={ require('../assets/images/teApuntas.png') }/>
           <Slider
               width={this.state.width}
               height={this.state.height}
               images={images}
               showBullets={this.state.showBullets}
+              isLoading={isLoading}
             />
           <section className='Body'>
             <div className='Body__Columns'>
-              <FollowUs />
+              { isLoading ? null : <FollowUs />}
             </div>
             <div className='Body__Columns'>
               <Quotes />

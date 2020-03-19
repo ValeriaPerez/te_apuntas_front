@@ -4,6 +4,7 @@ const initialState = {
   errorLogin: null,
   dataLogin: {},
   loadingLoging: false,
+  isLoading: false,
 };
 
 const home = (state = initialState, action) => {
@@ -15,6 +16,7 @@ const home = (state = initialState, action) => {
         dataLogin: action.payload.data,
         loadingLoging: action.payload.loading,
         errorLogin: action.payload.error,
+        isLoading: false,
       };
     case asyncActionTypes.LOGIN.SUCCESS:
       return {
@@ -22,6 +24,7 @@ const home = (state = initialState, action) => {
         dataLogin: action.payload.data,
         loadingLoging: action.payload.loading,
         errorLogin: action.payload.error,
+        isLoading: true,
       };
     case asyncActionTypes.LOGIN.FAIL:
       return {
@@ -29,6 +32,7 @@ const home = (state = initialState, action) => {
         dataLogin: action.payload.data,
         loadingLoging: action.payload.loading,
         errorLogin: action.payload.error,
+        isLoading: false,
       };
     default:
       return state;
