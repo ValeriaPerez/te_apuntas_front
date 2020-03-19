@@ -45,6 +45,7 @@ class Home extends Component {
 
   render() {
     const { imagesHome } = this.props;
+    console.log(imagesHome);
     const images = imagesHome.map(image => {
       return {'url': image.imagen};
     })

@@ -42,3 +42,12 @@ export async function getDestinyInfo() {
     return error;
   });
 }
+
+export async function getProfileInfo() {
+  return await doRequest('http://192.168.100.234:8000/api/v1/perfil/')
+  .then(response => {
+    return response;
+  }).catch(error => {
+    return error;
+  });
+}

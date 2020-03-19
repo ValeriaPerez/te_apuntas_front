@@ -15,6 +15,7 @@ export default class DestinationDetail extends Component {
       <div className='destination-detail'>
         <Header
           login={ true }
+          tokenId='1'
           title='Volver a Home'
           alt='Logo Header'
           imageLogo={ require('../assets/images/teApuntasB.png') }/>

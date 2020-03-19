@@ -17,13 +17,6 @@ class Slider extends React.Component {
 
    render() {
 
-     const images = [
-       { url: "https://images.pexels.com/photos/373892/pexels-photo-373892.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" },
-       { url: '../assets/destinyImage/destinyImage/bg2.png' },
-       { url: "images/3.jpg" },
-       { url: "images/4.jpg" },
-     ];
-
      return (
        <div>
          <SimpleImageSlider

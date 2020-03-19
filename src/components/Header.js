@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import Avatar from '../components/elements/avatar';
 
 function Header(props){
+  console.log(props);
   return (
     <section className='Header'>
       <div className='Header__container'>
         <Link to="/">
           <img className='Header__icon' src={ props.imageLogo } alt={ props.alt } title={ props.title } />
         </Link>
-        <Link to="/Profile" token=''>
+        <Link to="/Profile" tokenid={props.tokenid}>
           { props.login ? <Avatar /> : null }
         </Link>
       </div>
@@ -22,6 +23,7 @@ Header.defaultProps = {
   alt: 'Logo Header',
   imageLogo:'',
   login: true,
+  tokenid: 1,
 }
 
 export default Header

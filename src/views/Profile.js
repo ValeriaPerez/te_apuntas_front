@@ -6,9 +6,30 @@ import Header from '../components/Header';
 import Login from '../components/Login';
 import UserInfo from '../components/UserInfo'
 
-export default class Profile extends Component {
+import { retrieveProfileInfo } from '../redux/actions/profile';
+
+const mapStateToProps = state => ({
+  /* --- Home states --- */
+  profileInfo : state.Profile.profileInfo,
+  loadingProfileInfo : state.Profile.loadingProfileInfo,
+});
+
+class Profile extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      height: 0,
+      width: 0,
+      showBullets: false
+    };
+  }
+
+  doRequest();
 
   render() {
+
+    console.log(this.props);
 
     return (
       <div className='Home'>
@@ -27,3 +48,5 @@ export default class Profile extends Component {
   }
 
 }
+
+export default Profile;
