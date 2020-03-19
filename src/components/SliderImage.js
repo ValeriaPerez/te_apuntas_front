@@ -8,21 +8,14 @@ class Slider extends React.Component {
     // No llames this.setState() aquí!
     this.state = {
       counter: 0,
-      width: window.innertWidth
+      width: window.innertWidth,
+      path: window.location.href,
+      slideDuration: 1
+
     };
   }
 
    render() {
-     console.log(this.props.width);
-    //  const images = [
-    //    { url: "images/1.jpg" },
-    //    { url: "images/2.jpg" },
-    //    { url: "images/3.jpg" },
-    //    { url: "images/4.jpg" },
-    //    { url: "images/5.jpg" },
-    //    { url: "images/6.jpg" },
-    //    { url: "images/7.jpg" },
-    //  ];
 
      return (
        <div>
@@ -31,6 +24,7 @@ class Slider extends React.Component {
            height={this.props.height}
            images={this.props.images}
            showBullets={this.props.showBullets}
+           slideDuration={this.state.slideDuration}
          />
        </div>
      );

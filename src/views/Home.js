@@ -45,13 +45,16 @@ class Home extends Component {
 
   render() {
     const { imagesHome } = this.props;
+    console.log(imagesHome);
     const images = imagesHome.map(image => {
       return {'url': image.imagen};
     })
+
+    console.log(images);
     return (
       <div className='Home'>
         <div className='BG-img'>
-          <Header 
+          <Header
             title='Home'
             alt='Logo'
             imageLogo={ require('../assets/images/teApuntas.png') }/>
@@ -69,7 +72,7 @@ class Home extends Component {
               <Quotes />
             </div>
           </section>
-          <Footer />
+          <Footer isLogged='false'/>
         </div>
       </div>
     );
