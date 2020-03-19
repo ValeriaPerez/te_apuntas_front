@@ -11,7 +11,8 @@ import './css/main.css';
 // Views
 import Home from './views/Home';
 import SignIn from './views/SignIn';
-import Welcome from './views/Welcome';
+import Profile from './views/Profile';
+import HomeDestiny from './views/HomeDestiny';
 import DestinationDetail from './views/DestinationDetail';
 
 const routing = (
@@ -20,8 +21,9 @@ const routing = (
       <div id="siteWrapper">
         <Route exact path="/" component={Home} />
         <Route path="/SignIn" component={SignIn} />
-        <Route path="/Welcome" component={Welcome} />
+        <Route path="/HomeDestiny" component={HomeDestiny} />
         <Route path="/Travel" component={DestinationDetail} />
+        <Route path="/Profile" component={Profile} />
       </div>
     </Router>
   </Provider>

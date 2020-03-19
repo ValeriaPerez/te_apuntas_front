@@ -1,13 +1,16 @@
 import { combineReducers } from 'redux';
 
+
+import Profile from './profile';
+import Destination from './destination';
 import Login from './login';
-// import Travel from './travel';
-// import User from './user';
 import Home from './home';
 
 export default combineReducers({
+    Profile,
+    Destination,
     Login,
     // Travel,
     // User,
     Home,
-  });
+});

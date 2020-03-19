@@ -1,9 +1,11 @@
 const allTypes = [
     'RETRIEVE_IMAGES_HOME',
+    'RETRIEVE_DESTINY_INFO',
+    'RETRIEVE_PROFILE_INFO',
     'SAVE_DATA_CONTACT',
     'LOGIN',
   ];
-  
+
   /**
    * An async action type is not a string literal, as regular action types.
    * It's an object with START, SUCCESS and FAIL properties, each of it is a string literal
@@ -19,7 +21,7 @@ const allTypes = [
       FAIL: name + '_FAIL',
     };
   }
-  
+
   /**
    * Generated map has the shape
    * {
@@ -34,5 +36,5 @@ const allTypes = [
   for (const code of allTypes) {
     asyncActionTypes[code] = createAsyncActionType(code);
   }
-  
+
   export default asyncActionTypes;
