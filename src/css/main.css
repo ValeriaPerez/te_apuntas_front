@@ -399,20 +399,36 @@ body {
         .UserData__container--Card .userInfo .editImage {
           padding-bottom: 20px; }
       .UserData__container--Card .userAbout {
-        align-items: center;
+        align-items: flex-end;
         border-top: 1px solid #DDDDDD;
         display: flex;
         flex-direction: column;
-        padding: 20px; }
+        padding: 20px;
+        text-align: justify; }
         .UserData__container--Card .userAbout .editAbout {
           padding-bottom: 15px; }
         .UserData__container--Card .userAbout .editText {
           padding-bottom: 15px; }
     .UserData__container--DataUser {
       border-bottom: 1px solid #DDDDDD;
+      display: flex;
       min-height: 400px;
+      flex-direction: column;
+      line-height: 2.0;
       padding: 20px;
       width: 650px; }
+      .UserData__container--DataUser .DataUser__title {
+        font-size: 36px;
+        margin-bottom: 5px; }
+      .UserData__container--DataUser .DataUser__Edit {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        width: 400px; }
+      .UserData__container--DataUser .DataUser__Description div p {
+        font-weight: 600; }
 
 .Quotes {
   width: 400px; }
