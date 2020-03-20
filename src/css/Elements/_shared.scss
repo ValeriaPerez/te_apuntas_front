@@ -1,0 +1,15 @@
+.shared {
+  &__container {
+    @include container();
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+
+    & .button-shared {
+      max-width: 170px;
+    }
+  }	
+  @media (min-width: $tablet){
+    display: none;
+  }
+}
