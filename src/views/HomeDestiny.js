@@ -17,8 +17,8 @@ const mapStateToProps = state => ({
 
 class HomeDestiny extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       height: 0,
       width: 0,
@@ -51,13 +51,15 @@ class HomeDestiny extends Component {
     if (destinyInfo !== null) {
       destinyArray = destinyInfo.map(index => {
         const imgData = index.imagenes;
-        console.log('imgData', imgData);
+        return
           const img2 = imgData.map(img => {
             images.push({'url': img.imagen});
+            return
           });
       });
     }
 
+    console.log(destinyArray);
 
     return (
       <div className='Home'>

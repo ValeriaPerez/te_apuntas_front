@@ -12,14 +12,14 @@ export function retrieveProfileInfo() {
       dispatch(retrieveProfileInfoFail(error));
     });
   };
-} // End function retrieveDestinyInfo
+} // End function retrieveProfileInfo
 
 export const retrieveProfileInfoStart = () => ({
   type: asyncActionTypes.RETRIEVE_PROFILE_INFO.START,
   payload: { 'data': [], 'loading': true, error: null },
 });
 
-export const retrieveProfileInfoSuccess = (response) => ({
+export const retrieveProfileInfoSuccess = (response) => ( console.log('dienbte', response), {
   type: asyncActionTypes.RETRIEVE_PROFILE_INFO.SUCCESS,
   payload: { 'data': response, 'loading': false, error: null },
 });

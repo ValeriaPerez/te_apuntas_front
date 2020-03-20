@@ -1,15 +1,15 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 
 // Components
-import Footer from '../components/Footer';
 import Header from '../components/Header';
-import Login from '../components/Login';
-import UserInfo from '../components/UserInfo'
+import Footer from '../components/Footer';
+import UserInfo from '../components/UserInfo';
 
 import { retrieveProfileInfo } from '../redux/actions/profile';
 
 const mapStateToProps = state => ({
-  /* --- Home states --- */
+  /* --- Profile states --- */
   profileInfo : state.Profile.profileInfo,
   loadingProfileInfo : state.Profile.loadingProfileInfo,
 });
@@ -25,16 +25,19 @@ class Profile extends Component {
     };
   }
 
-  render() {
+  componentWillMount() {
+    const { dispatch } = this.props;
+    dispatch(retrieveProfileInfo());
+  }
 
-    console.log(this.props);
+  render() {
 
     return (
       <div className='Home'>
         <Header
           title='Home'
           alt='Logo'
-          imageLogo={ require('../assets/images/teApuntas.png') }/>
+          imageLogo={ require('../assets/images/teApuntasB.png') }/>
         <section className='Body'>
           <div className='Body__Columns LoginView'>
             <UserInfo />
@@ -46,5 +49,7 @@ class Profile extends Component {
   }
 
 }
+
+Profile = connect(mapStateToProps)(Profile);
 
 export default Profile;

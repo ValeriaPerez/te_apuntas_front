@@ -45,12 +45,9 @@ class Home extends Component {
     }
 
   render() {
-<<<<<<< HEAD
+
     const { imagesHome, isLoading } = this.props;
-=======
-    const { imagesHome } = this.props;
     console.log(imagesHome);
->>>>>>> 7b63db53d8161e53efc54f7493faa719d39fedad
     const images = imagesHome.map(image => {
       return {'url': image.imagen};
     })
