@@ -1,6 +1,6 @@
 .description {
   width: 100%;
-  padding: 2em;
+  padding: 2em 2em 0 2em;
 
   @media (min-width: $tablet){
     padding: 2em 0;
@@ -128,6 +128,27 @@
         letter-spacing: normal;
         text-align: left;
         color: #081f2d;
+      }
+    }
+
+    &__link {
+      font-size: 15px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: left;
+      color: #081f2d;
+      transition: all 0.2s ease-in-out;
+
+      @media (min-width: $tablet){
+        font-size: 24px;
+        line-height: 1.17;
+
+        &:hover {
+          color: #3f96b4;
+        }
       }
     }
   } 

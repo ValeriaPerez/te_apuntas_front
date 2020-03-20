@@ -7,3 +7,21 @@
   @include button(white, #081f2d, #081f2d, black, black, white);
   margin: 2em 0;
 }
+
+.button-travelRequest {
+  @include button(#3f96b4, #3f96b4, white, black, black, white);
+  margin: 2em 0;
+
+  font-size: 15px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+.button-shared {
+  @include button(white, #081f2d, #081f2d, #3f96b4, #3f96b4, white);
+
+  &--black {
+    @include button(black, black, white, #3f96b4, #3f96b4, white); 
+  }
+}

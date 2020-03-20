@@ -75,7 +75,7 @@ class Home extends Component {
               <Quotes />
             </div>
           </section>
-          <Footer section='home'/>
+          <Footer />
         </div>
       </div>
     );

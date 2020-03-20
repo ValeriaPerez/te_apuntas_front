@@ -6,6 +6,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 import Avatar from '../components/elements/avatar';
+import SharedButtons from '../components/elements/shared';
+import Slider from '../components/SliderImage';
 
 import { retrieveDestinyInfo } from '../redux/actions/destination';
 
@@ -16,14 +18,39 @@ const mapStateToProps = state => ({
 });
 
 class DestinationDetail extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      height: 500,
+      width: 0,
+      showBullets: false
+    };
+    window.addEventListener("resize", this.update);
+  }
 
   componentWillMount() {
     const { dispatch } = this.props;
     dispatch(retrieveDestinyInfo());
   }
 
+  componentDidMount() {
+    this.update();
+  }
+
+  update = () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth
+    });
+  };
+
   render() {
-    const { destinyInfo } = this.props
+    const { destinyInfo } = this.props;
+    const images = [
+      'https://img.freepik.com/foto-gratis/horizonte-ciudad-toronto-noche-ontario-canada_131985-286.jpg?size=626&ext=jpg',
+      'https://img.freepik.com/foto-gratis/horizonte-ciudad-toronto-noche-ontario-canada_131985-286.jpg?size=626&ext=jpg,'
+    ];
+
     console.log('destinyInfo', destinyInfo );
     return (
       <div className='destination-detail'>
@@ -33,6 +60,12 @@ class DestinationDetail extends Component {
           title='Volver a Home'
           alt='Logo Header'
           imageLogo={ require('../assets/images/teApuntasB.png') }/>
+        <Slider
+          width={this.state.width}
+          height={this.state.height}
+          images={images}
+          showBullets={this.state.showBullets}
+           />
         <div className='destination-detail__container'>
           <div className='destination-detail__columns'>
             <div className='destination-detail__column'>
@@ -44,11 +77,14 @@ class DestinationDetail extends Component {
               </div>
 
               <div className='location'>
-                <h4>Ubicacion</h4>
+                <div className='location__container'>
+                  <h4 className='location__title'>Ubicacion</h4>
+                  { this.renderDestinationLocationMap() }
+                </div>
               </div>
 
             </div>
-            <div className='destination-detail__column'>
+            <div className='destination-detail__column show-desktop'>
 
               <div className='reservation'>
                 <h4>Reservación</h4>
@@ -65,7 +101,8 @@ class DestinationDetail extends Component {
             </div>
           </div>
         </div>
-        <Footer />
+        <Footer section='destination-detail'/>
+        <SharedButtons />
       </div>
     );
   }
@@ -139,7 +176,23 @@ class DestinationDetail extends Component {
             <p className='item-description'>6 noches de alojamiento</p>
           </div>
         </div>
+        <a className='description__list__link' href='https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' filename='Plan_de_viaje' title='file Plan_de_viaje' download>Plan de viaje</a>
+        <button className='button-travelRequest'>Solicitar viaje privado</button>
       </div>
+    );
+  }
+
+  renderDestinationLocationMap() {
+    return (
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41281391.04844523!2d-130.0900153359974!3d50.83827347786808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b0d03d337cc6ad9%3A0x9968b72aa2438fa5!2zQ2FuYWTDoQ!5e0!3m2!1ses!2smx!4v1584718605709!5m2!1ses!2smx" 
+        className='location__map'
+        frameborder='0'
+        allowfullscreen=''
+        aria-hidden='false'
+        tabindex='0'
+        title='destination location'
+      />
     );
   }
 }
