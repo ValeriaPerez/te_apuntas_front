@@ -34,6 +34,7 @@ class Profile extends Component {
     return (
       <div className='Home'>
         <Header
+          login={ true }
           title='Home'
           alt='Logo'
           imageLogo={ require('../assets/images/teApuntasB.png') }/>
@@ -42,7 +43,7 @@ class Profile extends Component {
             <UserInfo />
           </div>
         </section>
-        <Footer isLogged={true}/>
+        <Footer />
       </div>
     );
   }
