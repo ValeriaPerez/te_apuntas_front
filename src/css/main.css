@@ -319,7 +319,8 @@ body {
   justify-content: space-between;
 }
 .shared__container .button-shared {
-  max-width: 170px;
+  max-width: 150px;
+  font-size: 12px;
 }
 @media (min-width: 959px) {
   .shared {
@@ -404,6 +405,48 @@ body {
 .Footer__login__section div {
   display: flex;
   flex-direction: row;
+}
+
+.footer {
+  background-color: #333333;
+  color: #FFFFFF;
+}
+.footer__container {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2em;
+}
+@media (min-width: 959px) {
+  .footer__container {
+    padding: 2em 0;
+  }
+}
+@media (min-width: 959px) {
+  .footer__content {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.footer__icons {
+  display: flex;
+  justify-content: space-around;
+}
+.footer__text {
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.13;
+  letter-spacing: normal;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 1em 0;
+}
+.footer__text--margin-right {
+  margin-right: 1em;
 }
 
 .FollowUs {
@@ -512,7 +555,7 @@ body {
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
-  padding: 0 2em;
+  padding: 0 2em 2em 2em;
 }
 @media (min-width: 959px) {
   .location__container {

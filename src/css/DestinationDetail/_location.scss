@@ -1,7 +1,7 @@
 .location {
   &__container {
     @include container();
-    padding: 0 2em;
+    padding: 0 2em 2em 2em;
 
     @media (min-width: $tablet){
       padding: 2em 0;

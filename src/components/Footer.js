@@ -1,11 +1,8 @@
-/* eslint-disable */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const mapStateToProps = state => ({
-
-});
+const mapStateToProps = state => ({ });
 
 class FooterComponent extends Component {
   render() {
@@ -15,15 +12,17 @@ class FooterComponent extends Component {
 
   renderFooter(section) {
     switch (section) {
+      default:
+        return this.getFooterHome();
       case '/':
         return this.getFooterHome();
-        break;
+      
       case '/Travel':
         return this.getFooterDestinationDetail();
-        break;
+
       case '/Profile':
         return this.getFooterDestinationDetail();
-        break;
+      
     }
   }
 
@@ -69,8 +68,24 @@ class FooterComponent extends Component {
 
   getFooterDestinationDetail() {
     return (
-      <footer className='Footer isLogged'>
-        <h1>New footer!!</h1>
+      <footer className='footer'>
+        <div className='footer__container'>
+          <div className='footer__content'>
+            <div className='footer__content show-desktop'>
+              <Link className='footer__text footer__text--margin-right' to="/">Home</Link>
+              <Link className='footer__text' to="/Profile">Profile</Link>
+            </div>
+            <div className='footer__icons'>
+              <a title='social' className='footer__text footer__text--margin-right' href='/'>Twitter</a>
+              <a title='social' className='footer__text footer__text--margin-right' href='/'>Instagram</a>
+              <a title='social' className='footer__text' href='/'>Facebook</a>
+            </div>
+          </div>
+          <div className='footer__content'>
+            <p className='footer__text'>© 2019 All rights reserved</p>
+            <p className='footer__text'>POWERED  BY CONCEPTHAUS</p>
+          </div>
+        </div>
       </footer>
     );
   }
