@@ -1,0 +1,9 @@
+/* paraams button */
+
+// ====  @mixin button($background, $border, $text, $backgroundH, $borderH, $textH)
+
+.button-detailTravel,
+.button-detailVideo {
+  @include button(white, #081f2d, #081f2d, black, black, white);
+  margin: 2em 0;
+}

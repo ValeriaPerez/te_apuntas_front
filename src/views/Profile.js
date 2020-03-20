@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import UserInfo from '../components/UserInfo';
-
 import { retrieveProfileInfo } from '../redux/actions/profile';
 
 const mapStateToProps = state => ({

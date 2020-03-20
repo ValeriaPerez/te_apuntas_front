@@ -5,6 +5,11 @@
 
   &__columns {
     display: flex;
+    flex-wrap: wrap;
+
+    @media (min-width: $tablet){
+      flex-wrap: nowrap;
+    }
   }
 
   &__column {

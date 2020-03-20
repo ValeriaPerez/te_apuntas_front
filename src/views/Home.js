@@ -45,7 +45,6 @@ class Home extends Component {
     }
 
   render() {
-
     const { imagesHome, isLoading } = this.props;
     console.log(imagesHome);
     const images = imagesHome.map(image => {
