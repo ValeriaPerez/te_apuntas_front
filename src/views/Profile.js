@@ -34,7 +34,7 @@ class Profile extends Component {
         <Header
           title='Home'
           alt='Logo'
-          imageLogo={ require('../assets/images/teApuntas.png') }/>
+          imageLogo={ require('../assets/images/teApuntasB.png') }/>
         <section className='Body'>
           <div className='Body__Columns LoginView'>
             <UserInfo />

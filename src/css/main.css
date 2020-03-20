@@ -66,7 +66,10 @@ body {
   position: absolute;
   width: 100%; }
   .Footer.isLogged {
-    background: #333333; }
+    background: #333333;
+    height: 150px;
+    max-height: 150px;
+    min-height: 150px; }
     .Footer.isLogged__container {
       box-sizing: border-box;
       position: relative;
@@ -79,20 +82,42 @@ body {
     margin: 0 auto;
     width: 100%;
     max-width: 1200px; }
-  .Footer__login--text {
-    color: #FFFFFF;
-    font-size: 0.8571428571em; }
-    .Footer__login--text button {
-      font-size: 1.4285714286em;
-      background: transparent;
-      border: 0;
+  .Footer__login {
+    display: flex;
+    flex-direction: row;
+    width: 100%; }
+    .Footer__login--text {
       color: #FFFFFF;
-      font-size: 12px;
-      padding: 0px 5px;
-      text-decoration: none; }
-      @media (min-width: 959px) {
-        .Footer__login--text button {
-          font-size: 1em; } }
+      font-size: 0.8571428571em; }
+      .Footer__login--text button {
+        font-size: 1.4285714286em;
+        background: transparent;
+        border: 0;
+        color: #FFFFFF;
+        font-size: 12px;
+        padding: 0px 5px;
+        text-decoration: none; }
+        @media (min-width: 959px) {
+          .Footer__login--text button {
+            font-size: 1em; } }
+    .Footer__login__section {
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      height: 80px;
+      justify-content: space-between;
+      width: 50%; }
+      .Footer__login__section:nth-child(1) {
+        align-items: flex-start; }
+        .Footer__login__section:nth-child(1) div p {
+          margin-right: 5px; }
+      .Footer__login__section:nth-child(2) {
+        align-items: flex-end; }
+        .Footer__login__section:nth-child(2) div {
+          margin-left: 5px; }
+      .Footer__login__section div {
+        display: flex;
+        flex-direction: row; }
 
 .FollowUs {
   width: 70%; }
@@ -381,6 +406,9 @@ body {
     flex-direction: row;
     justify-content: space-between;
     width: 100%; }
+    @media (max-width: 750px) {
+      .UserData__container {
+        flex-direction: column; } }
     .UserData__container--Card {
       align-items: center;
       border-radius: 1px solid #DDDDDD;

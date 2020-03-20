@@ -10,6 +10,10 @@
   width: 100%;
   &.isLogged {
     background: $darkGrey;
+    height: 150px;
+    max-height: 150px;
+    min-height: 150px;
+
     &__container {
       @include container();
     }
@@ -20,6 +24,9 @@
   }
 
   &__login {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 
     &--text {
       color: $white;
@@ -38,6 +45,38 @@
           @include fontSize(14px);
         }
       }
+    }
+
+    &__section {
+      color: $white;
+      display:flex;
+      flex-direction: column;
+      height: 80px;
+      justify-content: space-between;
+      width: 50%;
+
+      &:nth-child(1) {
+        align-items: flex-start;
+        div {
+          p {
+            margin-right: 5px;
+          }
+        }
+      }
+      &:nth-child(2) {
+        align-items: flex-end;
+        div {
+          margin-left: 5px;
+        }
+      }
+
+      div {
+        display: flex;
+        flex-direction: row;
+      }
+
+
+
     }
   }
 }

@@ -7,6 +7,10 @@
     justify-content: space-between;
     width: 100%;
 
+    @media (max-width: 750px) {
+      flex-direction: column;
+    }
+
     &--Card {
       align-items: center;
       border-radius: 1px solid $lightGrey;
@@ -39,7 +43,7 @@
         flex-direction: column;
         padding: 20px;
         text-align: justify;
-        
+
         .editAbout {
           padding-bottom: 15px;
         }

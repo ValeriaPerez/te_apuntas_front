@@ -32,8 +32,6 @@ class UserInfo extends React.Component {
               <div><p>lolita@concepthaus.mx</p></div>
               <div><p>Destino Favorito</p></div>
             </div>
-
-
           </div>
         </div>
       </section>
