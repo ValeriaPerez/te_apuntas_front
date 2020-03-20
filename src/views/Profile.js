@@ -3,7 +3,6 @@ import React, { Component } from "react";
 // Components
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import Login from '../components/Login';
 import UserInfo from '../components/UserInfo'
 
 import { retrieveProfileInfo } from '../redux/actions/profile';
