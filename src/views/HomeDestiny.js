@@ -17,8 +17,8 @@ const mapStateToProps = state => ({
 
 class HomeDestiny extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       height: 0,
       width: 0,

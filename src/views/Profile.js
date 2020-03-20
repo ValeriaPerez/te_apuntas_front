@@ -1,14 +1,15 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 
 // Components
-import Footer from '../components/Footer';
 import Header from '../components/Header';
-import UserInfo from '../components/UserInfo'
+import Footer from '../components/Footer';
+import UserInfo from '../components/UserInfo';
 
 import { retrieveProfileInfo } from '../redux/actions/profile';
 
 const mapStateToProps = state => ({
-  /* --- Home states --- */
+  /* --- Profile states --- */
   profileInfo : state.Profile.profileInfo,
   loadingProfileInfo : state.Profile.loadingProfileInfo,
 });
@@ -24,9 +25,12 @@ class Profile extends Component {
     };
   }
 
-  render() {
+  componentWillMount() {
+    const { dispatch } = this.props;
+    dispatch(retrieveProfileInfo());
+  }
 
-    console.log(this.props);
+  render() {
 
     return (
       <div className='Home'>
@@ -45,5 +49,7 @@ class Profile extends Component {
   }
 
 }
+
+Profile = connect(mapStateToProps)(Profile);
 
 export default Profile;
