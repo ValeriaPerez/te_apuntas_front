@@ -1,9 +1,49 @@
 .description {
   width: 100%;
-  padding: 2em 0;
+  padding: 2em 2em 0 2em;
+
+  @media (min-width: $tablet){
+    padding: 2em 0;
+  }
+
+  &__icons {
+    color: red;
+  }
+
+  &__travelers {
+
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em 0;
+
+    &--avatars {
+      & .MuiAvatar-root {
+        margin-left: -0.7em;
+      }
+    }
+
+    &__title {
+      font-size: 16px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.38;
+      letter-spacing: normal;
+      text-align: left;
+      color: #081f2d;
+
+      @media (min-width: $tablet){
+        
+      }
+    }
+  }
   
   &__title {
-    font-size: 37px;
+    font-size: 18px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -13,31 +53,103 @@
     color: $greyBlue;
     display: flex;
     justify-content: space-between;
+    margin: 1em 0;
+
+    @media (min-width: $tablet){
+      font-size: 37px;
+    }
   }
 
   &__span {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.2;
+    line-height: 1.1;
     letter-spacing: normal;
     text-align: left;
     color: $black;
+
+    @media (min-width: $tablet){
+      font-size: 30px;
+      line-height: 1.2;
+    }
   }
 
   &__text {
-    font-size: 24px;
+    font-size: 13px;
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.25;
+    line-height: 1.69;
     letter-spacing: normal;
     text-align: left;
     color: $black;
+
+    @media (min-width: $tablet){
+      font-size: 24px;
+      line-height: 1.25;
+    }
   }
 
-  &__icons {
-    color: red;
-  }
+  &__list {
+    &__title {
+      font-size: 18px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.22;
+      letter-spacing: normal;
+      text-align: left;
+      color: #081f2d;
+
+      @media (min-width: $tablet){
+        
+      }
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      margin: 0.5em 0;
+      & .icon {
+        @include setImg();
+        max-width: 15px;
+        height: 100%;
+        margin-right: 1em;
+      }
+
+      & .item-description {
+        font-size: 15px;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 2;
+        letter-spacing: normal;
+        text-align: left;
+        color: #081f2d;
+      }
+    }
+
+    &__link {
+      font-size: 15px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: left;
+      color: #081f2d;
+      transition: all 0.2s ease-in-out;
+
+      @media (min-width: $tablet){
+        font-size: 24px;
+        line-height: 1.17;
+
+        &:hover {
+          color: #3f96b4;
+        }
+      }
+    }
+  } 
 }
