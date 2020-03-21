@@ -62,7 +62,7 @@ class DestinationDetail extends Component {
           imageLogo={ require('../assets/images/teApuntasB.png') }/>
         <Slider
           width={this.state.width}
-          height={this.state.height}
+          height='60vh'
           images={images}
           showBullets={this.state.showBullets}
            />

@@ -14,6 +14,7 @@ class FooterComponent extends Component {
     switch (section) {
       default:
         return this.getFooterHome();
+        
       case '/':
         return this.getFooterHome();
       
@@ -21,7 +22,7 @@ class FooterComponent extends Component {
         return this.getFooterDestinationDetail();
 
       case '/Profile':
-        return this.getFooterDestinationDetail();
+        return this.getFooterProfile();
       
     }
   }
