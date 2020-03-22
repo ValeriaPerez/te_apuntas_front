@@ -15,7 +15,6 @@ const mapStateToProps = state => ({
 });
 
 class Profile extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -31,7 +30,8 @@ class Profile extends Component {
   }
 
   render() {
-
+    const { profileInfo } = this.props;
+    console.log("profileInfo", profileInfo);
     return (
       <div className='Home'>
         <Header
@@ -40,14 +40,13 @@ class Profile extends Component {
           imageLogo={ require('../assets/images/teApuntasB.png') }/>
         <section className='Body'>
           <div className='Body__Columns LoginView'>
-            <UserInfo />
+            <UserInfo dataUser={this.props.profileInfo}/>
           </div>
         </section>
         <Footer isLogged={true}/>
       </div>
     );
   }
-
 }
 
 Profile = connect(mapStateToProps)(Profile);

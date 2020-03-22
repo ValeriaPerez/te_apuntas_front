@@ -43,7 +43,8 @@ export async function getImagesHome() {
 
 
 export async function getDestinyInfo() {
-  return await doRequest('http://192.168.100.234:8000/api/v1/destino/')
+  return await doRequest('http://7ee80e5c.ngrok.io/api/v1/destino')
+  // return await doRequest('http://192.168.100.234:8000/api/v1/destino/')
   .then(response => {
     return response;
   }).catch(error => {
@@ -62,7 +63,8 @@ export async function postContactanos(data, token) {
 }
 
 export async function getProfileInfo() {
-  return await doRequest('http://192.168.100.234:8000/api/v1/perfil/1')
+  return await doRequest('http://7ee80e5c.ngrok.io/api/v1/perfil/1')
+  // return await doRequest('http://192.168.100.234:8000/api/v1/perfil/1')
   .then(response => {
     return response;
   }).catch(error => {
