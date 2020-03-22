@@ -1,10 +1,16 @@
 .destination-detail {
+
   &__container {
     @include container();
   }
 
   &__columns {
     display: flex;
+    flex-wrap: wrap;
+
+    @media (min-width: $tablet){
+      flex-wrap: nowrap;
+    }
   }
 
   &__column {

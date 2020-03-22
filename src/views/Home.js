@@ -74,7 +74,7 @@ class Home extends Component {
               <Quotes />
             </div>
           </section>
-          <Footer isLogged='false'/>
+          <Footer />
         </div>
       </div>
     );

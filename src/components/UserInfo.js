@@ -20,14 +20,18 @@ class UserInfo extends React.Component {
           </div>
           <div className='UserData__container--DataUser'>
             <h1 className='DataUser__title'>Hola, Lolita Davis</h1>
-            <div>
+            <div className='DataUser__Edit'>
               <p>Se registro en 2018</p>
               <p>Editar perfil</p>
             </div>
-            <div><p>Lols</p></div>
-            <div><p>Lols</p></div>
-            <div><p>Lols</p></div>
-            <div><p>Lols</p></div>
+            <div className='DataUser__Description'>
+              <div><p>Lols</p></div>
+              <div><p>México</p></div>
+              <div><p>Mujer</p></div>
+              <div><p>29 años</p></div>
+              <div><p>lolita@concepthaus.mx</p></div>
+              <div><p>Destino Favorito</p></div>
+            </div>
           </div>
         </div>
       </section>

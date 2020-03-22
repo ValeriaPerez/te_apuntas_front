@@ -8,8 +8,13 @@
   padding: 0px 35px 0px;
   position: absolute;
   width: 100%;
+
   &.isLogged {
     background: $darkGrey;
+    height: 150px;
+    max-height: 150px;
+    min-height: 150px;
+
     &__container {
       @include container();
     }
@@ -20,6 +25,9 @@
   }
 
   &__login {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 
     &--text {
       color: $white;
@@ -38,6 +46,80 @@
           @include fontSize(14px);
         }
       }
+    }
+
+    &__section {
+      color: $white;
+      display:flex;
+      flex-direction: column;
+      height: 80px;
+      justify-content: space-between;
+      width: 50%;
+
+      &:nth-child(1) {
+        align-items: flex-start;
+        div {
+          p {
+            margin-right: 5px;
+          }
+        }
+      }
+      &:nth-child(2) {
+        align-items: flex-end;
+        div {
+          margin-left: 5px;
+        }
+      }
+
+      div {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: $darkGrey;
+  color: $white;
+
+  &__container {
+    @include container();
+    padding: 2em;
+
+    @media (min-width: $tablet){
+      padding: 2em 0;
+    }
+  }
+
+  &__content {
+    @media (min-width: $tablet){
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-around;
+
+    @media (min-width: $tablet){
+    }
+  }
+
+  &__text {
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.13;
+    letter-spacing: normal;
+    text-align: center;
+    color: $white;
+    margin: 1em 0;
+
+    &--margin-right {
+      margin-right: 1em;
     }
   }
 }

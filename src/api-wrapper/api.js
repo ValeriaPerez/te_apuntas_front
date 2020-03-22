@@ -61,9 +61,8 @@ export async function postContactanos(data, token) {
   });
 }
 
-
 export async function getProfileInfo() {
-  return await doRequest('http://192.168.100.234:8000/api/v1/perfil/')
+  return await doRequest('http://192.168.100.234:8000/api/v1/perfil/1')
   .then(response => {
     return response;
   }).catch(error => {
