@@ -45,7 +45,6 @@ class Home extends Component {
     }
 
   render() {
-
     const { imagesHome, isLoading } = this.props;
     console.log(imagesHome);
     const images = imagesHome.map(image => {
@@ -76,7 +75,7 @@ class Home extends Component {
               <Quotes />
             </div>
           </section>
-          <Footer isLogged='false'/>
+          <Footer />
         </div>
       </div>
     );

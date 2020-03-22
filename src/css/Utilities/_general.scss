@@ -36,3 +36,17 @@
     outline: 0;
   }
 }
+
+.show-mobile {
+  display: block;
+  @media (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.show-desktop {
+  display: none;
+  @media (min-width: $tablet) {
+    display: block;
+  }
+}
