@@ -1,0 +1,22 @@
+.CalendarInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 150px;
+    margin-bottom: 50px;
+
+    &__section {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-right: 20px;
+      .Icon {
+        width: 30px;
+      }
+      p {
+        font-size: 20px;
+
+      }
+    }
+}

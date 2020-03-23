@@ -4,7 +4,8 @@ import { Button } from '@material-ui/core';
 import Avatar from '@material-ui/core/Avatar';
 import Tooltip from '@material-ui/core/Tooltip';
 import { AvatarGroup } from '@material-ui/lab';
-// import destinyInfo from '../redux/reducers/destination';
+import destinyInfo from '../redux/reducers/destination';
+import MiniCalendarInfo from './MiniCalendarInfo'
 
 class Destination extends React.Component {
   constructor(props) {
@@ -36,23 +37,13 @@ class Destination extends React.Component {
   render() {
     const { destinyInfo } = this.props;
     const apuntados = this.getImagesApuntados();
-    console.log('apuntados', apuntados);
+
     return (
       <div className='Destination'>
         { destinyInfo === null ? <h1>Cargando</h1> :
         <div className='DestinationData__container'>
           <div className='DestinationData'>
-            <div className='DestinationData__info'>
-              <div>
-                <p>{destinyInfo.pais}</p>
-              </div>
-              <div>
-                <p>{destinyInfo.duracion}</p>
-              </div>
-              <div>
-              <p>{destinyInfo.max_pasajeros}</p>
-              </div>
-            </div>
+            <MiniCalendarInfo data={this.props.destinyInfo}/>
             <div className='DestinationData__description'>
               <div className='DestinationData__description--title'>
                 <h1>{`${destinyInfo.ciudad} ${destinyInfo.pais}`}</h1>
