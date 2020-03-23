@@ -35,6 +35,10 @@ class UserInfo extends React.Component {
    });
   };
 
+  handleChangeToggle(value) {
+    console.log(this.state.value);
+  }
+
   handleSendData() {
     let data = '';
     console.log("enviar datos");
@@ -138,27 +142,27 @@ class UserInfo extends React.Component {
             <div className='DataUser__Description'>
               <div>
                 <FormControlLabel control={<IOSSwitch checked={this.state.checked[0]} onChange={this.handleChangeToggle.bind(this, 0) } name="checkedB" />}/>
-                <TextField required id="outlined-required" label="Required" variant="outlined" defaultValue={nombres} />
+                <TextField className='inputData' required id="outlined-required" label="Required" variant="outlined" defaultValue={nombres} />
               </div>
               <div>
                 <FormControlLabel control={<IOSSwitch checked={this.state.checked[1]} onChange={this.handleChangeToggle.bind(this, 1)} name="checkedB" />}/>
-                <TextField required id="outlined-required" label="Required" variant="outlined" defaultValue={paisName} />
+                <TextField className='inputData' required id="outlined-required" label="Required" variant="outlined" defaultValue={paisName} />
               </div>
               <div>
                 <FormControlLabel control={<IOSSwitch checked={this.state.checked[2]} onChange={this.handleChangeToggle.bind(this, 2)} name="checkedB" />}/>
-                <TextField required id="outlined-required" label="Required" variant="outlined" defaultValue={genero} />
+                <TextField className='inputData' required id="outlined-required" label="Required" variant="outlined" defaultValue={genero} />
               </div>
               <div>
                 <FormControlLabel control={<IOSSwitch checked={this.state.checked[3]} onChange={this.handleChangeToggle.bind(this, 3)} name="checkedB" />}/>
-                <TextField required id="outlined-required" label="Required" variant="outlined" defaultValue={edad + ' años'} />
+                <TextField className='inputData' required id="outlined-required" label="Required" variant="outlined" defaultValue={edad + ' años'} />
               </div>
               <div>
                 <FormControlLabel control={<IOSSwitch checked={this.state.checked[4]} onChange={this.handleChangeToggle.bind(this, 4)} name="checkedB" />}/>
-                <TextField required id="outlined-required" label="Required" variant="outlined" defaultValue={email} />
+                <TextField className='inputData' required id="outlined-required" label="Required" variant="outlined" defaultValue={email} />
               </div>
               <div>
                 <FormControlLabel control={<IOSSwitch checked={this.state.checked[5]} onChange={this.handleChangeToggle.bind(this, 5)} name="checkedB" />}/>
-                <TextField required id="outlined-required" label="Required" variant="outlined" defaultValue={favorito} />
+                <TextField className='inputData' required id="outlined-required" label="Required" variant="outlined" defaultValue={favorito} />
               </div>
               <div>
                 <button onClick={this.handleSendData}>enviar</button>
