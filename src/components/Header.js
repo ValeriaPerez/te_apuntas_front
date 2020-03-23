@@ -21,7 +21,7 @@ Header.defaultProps = {
   title: 'Title',
   alt: 'Logo Header',
   imageLogo:'',
-  login: true,
+  login: false,
   tokenid: 1,
 }
 
