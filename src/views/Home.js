@@ -45,12 +45,11 @@ class Home extends Component {
     }
 
   render() {
-    const { imagesHome, isLoading } = this.props;
+    const { imagesHome, isLoading, loadingImagesHome } = this.props;
     const images = imagesHome.map(image => {
       return {'url': image.imagen};
     })
 
-    console.log(images);
     return (
       <div className='Home'>
         <div className='BG-img'>
@@ -59,13 +58,15 @@ class Home extends Component {
             alt='Logo'
             isLoading={isLoading}
             imageLogo={ require('../assets/images/teApuntas.png') }/>
-          <Slider
+          { !loadingImagesHome?
+            <Slider
               width={this.state.width}
               height={this.state.height}
               images={images}
               showBullets={this.state.showBullets}
               isLoading={isLoading}
-            />
+            /> : <h1>Cargando</h1>
+          }
           <section className='Body'>
             <div className='Body__Columns'>
               { isLoading ? null : <FollowUs />}

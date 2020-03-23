@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Avatar from '../components/elements/avatar';
 
 function Header(props){
-  console.log(props);
   return (
     <section className='Header'>
       <div className='Header__container'>
