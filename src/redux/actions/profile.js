@@ -19,8 +19,7 @@ export const retrieveProfileInfoStart = () => ({
   payload: { 'data': [], 'loading': true, error: null },
 });
 
-export const retrieveProfileInfoSuccess = (response) => (  
-  {
+export const retrieveProfileInfoSuccess = (response) => ({
     type: asyncActionTypes.RETRIEVE_PROFILE_INFO.SUCCESS,
     payload: { 'data': response, 'loading': false, error: null
   },
