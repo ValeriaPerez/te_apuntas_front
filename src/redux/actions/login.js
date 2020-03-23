@@ -16,7 +16,7 @@ export function loginPost(data) {
   
 export const loginStart = () => ({
   type: asyncActionTypes.LOGIN.START,
-  payload: { 'data': [], 'loading': true, error: null },
+  payload: { 'data': {}, 'loading': true, error: null },
 });
 
 export const loginSuccess = (response) => ({
@@ -26,5 +26,5 @@ export const loginSuccess = (response) => ({
 
 export const loginFail = (error) => ({
   type: asyncActionTypes.LOGIN.FAIL,
-  payload: { 'data': [], 'loading': false, 'error': error },
+  payload: { 'data': {}, 'loading': false, 'error': error },
 });

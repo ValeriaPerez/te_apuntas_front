@@ -13,6 +13,8 @@ const mapStateToProps = state => ({
   /* --- Home states --- */
   destinyInfo : state.Destination.destinyInfo,
   loadingDestinyInfo : state.Destination.loadingDestinyInfo,
+  imagesDestiny: state.Destination.imagesDestiny,
+  indexPage: state.Destination.indexPage,
 });
 
 class HomeDestiny extends Component {
@@ -22,7 +24,7 @@ class HomeDestiny extends Component {
     this.state = {
       height: 0,
       width: 0,
-      showBullets: false
+      showBullets: false,
     };
     window.addEventListener("resize", this.update);
   }
@@ -44,40 +46,27 @@ class HomeDestiny extends Component {
   };
 
   render() {
-    let destinyArray = '';
-    const images = [];
-    const { destinyInfo } = this.props;
-    console.log('destinyInfo', destinyInfo);
-    if (destinyInfo !== null) {
-      destinyArray = destinyInfo.map(index => {
-        const imgData = index.imagenes;
-        return
-          const img2 = imgData.map(img => {
-            images.push({'url': img.imagen});
-            return
-          });
-      });
-    }
-
-    console.log(destinyArray);
-
+    const { destinyInfo, imagesDestiny, indexPage, loadingDestinyInfo } = this.props;
     return (
       <div className='Home'>
         <div className='BG-img'>
-          <Slider
-            width={this.state.width}
-            height={this.state.height}
-            images={images}
-            showBullets={this.state.showBullets}
-             />
+         { loadingDestinyInfo ? <h1>Cargando</h1> : 
+            <Slider
+              width={this.state.width}
+              height={this.state.height}
+              images={imagesDestiny.length > 0 && indexPage !== null ? imagesDestiny[indexPage] : []}
+              showBullets={this.state.showBullets}
+            />
+         } 
           <Header
             title='Home'
             alt='Logo'
             imageLogo={ require('../assets/images/teApuntas.png') }/>
+          {}
           <section className='Body'>
             <Modal />
             <div className='Body__Columns welcomeColumns'>
-              <Destination destinyInfo={this.props.destinyInfo}/>
+              <Destination destinyInfo={indexPage !== null ? destinyInfo[indexPage] : null}/>
             </div>
           </section>
         </div>
