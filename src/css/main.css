@@ -892,6 +892,24 @@ input[type=radio] {
               background: #081f2d;
               color: #FFFFFF; }
 
+.CalendarInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 150px;
+  margin-bottom: 50px; }
+  .CalendarInfo__section {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 20px; }
+    .CalendarInfo__section .Icon {
+      width: 30px;
+      margin-right: 10px; }
+    .CalendarInfo__section p {
+      font-size: 12px; }
+
 .ModalTA {
   display: flex;
   align-items: center;
