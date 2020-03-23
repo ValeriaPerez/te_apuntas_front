@@ -35,10 +35,6 @@ class UserInfo extends React.Component {
    });
   };
 
-  handleChangeToggle(value) {
-    console.log(this.state.value);
-  }
-
   handleSendData() {
     let data = '';
     console.log("enviar datos");
@@ -107,17 +103,16 @@ class UserInfo extends React.Component {
       );
     });
 
-    const isEditable = this.state.isEditable;
     const { dataUser } = this.props;
     console.log('alv',this.props.dataUser);
 
-    const codigo = dataUser ? dataUser.codigo : null;
+    // const codigo = dataUser ? dataUser.codigo : null;
     const edad = dataUser ? dataUser.edad : null;
     const email = dataUser ? dataUser.email : null;
     const favorito = dataUser ? dataUser.favorito : null;
-    const foto = dataUser ? dataUser.foto : null;
+    // const foto = dataUser ? dataUser.foto : null;
     const genero = dataUser ? dataUser.genero : null;
-    const materno = dataUser ? dataUser.materno : null;
+    // const materno = dataUser ? dataUser.materno : null;
     const nombres = dataUser ? dataUser.nombres : null;
     const pais = dataUser ? dataUser.pais : null;
     const paisCodigo = pais ? pais.code : null;

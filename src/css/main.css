@@ -26,15 +26,6 @@ body {
   "Mixins" styles
 -------------------------------- */
 /* - - - - - Botones - - - - - */
-.btn--grey {
-  color: #DDDDDD !important;
-  font-size: 14px !important;
-  margin-bottom: 20px !important;
-  margin-top: 20px !important;
-  border: 1px solid #DDDDDD !important;
-  padding: 5px 25px !important;
-  min-width: 100px; }
-
 /* - - - - - Links - - - - - */
 .Link {
   text-decoration: none; }
@@ -267,6 +258,55 @@ body {
       .button-shared--black:hover:after {
         right: 0; }
 
+.button-Home {
+  font-size: 14px;
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  text-transform: inherit;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  z-index: 1;
+  padding: 1em 3.5em;
+  line-height: 1;
+  text-align: center;
+  transition: all 0.2s ease-in-out; }
+  .button-Home:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    content: '';
+    z-index: -1;
+    border: 1px solid white;
+    transition: all 0.2s ease-in-out; }
+  .button-Home:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    content: '';
+    right: 100%;
+    background-color: white;
+    z-index: -1;
+    transition: all 0.2s ease-in-out; }
+  .button-Home:hover {
+    color: black; }
+    .button-Home:hover:before {
+      border-color: white; }
+    .button-Home:hover:after {
+      right: 0; }
+  .button-Home--contact {
+    max-width: 200px; }
+
 .shared__container {
   box-sizing: border-box;
   position: relative;
@@ -383,6 +423,9 @@ body {
 
 .FollowUs {
   width: 70%; }
+  @media (min-width: 959px) {
+    .FollowUs__container {
+      padding: 0 2em; } }
   .FollowUs__container--title {
     color: #FFFFFF;
     font-size: 24px; }
@@ -905,10 +948,9 @@ input[type=radio] {
     justify-content: center;
     margin-right: 20px; }
     .CalendarInfo__section .Icon {
-      width: 30px;
-      margin-right: 10px; }
+      width: 30px; }
     .CalendarInfo__section p {
-      font-size: 12px; }
+      font-size: 20px; }
 
 .ModalTA {
   display: flex;

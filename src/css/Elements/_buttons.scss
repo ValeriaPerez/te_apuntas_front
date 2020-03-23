@@ -25,3 +25,11 @@
     @include button(black, black, white, #3f96b4, #3f96b4, white); 
   }
 }
+
+.button-Home {
+  @include button(transparent, white, white, white, white, black);
+  
+  &--contact {
+    max-width: 200px;
+  }
+}
