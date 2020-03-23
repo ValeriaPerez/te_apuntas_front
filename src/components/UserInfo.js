@@ -1,5 +1,6 @@
 import React from 'react';
 import Avatar from '../components/elements/avatar';
+import Card from './Card'
 import TextField from '@material-ui/core/TextField';
 
 class UserInfo extends React.Component {
@@ -22,22 +23,12 @@ class UserInfo extends React.Component {
       return (
         <section className='UserData'>
           <div className='UserData__container'>
-            <div className='UserData__container--Card'>
-              <div className='userInfo'>
-                <Avatar cssClass='AvatarL'/>
-                <p className='editImage'>Cambiar foto</p>
-                <p className='aliasText'>APP02</p>
-              </div>
-              <div className='userAbout'>
-                <p className='editAbout'>Editar semblanza</p>
-                <p className='editText'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. Et dolor, met, do met, sed adipisi-cing, lorem ipsum.</p>
-              </div>
-            </div>
+            <Card />
             <div className='UserData__container--DataUser'>
               <h1 className='DataUser__title'>Hola, Lolita Davis</h1>
               <div className='DataUser__Edit'>
                 <p>Se registro en 2018</p>
-                <p>Editar perfil</p>
+                <a href='' onClick={this.handleEditProfile}>Editar perfil</a>
               </div>
               <div className='DataUser__Description'>
                 <div><TextField required id="standard-required" label="Required" defaultValue="Lols" /></div>
