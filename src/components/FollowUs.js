@@ -4,7 +4,6 @@ import TextField from '@material-ui/core/TextField';
 import { connect } from 'react-redux';
 
 import { submitContactanos } from '../redux/actions/home';
-import { loginPost } from '../redux/actions/login';
 
 const mapStateToProps = state => ({
   /* --- Home states --- */
@@ -27,15 +26,6 @@ class FollowUs extends React.Component {
 
     this.handleOpenForm = this.handleOpenForm.bind(this);
     this.handleSendInfo = this.handleSendInfo.bind(this);
-  }
-
-  componentWillMount() {
-    const { dispatch } = this.props;
-    const dataLogin = {
-      username: 'enrique',
-      password: 'qwerty12345',
-    }
-    dispatch(loginPost(dataLogin));
   }
 
   componentWillReceiveProps(nextProps) {
@@ -117,8 +107,6 @@ class FollowUs extends React.Component {
               </Button>
             </div>
           }
-
-
         </div>
 
 
