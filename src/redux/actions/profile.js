@@ -20,9 +20,8 @@ export const retrieveProfileInfoStart = () => ({
 });
 
 export const retrieveProfileInfoSuccess = (response) => ({
-    type: asyncActionTypes.RETRIEVE_PROFILE_INFO.SUCCESS,
-    payload: { 'data': response, 'loading': false, error: null
-  },
+  type: asyncActionTypes.RETRIEVE_PROFILE_INFO.SUCCESS,
+  payload: { 'data': response, 'loading': false, error: null},
 });
 
 export const retrieveProfileInfoFail = (error) => ({

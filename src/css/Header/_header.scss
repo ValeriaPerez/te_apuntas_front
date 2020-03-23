@@ -4,6 +4,9 @@
   font-size: 18px;
   padding: 0 2em;
   display: flex;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
 
   @media (min-width: $tablet){
     padding: 0 1em;
@@ -25,7 +28,7 @@
       max-width: 170px;
 
       &:hover {
-        max-width: 175px; 
+        max-width: 175px;
       }
     }
   }

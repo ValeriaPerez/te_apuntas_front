@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import UserInfo from '../components/UserInfo';
+
 import { retrieveProfileInfo } from '../redux/actions/profile';
 
 const mapStateToProps = state => ({
@@ -30,7 +31,6 @@ class Profile extends Component {
 
   render() {
     const { profileInfo } = this.props;
-    console.log("profileInfo", profileInfo);
     return (
       <div className='Home'>
         <Header

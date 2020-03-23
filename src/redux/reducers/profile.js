@@ -19,7 +19,7 @@ const profileInfo = (state = initialState, action) => {
     case asyncActionTypes.RETRIEVE_PROFILE_INFO.SUCCESS:
       return {
         ...state,
-        profileInfo: action.payload.data.results,
+        profileInfo: action.payload.data,
         loadingProfileInfo: action.payload.loading,
         error: action.payload.error,
       };

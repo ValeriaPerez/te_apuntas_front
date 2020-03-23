@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 // Components
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
 import Avatar from '../components/elements/avatar';
 import SharedButtons from '../components/elements/shared';
 import Slider from '../components/SliderImage';
@@ -175,8 +174,8 @@ class DestinationDetail extends Component {
 
   renderDestinationLocationMap() {
     return (
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41281391.04844523!2d-130.0900153359974!3d50.83827347786808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b0d03d337cc6ad9%3A0x9968b72aa2438fa5!2zQ2FuYWTDoQ!5e0!3m2!1ses!2smx!4v1584718605709!5m2!1ses!2smx" 
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41281391.04844523!2d-130.0900153359974!3d50.83827347786808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b0d03d337cc6ad9%3A0x9968b72aa2438fa5!2zQ2FuYWTDoQ!5e0!3m2!1ses!2smx!4v1584718605709!5m2!1ses!2smx"
         className='location__map'
         frameborder='0'
         allowfullscreen=''

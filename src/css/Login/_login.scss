@@ -44,6 +44,10 @@
             width: 60px;
             box-sizing: border-box;
 
+            .Login__icon {
+              width: 10px;
+            }
+
             &:hover {
               border-color: #081f2d;
               background: #081f2d;

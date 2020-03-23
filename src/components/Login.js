@@ -59,48 +59,42 @@ class Login extends React.Component {
       <div className='Login'>
         <div className='Login__container'>
           <p className='Login__container--Title'>Iniciar Sesión </p>
-          { !loadingLogin ?
-            <div className='Login__container__SocialMedia'>
-              <SocialLogin
-                provider='facebook'
-                appId='796860273846597'
-                key={'facebook'}
-                callback={this.callbackFacebook}>
-                <Button className='SocialMediaEvent' variant='outlined' color='primary'>
-                  F
-                </Button>
-              </SocialLogin>
-              <div>
-                <InstagramLogin
-                  clientId="5fd2f11482844c5eba963747a5f34556"
-                  onSuccess={this.callbackInstagram}
-                  onFailure={this.callbackInstagram}
-                  cssClass='SocialMediaEvent'>
-                  <p>I</p>
-                </InstagramLogin>
-              </div>
-              <div>
-                <LinkedIn
-                clientId="xxx"
-                callback={this.callbackLinkedIn}
-                className='SocialMediaEvent'
-                text='L'>
-                </LinkedIn>
-              </div>
-              <div className='SocialMediaEvent'>
-                <Button
-                  className='SocialMediaEvent'
-                  variant='outlined'
-                  color='primary'
-                  onClick = { this.loginTemp }>
-                  P
-                </Button>
-              </div>
-            </div> :
-            <h1>Esta cargando</h1>
-          } 
+          <div className='Login__container__SocialMedia'>
+            <SocialLogin
+              provider='facebook'
+              appId='796860273846597'
+              key={'facebook'}
+              callback={this.callbackFacebook}>
+              <Button className='SocialMediaEvent' variant='outlined' color='primary'>
+                <img className='Login__icon' src={ require('../assets/images/fb.png')} />
+              </Button>
+            </SocialLogin>
+            <div>
+              <InstagramLogin
+                clientId="5fd2f11482844c5eba963747a5f34556"
+                onSuccess={this.callbackInstagram}
+                onFailure={this.callbackInstagram}
+                cssClass='SocialMediaEvent'>
+                <img className='Login__icon' src={ require('../assets/images/instagram.png')} />
+               </InstagramLogin>
+            </div>
+            <div>
+              <LinkedIn
+               clientId="xxx"
+               callback={this.callbackLinkedIn}
+               className='SocialMediaEvent'
+               text={<img className='Login__icon' src={ require('../assets/images/linkedin.png') } />}>
+              </LinkedIn>
+            </div>
+            <div className='SocialMediaEvent'>
+              <Button className='SocialMediaEvent' variant='outlined' color='primary'>
+                <p>P</p>
+              </Button>
+            </div>
+
+          </div>
         </div>
-      </div> 
+      </div>
     )
   }
 }
