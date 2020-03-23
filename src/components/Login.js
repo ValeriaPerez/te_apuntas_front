@@ -36,7 +36,7 @@ class Login extends React.Component {
               key={'facebook'}
               callback={this.callbackFacebook}>
               <Button className='SocialMediaEvent' variant='outlined' color='primary'>
-                F
+                <img className='Login__icon' src={ require('../assets/images/fb.png')} />
               </Button>
             </SocialLogin>
             <div>
@@ -45,7 +45,7 @@ class Login extends React.Component {
                 onSuccess={this.callbackInstagram}
                 onFailure={this.callbackInstagram}
                 cssClass='SocialMediaEvent'>
-                <p>I</p>
+                <img className='Login__icon' src={ require('../assets/images/instagram.png')} />
                </InstagramLogin>
             </div>
             <div>
@@ -53,12 +53,12 @@ class Login extends React.Component {
                clientId="xxx"
                callback={this.callbackLinkedIn}
                className='SocialMediaEvent'
-               text='L'>
+               text={<img className='Login__icon' src={ require('../assets/images/linkedin.png') } />}>
               </LinkedIn>
             </div>
             <div className='SocialMediaEvent'>
               <Button className='SocialMediaEvent' variant='outlined' color='primary'>
-                P
+                <p>P</p>
               </Button>
             </div>
 

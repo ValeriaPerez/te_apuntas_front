@@ -78,8 +78,19 @@
 
       .DataUser__Description {
         div {
+
           p {
             font-weight: 600;
+          }
+          .MuiInputLabel-outlined {
+            font-size: 12px;
+            transform: translate(14px, 10px) scale(1);
+          }
+          .MuiInputLabel-outlined.MuiInputLabel-shrink {
+              transform: translate(23px, -6px) scale(0.75);
+          }
+          .MuiOutlinedInput-input {
+            padding: 5px;
           }
         }
       }

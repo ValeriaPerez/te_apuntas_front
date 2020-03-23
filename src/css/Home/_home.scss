@@ -6,7 +6,6 @@
 .BG-img {
   background: linear-gradient(to right,rgba(0,0,0,.4) 0%,rgba(0,0,0,.4) 100%),url('./../assets/images/foto23.png');
   background-size: cover;
-  height: 100vh;
   &.welcomeContainer {
     position: relative;
   }
@@ -19,7 +18,7 @@
   @include container();
   display: flex;
   flex-direction: column;
-  height: 70%;
+  height: 100vh;
   width: 100%;
   padding: 0px 2em;
 
