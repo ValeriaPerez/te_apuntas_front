@@ -1,5 +1,8 @@
 import axios from 'axios';
 
+//  URL del API
+const HOST = 'http://localhost:8000/';
+
 async function doRequest(endpoint, headersRequest = null, requestMethod = 'GET', data = null) {
   try {
     const dataRequest = {
@@ -33,7 +36,7 @@ function addHeaders(token){
 }
 
 export async function getImagesHome() {
-  return await doRequest('http://192.168.100.234:8000/api/v1/imagenes-home/')
+  return await doRequest('http://7ee80e5c.ngrok.io/api/v1/imagenes-home/')
   .then(response => {
     return response;
   }).catch(error => {
@@ -54,7 +57,7 @@ export async function getDestinyInfo() {
 
 export async function postContactanos(data, token) {
   const headers = addHeaders(token);
-  return await doRequest('http://localhost:8000/api/v1/contactanos/', headers, 'POST', data)
+  return await doRequest('http://7ee80e5c.ngrok.io/api/v1/contactanos/', headers, 'POST', data)
   .then(response => {
     return response;
   }).catch(error => {
@@ -73,7 +76,7 @@ export async function getProfileInfo() {
 }
 
 export async function login(data) {
-  return await doRequest('http://localhost:8000/api/v1/token/', null, 'POST', data)
+  return await doRequest('http://7ee80e5c.ngrok.io/api/v1/token/', null, 'POST', data)
   .then(response => {
     return response;
   }).catch(error => {
