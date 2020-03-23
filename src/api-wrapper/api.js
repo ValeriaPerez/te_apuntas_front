@@ -55,9 +55,8 @@ export async function getDestinyInfo() {
   });
 }
 
-export async function postContactanos(data, token) {
-  const headers = addHeaders(token);
-  return await doRequest(HOST + 'api/v1/contactanos/', headers, 'POST', data)
+export async function postContactanos(data) {
+  return await doRequest(HOST + 'api/v1/contactanos/', null, 'POST', data)
   .then(response => {
     return response;
   }).catch(error => {
