@@ -4,7 +4,7 @@ import axios from 'axios';
 // const HOST = 'http://localhost:8000/';
 const HOST = 'http://7ee80e5c.ngrok.io/';
 
-async function doRequest(endpoint, headersRequest = null, requestMethod = 'GET', data = null) {
+export async function doRequest(endpoint, headersRequest = null, requestMethod = 'GET', data = null) {
   try {
     const dataRequest = {
       method: requestMethod,
@@ -66,7 +66,7 @@ export async function postContactanos(data, token) {
 }
 
 export async function getProfileInfo() {
-  return await doRequest(HOST + 'api/v1/perfil/1')
+  return await doRequest(HOST + 'api/v1/perfil/1/')
   .then(response => {
     return response;
   }).catch(error => {
