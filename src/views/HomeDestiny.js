@@ -15,6 +15,7 @@ const mapStateToProps = state => ({
   loadingDestinyInfo : state.Destination.loadingDestinyInfo,
   imagesDestiny: state.Destination.imagesDestiny,
   indexPage: state.Destination.indexPage,
+
 });
 
 class HomeDestiny extends Component {
@@ -61,6 +62,7 @@ class HomeDestiny extends Component {
           <Header
             title='Home'
             alt='Logo'
+            login={ false }
             imageLogo={ require('../assets/images/teApuntas.png') }/>
           {}
           <section className='Body'>

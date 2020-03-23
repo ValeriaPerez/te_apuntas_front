@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import { connect } from 'react-redux';
 
@@ -91,9 +90,9 @@ class FollowUs extends React.Component {
                   rows='4'
                   variant='outlined'
                 />
-                <Button className='btn--grey ' variant='outlined' color='primary' onClick={this.handleSendInfo}>
+                <button className='button-Home' variant='outlined' color='primary' onClick={this.handleSendInfo}>
                   Enviar
-                </Button>
+                </button>
               </form>
 
             </div>
@@ -102,9 +101,9 @@ class FollowUs extends React.Component {
               <p className='FollowUs__container--description'>
                Bienvenido a Te Apuntas, si has llegado sin invitación escríbenos y cuéntanos por qué quieres ser parte de esto para que podamos enviarte una invitación personalizada.
               </p>
-              <Button className='btn--grey' variant='outlined' color='primary' onClick={this.handleOpenForm}>
+              <button className='button-Home button-Home--contact' onClick={this.handleOpenForm}>
                 Contáctanos
-              </Button>
+              </button>
             </div>
           }
         </div>

@@ -54,7 +54,6 @@ class Login extends React.Component {
   }
 
   render() {
-    const { loadingLogin } = this.props;
     return (
       <div className='Login'>
         <div className='Login__container'>
@@ -66,7 +65,7 @@ class Login extends React.Component {
               key={'facebook'}
               callback={this.callbackFacebook}>
               <Button className='SocialMediaEvent' variant='outlined' color='primary'>
-                <img className='Login__icon' src={ require('../assets/images/fb.png')} />
+                <img className='Login__icon' src={ require('../assets/images/fb.png')} alt='icono'/>
               </Button>
             </SocialLogin>
             <div>
@@ -75,7 +74,7 @@ class Login extends React.Component {
                 onSuccess={this.callbackInstagram}
                 onFailure={this.callbackInstagram}
                 cssClass='SocialMediaEvent'>
-                <img className='Login__icon' src={ require('../assets/images/instagram.png')} />
+                <img className='Login__icon' src={ require('../assets/images/instagram.png')} alt='icono'/>
                </InstagramLogin>
             </div>
             <div>
@@ -83,7 +82,7 @@ class Login extends React.Component {
                clientId="xxx"
                callback={this.callbackLinkedIn}
                className='SocialMediaEvent'
-               text={<img className='Login__icon' src={ require('../assets/images/linkedin.png') } />}>
+               text={<img className='Login__icon' src={ require('../assets/images/linkedin.png') } alt='icono'/>}>
               </LinkedIn>
             </div>
             <div className='SocialMediaEvent'>
