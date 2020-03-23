@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core';
 import Avatar from '@material-ui/core/Avatar';
 import Tooltip from '@material-ui/core/Tooltip';
 import { AvatarGroup } from '@material-ui/lab';
-import destinyInfo from '../redux/reducers/destination';
+// import destinyInfo from '../redux/reducers/destination';
 
 class Destination extends React.Component {
   constructor(props) {

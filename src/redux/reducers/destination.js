@@ -1,5 +1,5 @@
 import asyncActionTypes from '../constants/action-types';
-import { getImagesHome } from '../../api-wrapper/api';
+// import { getImagesHome } from '../../api-wrapper/api';
 
 const initialState = {
   destinyInfo: null,

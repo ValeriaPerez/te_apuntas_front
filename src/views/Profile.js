@@ -30,7 +30,6 @@ class Profile extends Component {
   }
 
   render() {
-    const { profileInfo } = this.props;
     return (
       <div className='Home'>
         <Header
