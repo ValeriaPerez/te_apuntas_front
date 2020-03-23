@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import Avatar from '../components/elements/avatar';
 import SharedButtons from '../components/elements/shared';
 import Slider from '../components/SliderImage';
+import Reservation from '../components/destination-detail/reservation';
 
 import { retrieveDestinyInfo } from '../redux/actions/destination';
 
@@ -84,11 +85,9 @@ class DestinationDetail extends Component {
               </div>
 
             </div>
-            <div className='destination-detail__column show-desktop'>
+            <div className='destination-detail__column'>
 
-              <div className='reservation'>
-                <h4>Reservación</h4>
-              </div>
+              <Reservation />
 
               <div className='travelers'>
                 <h4>Apuntados al viaje</h4>
