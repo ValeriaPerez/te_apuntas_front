@@ -24,7 +24,7 @@ function ImageAvatars(props) {
   return (
     <div className={ classes.root }>
       <Avatar alt={ props.alt } src={ props.image }/>
-      { props.showName ? <p className={ classes.name }>Nombre</p> : null }
+      { props.showName ? <p className={ classes.name }> { props.name }</p> : null }
     </div>
   );
 }
@@ -33,6 +33,7 @@ ImageAvatars.defaultProps = {
   alt: '',
   image:'',
   showName: false,
+  'name': '',
 }
 
 export default ImageAvatars

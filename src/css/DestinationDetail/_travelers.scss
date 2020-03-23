@@ -1,2 +1,91 @@
 .travelers {
+  &__container {
+    @include container();
+    padding: 2em;
+
+    @media (min-width: $tablet){
+      padding: 2em 0;
+    }
+  }
+
+  &__title {
+    font-size: 37px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.22;
+    letter-spacing: normal;
+    text-align: left;
+    color: #081f2d;
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__counter {
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.21;
+    letter-spacing: normal;
+    text-align: left;
+    color: #081f2d;
+
+    @media (min-width: $tablet){
+      font-size: 25px;
+    }
+  }
+
+  &__date {
+    font-size: 13px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.69;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4a4f54;
+    margin: 1em 0; 
+
+    @media (min-width: $tablet){
+      font-size: 20px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    & div {
+      width: 100%;
+      max-width: 135px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 1em 0;
+
+      & p {
+        font-size: 20px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.1;
+        letter-spacing: normal;
+        text-align: center;
+        color: #081f2d;
+        width: 100%;
+      }
+    }
+
+    & .MuiAvatar-root {
+      width: 80px;
+      height: 80px;
+    }
+  }
 }
