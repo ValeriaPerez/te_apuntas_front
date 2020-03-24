@@ -2,7 +2,7 @@ import axios from 'axios';
 
 //  URL del API
 // const HOST = 'http://localhost:8000/';
-const HOST = 'http://198224a0.ngrok.io/';
+const HOST = 'http://c971c8d1.ngrok.io/';
 
 export async function doRequest(endpoint, headersRequest = null, requestMethod = 'GET', data = null) {
   try {
