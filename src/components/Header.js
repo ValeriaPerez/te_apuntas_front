@@ -3,18 +3,37 @@ import { Link } from 'react-router-dom';
 import Avatar from '../components/elements/avatar';
 
 function Header(props){
-  return (
-    <section className='Header'>
-      <div className='Header__container'>
-        <Link to="/">
-          <img className='Header__icon' src={ props.imageLogo } alt={ props.alt } title={ props.title } />
-        </Link>
-        <Link to="/Profile" tokenid={props.tokenid}>
-          { props.login ? <Avatar /> : null }
-        </Link>
-      </div>
-    </section>
-  )
+
+  console.log(props);
+  if (props.login) {
+    return (
+      <section className='Header isLogged'>
+        <div className='Header__container'>
+          <Link to="/">
+            <img className='Header__icon' src={ props.imageLogo } alt={ props.alt } title={ props.title } />
+          </Link>
+          <Link to="/Profile" tokenid={props.tokenid}>
+            { props.login ? <Avatar /> : null }
+          </Link>
+        </div>
+      </section>
+    )
+  } else {
+    return (
+      <section className='Header'>
+        <div className='Header__container'>
+          <Link to="/">
+            <img className='Header__icon' src={ props.imageLogo } alt={ props.alt } title={ props.title } />
+          </Link>
+          <Link to="/Profile" tokenid={props.tokenid}>
+            { props.login ? <Avatar /> : null }
+          </Link>
+        </div>
+      </section>
+    )
+  }
+
+
 }
 
 Header.defaultProps = {
