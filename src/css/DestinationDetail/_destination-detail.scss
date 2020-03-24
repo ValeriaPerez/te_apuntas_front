@@ -1,5 +1,9 @@
 .destination-detail {
 
+  .image-slider {
+    height: calc(60vh + 99px) !important;
+  }
+
   &__container {
     @include container();
   }

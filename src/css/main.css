@@ -486,6 +486,8 @@ body {
       .Destination .DestinationPeople__link .btn--grey {
         text-decoration: none; }
 
+.destination-detail .image-slider {
+  height: calc(60vh + 99px) !important; }
 .destination-detail__container {
   box-sizing: border-box;
   position: relative;
@@ -863,6 +865,8 @@ input[type=radio] {
   position: fixed;
   width: 100%;
   z-index: 100; }
+  .Header.isLogged {
+    background: #FFFFFF; }
   @media (min-width: 959px) {
     .Header {
       padding: 0 1em; } }
