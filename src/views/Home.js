@@ -45,6 +45,7 @@ class Home extends Component {
     }
 
   render() {
+    const widthPage = this.state.width;
     const { imagesHome, isLoading, loadingImagesHome } = this.props;
     const images = imagesHome.map(image => {
       return {'url': image.imagen};
@@ -67,14 +68,28 @@ class Home extends Component {
               isLoading={isLoading}
             /> : <h1>Cargando</h1>
           }
-          <section className='Body'>
-            <div className='Body__Columns'>
-              { isLoading ? null : <FollowUs />}
-            </div>
-            <div className='Body__Columns'>
-              <Quotes />
-            </div>
-          </section>
+          { widthPage > 800 ?
+            <section className='Body'>
+              <div className='Body__Columns'>
+                <p className='WelcomeText'>
+                 Bienvenido a Te Apuntas, si has llegado sin invitación escríbenos y cuéntanos por qué quieres ser parte de esto para que podamos enviarte una invitación personalizada.
+                </p>
+                { isLoading ? null : <FollowUs />}
+              </div>
+              <div className='Body__Columns'>
+                <Quotes />
+              </div>
+            </section>
+            : <section className='Body'>
+              <div className='HomeContainer'>
+                <p className='WelcomeText'>
+                 Bienvenido a Te Apuntas, si has llegado sin invitación escríbenos y cuéntanos por qué quieres ser parte de esto para que podamos enviarte una invitación personalizada.
+                </p>
+                <Quotes />
+                { isLoading ? null : <FollowUs />}
+              </div>
+            </section>}
+
           <Footer />
         </div>
       </div>

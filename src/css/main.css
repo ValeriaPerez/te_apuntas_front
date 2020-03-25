@@ -380,15 +380,23 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%; }
+    @media (max-width: 959px) {
+      .Footer__login {
+        justify-content: center; } }
     .Footer__login--text {
+      font-size: 0.9285714286em;
       color: #FFFFFF;
-      font-size: 0.8571428571em; }
+      line-height: 1.69;
+      letter-spacing: 0.13px; }
       .Footer__login--text button {
-        font-size: 1.4285714286em;
+        font-size: 1em;
         background: transparent;
         border: 0;
         color: #FFFFFF;
-        font-size: 12px;
+        cursor: poinet;
+        font-weight: 600;
+        line-height: 1.69;
+        letter-spacing: 0.13px;
         padding: 0px 5px;
         text-decoration: none; }
         @media (min-width: 959px) {
@@ -448,6 +456,9 @@ body {
 
 .FollowUs {
   width: 80%; }
+  @media (max-width: 959px) {
+    .FollowUs {
+      width: 100%; } }
   @media (min-width: 959px) {
     .FollowUs__container {
       padding: 2em 2em 2em 0em; } }
@@ -461,6 +472,10 @@ body {
     line-height: 1.29;
     letter-spacing: 0.17px;
     margin: 10px 10px 25px 0px; }
+  @media (max-width: 768px) {
+    .FollowUs__container .button-Home {
+      max-width: 100%;
+      width: 100%; } }
   .FollowUs__container__Form {
     display: flex;
     flex-direction: column; }
@@ -862,6 +877,11 @@ input[type=radio] {
   .BG-img .image-slider {
     position: absolute; }
 
+.Home .image-slider button {
+  z-index: 100; }
+  .Home .image-slider button img {
+    width: 40px; }
+
 .Body {
   box-sizing: border-box;
   position: relative;
@@ -869,20 +889,56 @@ input[type=radio] {
   width: 100%;
   max-width: 1200px;
   display: flex;
-  flex-direction: column;
-  height: 100vh;
+  flex-direction: row;
+  height: calc(100vh - 100px);
   width: 100%;
   padding: 0px 2em; }
-  @media (min-width: 959px) {
+  @media (max-width: 800px) {
     .Body {
-      flex-direction: row;
-      padding: 0; } }
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 6em 2em 0em 2em; } }
+  @media (max-width: 320px) {
+    .Body {
+      padding: 8em 2em 0em 2em; } }
+  .Body .HomeContainer {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 100%; }
+    @media (max-width: 959px) {
+      .Body .HomeContainer {
+        align-items: center;
+        justify-content: space-between; } }
+    .Body .HomeContainer .WelcomeText {
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.69;
+      letter-spacing: 0.13px; }
   .Body .Body__Columns {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex: 1; }
+    .Body .Body__Columns .WelcomeText {
+      color: #FFFFFF;
+      font-size: 17px;
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.69;
+      letter-spacing: 0.13px;
+      width: 424px; }
+      @media (max-width: 959px) {
+        .Body .Body__Columns .WelcomeText {
+          font-size: 15px;
+          line-height: 1.3;
+          margin-bottom: 20px;
+          width: 350px; } }
     .Body .Body__Columns.welcomeColumns {
       justify-content: flex-end; }
   .Body .Body__Columns:nth-of-type(2) {
@@ -914,8 +970,8 @@ input[type=radio] {
   .Header__icon {
     display: block;
     width: 100%;
-    max-width: 100px; }
-    @media (min-width: 959px) {
+    max-width: 170px; }
+    @media (max-width: 959px) {
       .Header__icon {
         transition: all 0.55s;
         max-width: 170px; }
@@ -1113,14 +1169,25 @@ input[type=radio] {
 
 .Quotes {
   width: 450px; }
-  @media (max-width: 800px) {
+  @media (max-width: 959px) {
     .Quotes {
-      width: 100%;
-      padding: 20px 0px; } }
+      width: 85%;
+      padding: 40px 0px; } }
+  @media (max-width: 320px) {
+    .Quotes {
+      width: 95%;
+      padding: 40px 0px; } }
   .Quotes__text {
     color: #FFFFFF;
     font-size: 28px; }
+    @media (max-width: 959px) {
+      .Quotes__text {
+        font-size: 18px; } }
+    @media (max-width: 375px) {
+      .Quotes__text {
+        font-size: 14px; } }
   .Quotes__links {
+    align-items: center;
     display: flex;
     flex-direction: row;
     margin-top: 5px; }

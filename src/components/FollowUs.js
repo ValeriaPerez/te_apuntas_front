@@ -34,7 +34,7 @@ class FollowUs extends React.Component {
       this.setState(state => ({
         showForm: false
       }));
-    } 
+    }
   }
 
   handleOpenForm() {
@@ -77,7 +77,7 @@ class FollowUs extends React.Component {
               <form className='FollowUs__container__Form' noValidate autoComplete="off">
                 <TextField
                   required
-                  className='InputComponent' 
+                  className='InputComponent'
                   id='inp-name'
                   label='Nombre Completo' />
                 <TextField className='InputComponent' id='inp-email' label='Correo Electrónico' />
@@ -98,9 +98,6 @@ class FollowUs extends React.Component {
             </div>
             :
             <div>
-              <p className='FollowUs__container--description'>
-               Bienvenido a Te Apuntas, si has llegado sin invitación escríbenos y cuéntanos por qué quieres ser parte de esto para que podamos enviarte una invitación personalizada.
-              </p>
               <button className='button-Home button-Home--contact' onClick={this.handleOpenForm}>
                 Contáctanos
               </button>
