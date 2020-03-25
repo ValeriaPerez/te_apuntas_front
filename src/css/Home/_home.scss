@@ -6,11 +6,25 @@
 .BG-img {
   background: linear-gradient(to right,rgba(0,0,0,.4) 0%,rgba(0,0,0,.4) 100%),url('./../assets/images/foto23.png');
   background-size: cover;
+
   &.welcomeContainer {
     position: relative;
   }
   .image-slider {
     position: absolute;
+
+    &:after {
+      @include absoluteFullContainer();
+      display: block;
+      content: '';
+      background-color: black;
+      z-index: 0;
+      opacity: 0.3;
+    }
+
+    & button {
+      z-index: 10;
+    }
   }
 }
 

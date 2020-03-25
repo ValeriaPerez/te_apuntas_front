@@ -1,0 +1,52 @@
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  z-index: 999;
+  opacity: 0.7;
+  transition: opacity 0.25s ease-in-out;
+} 
+
+.loader span {
+  position: absolute;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: #3f96b4;
+  -webkit-animation: loader 1.5s linear infinite;
+  animation: loader 1.5s linear infinite;
+}
+
+.loader span:last-child {
+  animation-delay: -0.9s;
+  -webkit-animation-delay: -0.9s;
+}
+
+@keyframes loader {
+  0% {
+    transform: scale(0, 0);
+    opacity:0.8;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity:0;
+  }
+}
+
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: scale(0, 0);
+    opacity:0.8;
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+    opacity:0;
+  }
+}

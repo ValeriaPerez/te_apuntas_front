@@ -10,15 +10,15 @@ class MiniCalendarInfo extends React.Component {
     return (
       <div className='CalendarInfo'>
         <div className='CalendarInfo__section'>
-          <img className='Icon' src={ require('../assets/images/signed.png')} />
+          <img className='Icon' alt='icon' src={ require('../assets/images/signed.png')} />
           <p>{data.pais}</p>
         </div>
         <div className='CalendarInfo__section'>
-          <img className='Icon' src={ require('../assets/images/calendar.png')} />
+          <img className='Icon' alt='icon' src={ require('../assets/images/calendar.png')} />
           <p>{data.duracion}</p>
         </div>
         <div className='CalendarInfo__section'>
-          <img className='Icon' src={ require('../assets/images/people.png')} />
+          <img className='Icon' alt='icon' src={ require('../assets/images/people.png')} />
           <p>{data.max_pasajeros}</p>
         </div>
       </div>
