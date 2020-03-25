@@ -1,16 +1,17 @@
 .Quotes {
-  width: 400px;
+  width: 450px;
   @media (max-width: 800px) {
     width: 100%;
     padding: 20px 0px;
   }
   &__text {
     color: $white;
-    font-size: 24px;
+    font-size: 28px;
   }
   &__links {
     display: flex;
     flex-direction: row;
+    margin-top: 5px;
 
     &--username {
       color: $white;
@@ -26,6 +27,12 @@
         height: 10px;
         width: 10px;
       }
+    }
+    &--icon {
+      margin-right: 5px;
+      margin-left: 5px;
+      height:15px;
+      width:15px;
     }
   }
 }

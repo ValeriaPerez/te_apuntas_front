@@ -4,7 +4,7 @@
 }
 
 .BG-img {
-  background: linear-gradient(to right,rgba(0,0,0,.4) 0%,rgba(0,0,0,.4) 100%),url('./../assets/images/foto23.png');
+  background: linear-gradient(to right,rgba(0,0,0,.4) 0%,rgba(0,0,0,.4) 100%);
   background-size: cover;
   &.welcomeContainer {
     position: relative;

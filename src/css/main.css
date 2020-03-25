@@ -61,22 +61,23 @@ body {
 /* paraams button */
 .button-detailTravel,
 .button-detailVideo {
-  font-size: 14px;
-  border-radius: 4px;
-  width: 100%;
-  outline: none;
-  cursor: pointer;
   background: white;
   border: none;
+  border-radius: 4px;
+  color: #081f2d;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  outline: none;
+  text-align: center;
   text-transform: inherit;
   text-decoration: none;
-  color: #081f2d;
-  position: relative;
-  z-index: 1;
-  padding: 1em 3.5em;
-  line-height: 1;
-  text-align: center;
   transition: all 0.2s ease-in-out;
+  padding: 1em 3.5em;
+  position: relative;
+  width: 100%;
+  z-index: 1;
   margin: 2em 0; }
   .button-detailTravel:before,
   .button-detailVideo:before {
@@ -85,11 +86,12 @@ body {
     left: 0;
     bottom: 0;
     right: 0;
-    display: block;
-    content: '';
-    z-index: -1;
     border: 1px solid #081f2d;
-    transition: all 0.2s ease-in-out; }
+    border-radius: 3px;
+    content: '';
+    display: block;
+    transition: all 0.2s ease-in-out;
+    z-index: -1; }
   .button-detailTravel:after,
   .button-detailVideo:after {
     position: absolute;
@@ -97,39 +99,43 @@ body {
     left: 0;
     bottom: 0;
     right: 0;
-    display: block;
-    content: '';
-    right: 100%;
     background-color: black;
-    z-index: -1;
-    transition: all 0.2s ease-in-out; }
+    border-radius: 3px;
+    content: '';
+    display: block;
+    right: 100%;
+    transition: all 0.2s ease-in-out;
+    z-index: -1; }
   .button-detailTravel:hover,
   .button-detailVideo:hover {
-    color: white; }
+    color: white;
+    border-radius: 4px; }
     .button-detailTravel:hover:before,
     .button-detailVideo:hover:before {
-      border-color: black; }
+      border-color: black;
+      border-radius: 3px; }
     .button-detailTravel:hover:after,
     .button-detailVideo:hover:after {
       right: 0; }
 
 .button-travelRequest {
-  font-size: 14px;
-  border-radius: 4px;
-  width: 100%;
-  outline: none;
-  cursor: pointer;
   background: #3f96b4;
   border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  outline: none;
+  text-align: center;
   text-transform: inherit;
   text-decoration: none;
-  color: white;
-  position: relative;
-  z-index: 1;
-  padding: 1em 3.5em;
-  line-height: 1;
-  text-align: center;
   transition: all 0.2s ease-in-out;
+  padding: 1em 3.5em;
+  position: relative;
+  width: 100%;
+  z-index: 1;
   margin: 2em 0;
   font-size: 15px;
   font-weight: bold;
@@ -141,167 +147,186 @@ body {
     left: 0;
     bottom: 0;
     right: 0;
-    display: block;
-    content: '';
-    z-index: -1;
     border: 1px solid #3f96b4;
-    transition: all 0.2s ease-in-out; }
+    border-radius: 3px;
+    content: '';
+    display: block;
+    transition: all 0.2s ease-in-out;
+    z-index: -1; }
   .button-travelRequest:after {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    display: block;
-    content: '';
-    right: 100%;
     background-color: black;
-    z-index: -1;
-    transition: all 0.2s ease-in-out; }
+    border-radius: 3px;
+    content: '';
+    display: block;
+    right: 100%;
+    transition: all 0.2s ease-in-out;
+    z-index: -1; }
   .button-travelRequest:hover {
-    color: white; }
+    color: white;
+    border-radius: 4px; }
     .button-travelRequest:hover:before {
-      border-color: black; }
+      border-color: black;
+      border-radius: 3px; }
     .button-travelRequest:hover:after {
       right: 0; }
 
 .button-shared {
-  font-size: 14px;
-  border-radius: 4px;
-  width: 100%;
-  outline: none;
-  cursor: pointer;
   background: white;
   border: none;
+  border-radius: 4px;
+  color: #081f2d;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  outline: none;
+  text-align: center;
   text-transform: inherit;
   text-decoration: none;
-  color: #081f2d;
-  position: relative;
-  z-index: 1;
+  transition: all 0.2s ease-in-out;
   padding: 1em 3.5em;
-  line-height: 1;
-  text-align: center;
-  transition: all 0.2s ease-in-out; }
+  position: relative;
+  width: 100%;
+  z-index: 1; }
   .button-shared:before {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    display: block;
-    content: '';
-    z-index: -1;
     border: 1px solid #081f2d;
-    transition: all 0.2s ease-in-out; }
+    border-radius: 3px;
+    content: '';
+    display: block;
+    transition: all 0.2s ease-in-out;
+    z-index: -1; }
   .button-shared:after {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    display: block;
-    content: '';
-    right: 100%;
     background-color: #3f96b4;
-    z-index: -1;
-    transition: all 0.2s ease-in-out; }
+    border-radius: 3px;
+    content: '';
+    display: block;
+    right: 100%;
+    transition: all 0.2s ease-in-out;
+    z-index: -1; }
   .button-shared:hover {
-    color: white; }
+    color: white;
+    border-radius: 4px; }
     .button-shared:hover:before {
-      border-color: #3f96b4; }
+      border-color: #3f96b4;
+      border-radius: 3px; }
     .button-shared:hover:after {
       right: 0; }
   .button-shared--black {
-    font-size: 14px;
-    border-radius: 4px;
-    width: 100%;
-    outline: none;
-    cursor: pointer;
     background: black;
     border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    outline: none;
+    text-align: center;
     text-transform: inherit;
     text-decoration: none;
-    color: white;
-    position: relative;
-    z-index: 1;
+    transition: all 0.2s ease-in-out;
     padding: 1em 3.5em;
-    line-height: 1;
-    text-align: center;
-    transition: all 0.2s ease-in-out; }
+    position: relative;
+    width: 100%;
+    z-index: 1; }
     .button-shared--black:before {
       position: absolute;
       top: 0;
       left: 0;
       bottom: 0;
       right: 0;
-      display: block;
-      content: '';
-      z-index: -1;
       border: 1px solid black;
-      transition: all 0.2s ease-in-out; }
+      border-radius: 3px;
+      content: '';
+      display: block;
+      transition: all 0.2s ease-in-out;
+      z-index: -1; }
     .button-shared--black:after {
       position: absolute;
       top: 0;
       left: 0;
       bottom: 0;
       right: 0;
-      display: block;
-      content: '';
-      right: 100%;
       background-color: #3f96b4;
-      z-index: -1;
-      transition: all 0.2s ease-in-out; }
+      border-radius: 3px;
+      content: '';
+      display: block;
+      right: 100%;
+      transition: all 0.2s ease-in-out;
+      z-index: -1; }
     .button-shared--black:hover {
-      color: white; }
+      color: white;
+      border-radius: 4px; }
       .button-shared--black:hover:before {
-        border-color: #3f96b4; }
+        border-color: #3f96b4;
+        border-radius: 3px; }
       .button-shared--black:hover:after {
         right: 0; }
 
 .button-Home {
-  font-size: 14px;
-  border-radius: 4px;
-  width: 100%;
-  outline: none;
-  cursor: pointer;
   background: transparent;
   border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  outline: none;
+  text-align: center;
   text-transform: inherit;
   text-decoration: none;
-  color: white;
-  position: relative;
-  z-index: 1;
+  transition: all 0.2s ease-in-out;
   padding: 1em 3.5em;
-  line-height: 1;
-  text-align: center;
-  transition: all 0.2s ease-in-out; }
+  position: relative;
+  width: 100%;
+  z-index: 1; }
   .button-Home:before {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    display: block;
-    content: '';
-    z-index: -1;
     border: 1px solid white;
-    transition: all 0.2s ease-in-out; }
+    border-radius: 3px;
+    content: '';
+    display: block;
+    transition: all 0.2s ease-in-out;
+    z-index: -1; }
   .button-Home:after {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    display: block;
-    content: '';
-    right: 100%;
     background-color: white;
-    z-index: -1;
-    transition: all 0.2s ease-in-out; }
+    border-radius: 3px;
+    content: '';
+    display: block;
+    right: 100%;
+    transition: all 0.2s ease-in-out;
+    z-index: -1; }
   .button-Home:hover {
-    color: black; }
+    color: black;
+    border-radius: 4px; }
     .button-Home:hover:before {
-      border-color: white; }
+      border-color: white;
+      border-radius: 3px; }
     .button-Home:hover:after {
       right: 0; }
   .button-Home--contact {
@@ -422,23 +447,30 @@ body {
       margin-right: 1em; }
 
 .FollowUs {
-  width: 70%; }
+  width: 80%; }
   @media (min-width: 959px) {
     .FollowUs__container {
-      padding: 0 2em; } }
+      padding: 2em 2em 2em 0em; } }
   .FollowUs__container--title {
     color: #FFFFFF;
     font-size: 24px; }
   .FollowUs__container--description {
     color: #FFFFFF;
-    font-size: 13px;
-    margin: 10px 0px; }
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.29;
+    letter-spacing: 0.17px;
+    margin: 10px 10px 25px 0px; }
   .FollowUs__container__Form {
     display: flex;
     flex-direction: column; }
     .FollowUs__container__Form .InputComponent .MuiFormLabel-root, .FollowUs__container__Form .TextAreaComponent .MuiFormLabel-root {
       color: #DDDDDD;
       font-size: 12px; }
+      .FollowUs__container__Form .InputComponent .MuiFormLabel-root:hover, .FollowUs__container__Form .TextAreaComponent .MuiFormLabel-root:hover {
+        border-bottom: 0; }
+    .FollowUs__container__Form .MuiInput-underline:before {
+      border-bottom: 0; }
 
 .Destination {
   color: #FFFFFF;
@@ -823,7 +855,7 @@ input[type=radio] {
   padding: 0; }
 
 .BG-img {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("./../assets/images/foto23.png");
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
   background-size: cover; }
   .BG-img.welcomeContainer {
     position: relative; }
@@ -1080,17 +1112,18 @@ input[type=radio] {
         padding: 5px; }
 
 .Quotes {
-  width: 400px; }
+  width: 450px; }
   @media (max-width: 800px) {
     .Quotes {
       width: 100%;
       padding: 20px 0px; } }
   .Quotes__text {
     color: #FFFFFF;
-    font-size: 24px; }
+    font-size: 28px; }
   .Quotes__links {
     display: flex;
-    flex-direction: row; }
+    flex-direction: row;
+    margin-top: 5px; }
     .Quotes__links--username {
       color: #FFFFFF;
       font-size: 12px; }
@@ -1102,5 +1135,10 @@ input[type=radio] {
         background: #FFFFFF;
         height: 10px;
         width: 10px; }
+    .Quotes__links--icon {
+      margin-right: 5px;
+      margin-left: 5px;
+      height: 15px;
+      width: 15px; }
 
 /*# sourceMappingURL=main.css.map */
