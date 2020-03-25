@@ -7,6 +7,7 @@ import Quotes from '../components/Quotes';
 import FollowUs from '../components/FollowUs';
 import Footer from '../components/Footer';
 import Slider from '../components/SliderImage';
+import Loader from '../components/elements/loader';
 
 import { retrieveImagesHome } from '../redux/actions/home';
 
@@ -65,7 +66,7 @@ class Home extends Component {
               images={images}
               showBullets={this.state.showBullets}
               isLoading={isLoading}
-            /> : <h1>Cargando</h1>
+            /> : <Loader />
           }
           <section className='Body'>
             <div className='Body__Columns'>
