@@ -390,8 +390,15 @@ body {
   justify-content: space-between;
 }
 .shared__container .button-shared {
-  max-width: 150px;
+  max-width: 120px;
+  padding: 1em 0.5em;
   font-size: 12px;
+}
+@media (min-width: 959px) {
+  .shared__container .button-shared {
+    max-width: 150px;
+    font-size: 12px;
+  }
 }
 @media (min-width: 959px) {
   .shared {
@@ -827,7 +834,7 @@ body {
   }
 }
 .travelers__title {
-  font-size: 37px;
+  font-size: 16px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -839,6 +846,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (min-width: 959px) {
+  .travelers__title {
+    font-size: 37px;
+  }
 }
 .travelers__counter {
   font-size: 14px;
@@ -873,13 +885,18 @@ body {
 }
 .travelers__list {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
+@media (min-width: 959px) {
+  .travelers__list {
+    justify-content: flex-start;
+  }
+}
 .travelers__list div {
   width: 100%;
-  max-width: 135px;
+  max-width: 80px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -887,8 +904,14 @@ body {
   text-align: center;
   margin: 1em 0;
 }
+@media (min-width: 959px) {
+  .travelers__list div {
+    max-width: 135px;
+    margin: 1em 0;
+  }
+}
 .travelers__list div p {
-  font-size: 20px;
+  font-size: 13px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -898,9 +921,20 @@ body {
   color: #081f2d;
   width: 100%;
 }
+@media (min-width: 959px) {
+  .travelers__list div p {
+    font-size: 20px;
+  }
+}
 .travelers__list .MuiAvatar-root {
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  max-width: 80px;
+}
+@media (min-width: 959px) {
+  .travelers__list .MuiAvatar-root {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .reservation .shared__container {
@@ -920,7 +954,7 @@ body {
   }
 }
 .reservation__title {
-  font-size: 37px;
+  font-size: 16px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -930,16 +964,27 @@ body {
   color: #081f2d;
   margin: 1em 0;
 }
+@media (min-width: 959px) {
+  .reservation__title {
+    font-size: 37px;
+  }
+}
 .reservation__subtitle {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.17;
   letter-spacing: normal;
-  text-align: left;
+  text-align: center;
   color: #081f2d;
   margin: 1em 0;
+}
+@media (min-width: 959px) {
+  .reservation__subtitle {
+    font-size: 24px;
+    text-align: left;
+  }
 }
 .reservation__text {
   font-size: 24px;

@@ -14,7 +14,7 @@
   }
 
   &__title {
-    font-size: 37px;
+    font-size: 16px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -23,18 +23,27 @@
     text-align: left;
     color: #081f2d;
     margin: 1em 0;
+
+    @media (min-width: $tablet){
+      font-size: 37px;
+    }
   }
 
   &__subtitle {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.17;
     letter-spacing: normal;
-    text-align: left;
+    text-align: center;
     color: #081f2d;
     margin: 1em 0;
+
+    @media (min-width: $tablet){
+      font-size: 24px;
+      text-align: left;
+    }
   }
 
   &__text {
