@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import Avatar from '../components/elements/avatar';
 
 function Header(props){
-
-  console.log(props);
   if (props.login) {
     return (
       <section className='Header isLogged'>
@@ -13,7 +11,7 @@ function Header(props){
             <img className='Header__icon' src={ props.imageLogo } alt={ props.alt } title={ props.title } />
           </Link>
           <Link to="/Profile" tokenid={props.tokenid}>
-            { props.login ? <Avatar /> : null }
+            { props.login ? <Avatar image='https://picsum.photos/200/300'/> : null }
           </Link>
         </div>
       </section>
@@ -32,8 +30,6 @@ function Header(props){
       </section>
     )
   }
-
-
 }
 
 Header.defaultProps = {

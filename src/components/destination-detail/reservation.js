@@ -9,13 +9,13 @@ class Reservation extends Component {
       <div className='reservation'>
         <div className='reservation__container'>
           <h4 className='reservation__title show-desktop'>Reservación</h4>
-          { this.renderPaymentMethod() }
+          { this.rederPaymentDetail() }
         </div>
       </div>
     );
   }
 
-  renderPaymentMethod() {
+  renderSelectPaymentMethod() {
     return (
       <div>
         <p className='reservation__text show-desktop'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.</p>
@@ -45,6 +45,28 @@ class Reservation extends Component {
       );
     });
   }
+
+  rederPaymentDetail() {
+    return (
+      <div>
+        <div className='reservation__icon'></div>
+        <p className='reservation__title-total'>Total a Pagar</p>
+        <h4 className='reservation__price'>€50.00</h4>
+        <div className='reservation__resume'>
+          <div className='reservation__item'>
+            <span>Lorem Ipsum</span><strong>€46.00</strong>
+          </div>
+          <div className='reservation__item'>
+            <span>Lorem Ipsum</span><strong>€46.00</strong>
+          </div>
+        </div>
+        <div className='reservation__total'>
+          <span>total</span><strong>$50.00</strong>
+        </div>
+      </div>
+    );
+  }
+
 }
 
 export default Reservation;
