@@ -670,7 +670,7 @@ body {
       font-size: 20px; } }
 .travelers__list {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap; }
   .travelers__list div {

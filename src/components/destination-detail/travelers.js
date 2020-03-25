@@ -24,8 +24,8 @@ class Travelers extends Component {
       },
 
       {
-        'name' : 'Steve',
-        'image' : 'https://gal.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fgal.2Fvar.2Fgal.2Fstorage.2Fimages.2Fmedia.2Fmultiupload_du_11_octobre_2011.2Fsteve.2F1766087-1-fre-FR.2Fsteve.2Ejpg/480x480/quality/80/steve-jobs-les-raisons-de-son-deces.jpg'
+        'name' : '',
+        'image' : ''
       },
       {
         'name' : 'Andres',
@@ -53,8 +53,8 @@ class Travelers extends Component {
         'image' : 'https://i.picsum.photos/id/237/200/300.jpg'
       },
       {
-        'name' : 'Amadeo Jaime Terreros',
-        'image' : 'https://i.picsum.photos/id/866/200/300.jpg'
+        'name' : '',
+        'image' : ''
       },
       {
         'name' : 'Enrique Duran',
@@ -65,9 +65,13 @@ class Travelers extends Component {
 
     return users.map((date, index) => {
       return (
-        <Avatar key={index} showName={ true } image={ date.image } name={ date.name } />  
+        <Avatar onClick={ (e) => this.getProfileModal() } key={index} showName={ true } image={ date.image === '' ? '?' : date.image } name={ date.name === '' ? '?' : date.name } />  
       );
     });
+  }
+
+  getProfileModal(event) {
+    console.log('entre');
   }
 }
 

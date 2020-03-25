@@ -9,6 +9,7 @@ const useStyles = makeStyles(theme => ({
     '& > *': {
       width: theme.spacing(5),
       height: theme.spacing(5),
+      cursor: 'pointer',
     },
   },
   name: {
@@ -22,7 +23,7 @@ function ImageAvatars(props) {
   const classes = useStyles();
 
   return (
-    <div className={ classes.root }>
+    <div className={ classes.root } onClick={ props.onClick }>
       <Avatar alt={ props.alt } src={ props.image }/>
       { props.showName ? <p className={ classes.name }> { props.name }</p> : null }
     </div>
@@ -34,6 +35,7 @@ ImageAvatars.defaultProps = {
   image:'',
   showName: false,
   'name': '',
+  'onClick': null,
 }
 
 export default ImageAvatars
