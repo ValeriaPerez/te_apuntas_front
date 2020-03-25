@@ -1,9 +1,13 @@
 .FollowUs {
-  width: 70%;
+  width: 80%;
+
+  @media (max-width: $tablet) {
+    width: 100%;
+  }
 
   &__container {
     @media (min-width: $tablet){
-      padding: 0 2em;
+      padding: 2em 2em 2em 0em;
     }
     &--title {
       color: $white;
@@ -11,8 +15,18 @@
     }
     &--description {
       color: $white;
-      font-size: 13px;
-      margin: 10px 0px;
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.29;
+      letter-spacing: 0.17px;
+      margin: 10px 10px 25px 0px;
+    }
+
+    .button-Home {
+      @media (max-width: $tablet-min) {
+        max-width: 100%;
+        width: 100%;
+      }
     }
 
     &__Form {
@@ -22,7 +36,13 @@
         .MuiFormLabel-root {
           color: $lightGrey;
           font-size: 12px;
+          &:hover {
+            border-bottom: 0;
+          }
         }
+      }
+      .MuiInput-underline:before {
+        border-bottom: 0;
       }
     }
   }

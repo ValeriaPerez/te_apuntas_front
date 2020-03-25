@@ -30,16 +30,26 @@
     flex-direction: row;
     width: 100%;
 
+    @media (max-width: $tablet) {
+      justify-content: center;
+    }
+
     &--text {
+      @include fontSize(13px);
       color: $white;
-       @include fontSize(12px);
+      line-height: 1.69;
+      letter-spacing: 0.13px;
+
 
       button {
-        @include fontSize(20px);
+        @include fontSize(14px);
         background: transparent;
         border: 0;
         color: $white;
-        font-size: 12px;
+        cursor: poinet;
+        font-weight: 600;
+        line-height: 1.69;
+        letter-spacing: 0.13px;
         padding: 0px 5px;
         text-decoration: none;
 

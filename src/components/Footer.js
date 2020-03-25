@@ -14,16 +14,16 @@ class FooterComponent extends Component {
     switch (section) {
       default:
         return this.getFooterHome();
-        
+
       case '/':
         return this.getFooterHome();
-      
+
       case '/Travel':
         return this.getFooterDestinationDetail();
 
       case '/Profile':
         return this.getFooterProfile();
-      
+
     }
   }
 
@@ -33,7 +33,7 @@ class FooterComponent extends Component {
         <div className='Footer__container'>
           <div className='Footer__login'>
             <Link className='Link' to="/SignIn">
-              <p className='Footer__login--text'>¿Ya eres usuario?<button>Iniciar Sesion</button></p>
+              <p className='Footer__login--text'>¿Ya eres usuario?<button>Inicia Sesión</button></p>
             </Link>
           </div>
         </div>
