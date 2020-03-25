@@ -1,0 +1,16 @@
+.notification {
+  &__text {
+    font-size: 11px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+    text-align: left;
+    color: #081f2d;
+  }
+
+  &__button {
+    @include button(black, black, white, #3f96b4, #3f96b4, white); 
+  }
+}

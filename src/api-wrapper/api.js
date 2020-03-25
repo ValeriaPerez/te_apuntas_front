@@ -29,12 +29,14 @@ export async function doRequest(endpoint, headersRequest = null, requestMethod =
   }
 }
 
-function addHeaders(token){
-  const headerAutentication = 'Bearer ' + token;
-  return {
-    'Authorization': headerAutentication
-  }
-}
+
+/* TODO: 'addHeaders' is defined but never used  */
+// function addHeaders(token){
+  // const headerAutentication = 'Bearer ' + token;
+  // return {
+    // 'Authorization': headerAutentication
+  // }
+// }
 
 export async function getImagesHome() {
   return await doRequest(HOST + 'api/v1/imagenes-home/')
