@@ -86,7 +86,7 @@ class Login extends React.Component {
               </LinkedIn>
             </div>
             <div className='SocialMediaEvent'>
-              <Button className='SocialMediaEvent' variant='outlined' color='primary'>
+              <Button className='SocialMediaEvent' variant='outlined' color='primary' onClick={this.loginTemp}>
                 <p>P</p>
               </Button>
             </div>
