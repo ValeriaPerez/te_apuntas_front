@@ -24,7 +24,8 @@ function Header(props){
             <img className='Header__icon' src={ props.imageLogo } alt={ props.alt } title={ props.title } />
           </Link>
           <Link to="/Profile" tokenid={props.tokenid}>
-            { props.login ? <Avatar /> : null }
+            {/* TODO: Validar bien la propiedaad login y modificaar clase dependiendo el location */}
+            { props.login || props.homeDestiny ? <Avatar image='https://picsum.photos/200/300' /> : null }
           </Link>
         </div>
       </section>
@@ -38,6 +39,8 @@ Header.defaultProps = {
   imageLogo:'',
   login: false,
   tokenid: 1,
+  'isTransparent': false,
+  'homeDestiny': false,
 }
 
 export default Header

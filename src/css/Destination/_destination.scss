@@ -4,9 +4,24 @@
   flex-direction: row;
   justify-content: space-between;
   width:100%;
+  padding: 2em 0;
+  @media (min-width:$tablet){
+    padding: 2em 0 4em 0;
+  }
 
   .DestinationData {
-    width: 50%;
+    width: 100%;
+
+    @media (min-width:$tablet){
+      width: 50%;
+    }
+
+    &__container {
+      @media (min-width:$tablet){
+        display: flex;
+        justify-content: space-between;
+      }
+    }
 
     &__info {
       display: flex;
@@ -15,14 +30,28 @@
       width: 150px;
       margin-bottom: 50px;
     }
+
     &__description {
+
       &--title {
         display: flex;
         flex-direction: row;
-        width: 325px;
-        h1 {
 
+        h1 {
+          font-size: 18px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.22;
+          letter-spacing: normal;
+          text-align: left;
+          color: #ffffff;
+          margin-bottom: 1em;
+          @media (min-width:$tablet){
+            font-size: 45px;
+          }
         }
+
         p {
           align-items: center;
           background: $greyBlue;
@@ -32,21 +61,41 @@
           margin-left: 10px;
         }
       }
+
       &--status {
         margin-bottom: 10px;
       }
       &--info {
-        margin-top: 10px;
+        font-size: 13px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.15;
+        letter-spacing: normal;
+        text-align: left;
+        color: #ffffff;
+
+        @media (min-width:$tablet){
+          font-size: 17px;
+        }
       }
     }
   }
+
   .DestinationPeople {
     display: flex;
     flex-direction: column;
-    width: 25%;
+
+    @media (min-width:$tablet){
+      width: 25%;
+    }
 
     &__container {
-      margin-bottom: 50px;
+      @media (min-width:$tablet){
+        margin-bottom: 50px;
+        margin-left: 7px;
+      }
+      
       &--avatar {
         background: transparent;
         border: 1px solid $lightGrey;
@@ -54,7 +103,6 @@
         &.counter {
           background: transparent;
           border: 0;
-
         }
       }
     }
@@ -66,6 +114,5 @@
         text-decoration: none;
       }
     }
-
   }
 }

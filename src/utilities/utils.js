@@ -1,4 +1,4 @@
-import destinyInfo from "../redux/reducers/destination";
+// import destinyInfo from "../redux/reducers/destination";
 
 const MONTHS = {
   '01': 'ENE',
