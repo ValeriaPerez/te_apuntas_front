@@ -58,7 +58,8 @@ class Home extends Component {
           <Header
             title='Home'
             alt='Logo'
-            isLoading={isLoading}
+            login={ false }
+            isLoading={ isLoading }
             imageLogo={ require('../assets/images/teApuntas.png') }/>
           { !loadingImagesHome?
             <Slider

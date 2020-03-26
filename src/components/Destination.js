@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '@material-ui/core';
 import Avatar from '@material-ui/core/Avatar';
 import Tooltip from '@material-ui/core/Tooltip';
 import { AvatarGroup } from '@material-ui/lab';
+import Loader from './elements/loader';
 
 // TODO: 'destinyInfo' is defined but never used import destinyInfo from '../redux/reducers/destination';
 import MiniCalendarInfo from './MiniCalendarInfo'
@@ -28,22 +28,25 @@ class Destination extends React.Component {
   render() {
     const { destinyInfo } = this.props;
     const apuntados = getImagesApuntados(destinyInfo);
+    const isMax = apuntados.length > 5 ? true : false;
     return (
       <div className='Destination'>
-        { destinyInfo === null ? <h1>Cargando</h1> :
+        { destinyInfo === null ? <Loader /> :
         <div className='DestinationData__container'>
           <div className='DestinationData'>
-            <MiniCalendarInfo data={this.props.destinyInfo}/>
+            <MiniCalendarInfo destinyInfo={ destinyInfo } data={this.props.destinyInfo}/>
             <div className='DestinationData__description'>
               <div className='DestinationData__description--title'>
                 <h1>{`${destinyInfo.ciudad} ${destinyInfo.pais}`}</h1>
-                {/* <p>Privado</p> */}
+                {/*<p>Privado</p> */}
               </div>
-              <p className='DestinationData__description--info'><span className='descriptionQuote'>{destinyInfo.descripcion}</span></p>
+              <p className='DestinationData__description--info'>
+                {destinyInfo.descripcion.substring(1, 350)}...
+              </p>
             </div>
           </div>
           <div className='DestinationPeople'>
-            <div>
+            <div className='show-desktop'>
               <AvatarGroup className='DestinationPeople__container'>
                 { apuntados.map(apuntado => {
                   return <Avatar
@@ -52,16 +55,14 @@ class Destination extends React.Component {
                             src={apuntado.foto}
                             key={`avatar-${apuntado.id}`}/>
                 })}
-                <Tooltip className='DestinationPeople__container--avatar counter' title="Foo • Bar • Baz">
-                  <Avatar>+3</Avatar>
-                </Tooltip>
+                { isMax ? 
+                  <Tooltip className='DestinationPeople__container--avatar counter' title="Foo • Bar • Baz">
+                    <Avatar>+3</Avatar>
+                  </Tooltip> : null
+                }
               </AvatarGroup>
             </div>
-            <Link className='DestinationPeople__link' to="/Travel" destinyInfo={destinyInfo}>
-              <Button className='btn--grey' variant='outlined'>
-                Ver Más
-              </Button>
-            </Link>
+            <Link className='Button-Destination' to="/Travel" destinyInfo={destinyInfo}>Ver Más</Link>
           </div>
         </div>
       }

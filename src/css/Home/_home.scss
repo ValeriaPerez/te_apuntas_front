@@ -1,8 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 .BG-img {
   background: linear-gradient(to right,rgba(0,0,0,.4) 0%,rgba(0,0,0,.4) 100%);
   background-size: cover;
@@ -43,13 +38,14 @@
   @include container();
   display: flex;
   flex-direction: row;
-  height: calc(100vh - 100px);
+  height: 100vh;
   width: 100%;
 
 
   @media (max-width: 1238px) {
     padding: 0px 2em;
   }
+
 
   @media (max-width: 800px) {
     flex-direction: column;
@@ -65,6 +61,7 @@
     flex-direction: column;
     height: 400px;
     width: 100%;
+
     @media (max-width: $tablet) {
       align-items: center;
       justify-content: space-between;
@@ -87,7 +84,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex: 1;
+    flex: 1;  
 
     .WelcomeText {
       color: $white;
