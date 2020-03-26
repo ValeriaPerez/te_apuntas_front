@@ -37,7 +37,7 @@ class Profile extends Component {
           title='Home'
           alt='Logo'
           imageLogo={ require('../assets/images/teApuntasB.png') }/>
-          <UserInfo dataUser={this.props.profileInfo}/>
+          <UserInfo dataUser={this.props}/>
         <Footer />
       </div>
     );

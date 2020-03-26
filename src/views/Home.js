@@ -40,10 +40,10 @@ class Home extends Component {
     });
   };
 
-    componentWillMount() {
-      const { dispatch } = this.props;
-      dispatch(retrieveImagesHome());
-    }
+  componentWillMount() {
+    const { dispatch } = this.props;
+    dispatch(retrieveImagesHome());
+  }
 
   render() {
     const widthPage = this.state.width;

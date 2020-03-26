@@ -73,8 +73,13 @@ export async function getProfileInfo() {
   });
 }
 
-export async function patchProfileInfo() {
-
+export async function patchProfileInfo(data) {
+  return await doRequest(HOST + 'api/v1/perfil/1', null, 'POST', data)
+  .then(response => {
+    return response;
+  }).catch(error => {
+    return error;
+  });
 }
 
 export async function login(data) {

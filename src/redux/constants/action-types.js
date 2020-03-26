@@ -3,6 +3,7 @@ const allTypes = [
     'RETRIEVE_DESTINY_INFO',
     'RETRIEVE_PROFILE_INFO',
     'SAVE_DATA_CONTACT',
+    'PATCH_PROFILE_DATA',
     'LOGIN',
   ];
 

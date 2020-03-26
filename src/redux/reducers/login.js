@@ -1,10 +1,11 @@
 import asyncActionTypes from '../constants/action-types';
 
 const initialState = {
-  errorLogin: null,
   dataLogin: {},
+  errorLogin: null,
+  isLoading: false,  
   loadingLoging: false,
-  isLoading: false,
+
 };
 
 const home = (state = initialState, action) => {
@@ -34,6 +35,7 @@ const home = (state = initialState, action) => {
         errorLogin: action.payload.error,
         isLoading: false,
       };
+
     default:
       return state;
   }

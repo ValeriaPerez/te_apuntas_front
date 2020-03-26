@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 0 2em;
     width: 100%;
 
     @include container();
@@ -61,5 +62,133 @@
 
 
     }
+  }
+}
+
+
+.UserDataMob {
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px);
+  padding-top: 100px;
+  padding-right: 2em;
+  padding-left: 2em;
+
+  @media (max-width: $iphone5) {
+    height: 100vh;
+  }
+
+  @include container();
+  &-Header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    &__Sections {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 150px;
+      width: 50%;
+
+      &:nth-child(1) {
+        align-items: flex-start;
+      }
+      &:nth-child(2) {
+        align-items: flex-end;
+      }
+
+      .MuiAvatar-circle {
+        height: 80px;
+        width: 80px;
+        @media (max-width: $iphone5) {
+          width: 80px;
+          height: 80px;
+        }
+      }
+      .aliasText {
+        font-size: 17px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.29;
+        letter-spacing: normal;
+        margin-top: 10px;
+        text-align: center;
+
+      }
+
+      .elements {
+        display: flex;
+        flex-direction: column;
+        height: 150px;
+        justify-content: center;
+      }
+
+      .editProfileIcon {
+        height: 40px;
+        width: 40px;
+
+        @media (max-width: $iphone5) {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      .SocialNetwork {
+        display: flex;
+        flex-direction: row;
+        &__icon {
+          width: 20px;
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+
+  &-Body {
+    padding: 1em 0;
+    .DataUser__title {
+      color: $mateGrey;
+      font-size: 17px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.29;
+      letter-spacing: normal;
+      text-align: left;
+    }
+
+    .DataUser__date {
+      color: $mateGrey;
+      font-size: 12px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.83;
+      letter-spacing: normal;
+      text-align: left;
+    }
+
+    .DataUser__semblanza {
+      color: #4a4f54;
+      font-size: 12px;
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.67;
+      letter-spacing: normal;
+      text-align: left;
+      padding: 1em 0;
+    }
+
+    .DataUser__Description {
+      line-height: 1.7;
+    }
+
+    .DataUser__line {
+      padding: 2em 0;
+    }
+
   }
 }
