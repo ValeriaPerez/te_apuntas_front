@@ -1,8 +1,9 @@
 import asyncActionTypes from '../constants/action-types';
 
 const initialState = {
-  errorLogin: null,
   dataLogin: {},
+  errorLogin: null,
+  isLoading: false,
   loadingLoging: false,
   isLoading: false,
   isLogin: false,
@@ -38,6 +39,7 @@ const home = (state = initialState, action) => {
         isLogin: false,
         isLoading: false,
       };
+
     default:
       return state;
   }

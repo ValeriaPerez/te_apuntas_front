@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 //  URL del API
-// const HOST = 'http://localhost:8000/';
-const HOST = 'http://te-apuntas-deploy.herokuapp.com/';
+// const HOST = 'http://1559edcc.ngrok.io/';
+const HOST = 'https://te-apuntas-deploy.herokuapp.com/';
 
 export async function doRequest(endpoint, headersRequest = null, requestMethod = 'GET', data = null) {
   try {
@@ -68,6 +68,15 @@ export async function postContactanos(data) {
 
 export async function getProfileInfo() {
   return await doRequest(HOST + 'api/v1/perfil/1/')
+  .then(response => {
+    return response;
+  }).catch(error => {
+    return error;
+  });
+}
+
+export async function patchProfileInfo(data) {
+  return await doRequest(HOST + 'api/v1/perfil/1', null, 'POST', data)
   .then(response => {
     return response;
   }).catch(error => {

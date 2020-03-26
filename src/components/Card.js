@@ -12,8 +12,8 @@ class Card extends React.Component {
 
   render() {
     return(
-      <div className='UserData__container--Card'>
-        <div className='userInfo'>
+      <div className='Card'>
+        <div className='Info'>
           <Avatar cssClass='AvatarL'/>
           <p className='editImage'>Cambiar foto</p>
           <p className='aliasText'>APP02</p>

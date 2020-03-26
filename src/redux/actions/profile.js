@@ -1,5 +1,5 @@
 import asyncActionTypes from '../constants/action-types';
-import { getProfileInfo } from '../../api-wrapper/api';
+import { getProfileInfo, patchProfileInfo } from '../../api-wrapper/api';
 
 
 export function retrieveProfileInfo() {
@@ -27,4 +27,32 @@ export const retrieveProfileInfoSuccess = (response) => ({
 export const retrieveProfileInfoFail = (error) => ({
   type: asyncActionTypes.RETRIEVE_PROFILE_INFO.FAIL,
   payload: { 'data': [], 'loading': false, 'error': error },
+});
+
+/*        ---------------    PATCH_PROFILE_INFO   ---------------        */
+export function submitProfileInfo(data, token) {
+  return function action(dispatch) {
+    dispatch(submitProfileInfoStart());
+    const request = patchProfileInfo(data, token);
+    request.then(response => {
+        dispatch(submitProfileInfoSuccess(response));
+    }).catch(error => {
+      dispatch(submitProfileInfoFail(error));
+    });
+  };
+}
+
+export const submitProfileInfoStart = () => ({
+  type: asyncActionTypes.PATCH_PROFILE_DATA.START,
+  payload: { 'data': {}, 'loading': true, error: null },
+});
+
+export const submitProfileInfoSuccess = (response) => ({
+  type: asyncActionTypes.PATCH_PROFILE_DATA.SUCCESS,
+  payload: { 'data': response, 'loading': false, error: null },
+});
+
+export const submitProfileInfoFail = (error) => ({
+  type: asyncActionTypes.PATCH_PROFILE_DATA.FAIL,
+  payload: { 'data': {}, 'loading': false, 'error': error },
 });

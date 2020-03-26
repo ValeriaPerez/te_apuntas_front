@@ -7,6 +7,8 @@ import Switch from '@material-ui/core/Switch';
 import { withStyles } from '@material-ui/core/styles';
 import { doRequest } from '../api-wrapper/api.js';
 
+import { submitProfileInfo } from '../redux/actions/profile';
+
 class UserInfo extends React.Component {
 
   constructor(props) {
@@ -15,10 +17,34 @@ class UserInfo extends React.Component {
       isEditable: false,
       checked: [ false,false,false,false,false,false ],
       setChecked: false,
+      edad: '',
+      email: '',
+      favorito: '',
+      genero: '',
+      materrno: '',
+      nombre: '',
+      pais: '',
+      paisCodigo: '',
+      paterno: '',
+
+      height: 0,
+      width: 0,
     };
 
+    window.addEventListener("resize", this.update);
     this.handleEditProfile = this.handleEditProfile.bind(this);
   }
+
+  componentDidMount() {
+    this.update();
+  }
+
+  update = () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth
+    });
+  };
 
   handleEditProfile() {
     this.setState(state => ({
@@ -36,22 +62,22 @@ class UserInfo extends React.Component {
   };
 
   handleSendData() {
-    // TODO: 'data' is assigned a value but never used
-    // eslint-disable-next-line
-    let data = ''; 
-    console.log("enviar datos");
-    doRequest(
-      'http://7ee80e5c.ngrok.io/api/v1/perfil/1/',
-      null,
-      'PATCH',
-      data = {
-        nombres: 'Kike'
-      },
-    );
+    const { dispatch, dataUser } = this.props;
+    const data = {
+      edad: document.getElementById('profile-edad').value,
+      email: document.getElementById('profile-email').value,
+      favorito: document.getElementById('profile-favorito').value,
+      genero: document.getElementById('profile-genero').value,
+      materrno: document.getElementById('profile-materno').value,
+      nombre: document.getElementById('profile-nombre').value,
+      pais: document.getElementById('profile-pais').value,
+      paisCodigo: document.getElementById('profile-paisCodigo').value,
+      paterno: document.getElementById('profile-paterno').value,
+    }
+    dispatch(submitProfileInfo(data));
   }
 
   render() {
-    console.log(this.state.checked);
     const IOSSwitch = withStyles(theme => ({
       root: {
         width: 42,
@@ -103,103 +129,144 @@ class UserInfo extends React.Component {
           {...props}
         />
       );
-    });
+    }); // End Switch Button Function
 
     const { dataUser } = this.props;
-    console.log('alv',this.props.dataUser);
+    const widthPage = this.state.width;
+    console.log(widthPage);
 
     // const codigo = dataUser ? dataUser.codigo : null;
-    const edad = dataUser ? dataUser.edad : null;
-    const email = dataUser ? dataUser.email : null;
-    const favorito = dataUser ? dataUser.favorito : null;
-    // const foto = dataUser ? dataUser.foto : null;
-    const genero = dataUser ? dataUser.genero : null;
-    // const materno = dataUser ? dataUser.materno : null;
-    const nombres = dataUser ? dataUser.nombres : null;
-    const pais = dataUser ? dataUser.pais : null;
-    const paisCodigo = pais ? pais.code : null;
-    const paisName = pais ? pais.name : null;
-    const paterno = dataUser ? dataUser.paterno : null;
-    const semblanza = dataUser ? dataUser.semblanza : null;
+    const profileEdad = dataUser.profileInfo ? dataUser.profileInfo.edad : null;
+    const profileEmail = dataUser.profileInfo ? dataUser.profileInfo.email : null;
+    const profileFavorito = dataUser.profileInfo ? dataUser.profileInfo.favorito : null;
+    const profileFoto = dataUser.profileInfo ? dataUser.profileInfo.foto : null;
+    const profileGenero = dataUser.profileInfo ? dataUser.profileInfo.genero : null;
+    const profileMaterno = dataUser.profileInfo ? dataUser.profileInfo.materno : null;
+    const profileNombres = dataUser.profileInfo ? dataUser.profileInfo.nombres : null;
+    const profilePais = dataUser.profileInfo ? dataUser.profileInfo.pais : null;
+    const profilePaisCodigo = dataUser.profileInfo ? dataUser.profileInfo.code : null;
+    const profilePaisName = dataUser.profileInfo ? dataUser.profileInfo.name : null;
+    const profilePaterno = dataUser.profileInfo ? dataUser.profileInfo.paterno : null;
+    const profileSemblanza = dataUser.profileInfo ? dataUser.profileInfo.semblanza : null;
 
-    console.log(paisCodigo);
-    console.log(favorito)
-
-
-    return this.state.isEditable ? (
-      <section className='UserData'>
-        <div className='UserData__container'>
-          <Card />
-          <div className='UserData__container--DataUser'>
-            <h1 className='DataUser__title'>Hola, {dataUser.name}</h1>
-            <div className='DataUser__Edit'>
-              <p>Se registro en 2018</p>
-              <button onClick={this.handleEditProfile}>Editar perfil</button>
-            </div>
-            <div className='DataUser__Description'>
-              <div>
-                <FormControlLabel control={<IOSSwitch checked={this.state.checked[0]} onChange={this.handleChangeToggle.bind(this, 0) } name="checkedB" />}/>
-                <TextField className='inputData' required id="outlined-required" label="Required" variant="outlined" defaultValue={nombres} />
-              </div>
-              <div>
-                <FormControlLabel control={<IOSSwitch checked={this.state.checked[1]} onChange={this.handleChangeToggle.bind(this, 1)} name="checkedB" />}/>
-                <TextField className='inputData' required id="outlined-required" label="Required" variant="outlined" defaultValue={paisName} />
-              </div>
-              <div>
-                <FormControlLabel control={<IOSSwitch checked={this.state.checked[2]} onChange={this.handleChangeToggle.bind(this, 2)} name="checkedB" />}/>
-                <TextField className='inputData' required id="outlined-required" label="Required" variant="outlined" defaultValue={genero} />
-              </div>
-              <div>
-                <FormControlLabel control={<IOSSwitch checked={this.state.checked[3]} onChange={this.handleChangeToggle.bind(this, 3)} name="checkedB" />}/>
-                <TextField className='inputData' required id="outlined-required" label="Required" variant="outlined" defaultValue={edad + ' años'} />
-              </div>
-              <div>
-                <FormControlLabel control={<IOSSwitch checked={this.state.checked[4]} onChange={this.handleChangeToggle.bind(this, 4)} name="checkedB" />}/>
-                <TextField className='inputData' required id="outlined-required" label="Required" variant="outlined" defaultValue={email} />
-              </div>
-              <div>
-                <FormControlLabel control={<IOSSwitch checked={this.state.checked[5]} onChange={this.handleChangeToggle.bind(this, 5)} name="checkedB" />}/>
-                <TextField className='inputData' required id="outlined-required" label="Required" variant="outlined" defaultValue={favorito} />
-              </div>
-              <div>
-                <button onClick={this.handleSendData}>enviar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    ) : (
+    if (widthPage > 750) {
+      return this.state.isEditable ? (
         <section className='UserData'>
           <div className='UserData__container'>
-            <div className='UserData__container--Card'>
-              <div className='userInfo'>
-                <Avatar cssClass='AvatarL'/>
-                <p className='editImage'>Cambiar foto</p>
-                <p className='aliasText'>APP02</p>
-              </div>
-              <div className='userAbout'>
-                <p className='editAbout'>Editar semblanza</p>
-                <p className='editText'>{semblanza}</p>
-              </div>
-            </div>
+            <Card />
             <div className='UserData__container--DataUser'>
-              <h1 className='DataUser__title'>Hola, {nombres + ' ' + paterno}</h1>
+              <h1 className='DataUser__title'>Hola, {dataUser.name}</h1>
               <div className='DataUser__Edit'>
                 <p>Se registro en 2018</p>
                 <button onClick={this.handleEditProfile}>Editar perfil</button>
               </div>
               <div className='DataUser__Description'>
-                <div><p>{nombres}</p></div>
-                <div><p>{paisName}</p></div>
-                <div><p>{genero}</p></div>
-                <div><p>{edad} años</p></div>
-                <div><p>{email}</p></div>
-                <div><p>{favorito}</p></div>
+                <div>
+                  <FormControlLabel control={<IOSSwitch checked={this.state.checked[0]} onChange={this.handleChangeToggle.bind(this, 0) } name="checkedB" />}/>
+                  <TextField className='inputData' required id="profile-nombre" label="Required" variant="outlined" defaultValue={profileNombres} />
+                </div>
+                <div>
+                  <FormControlLabel control={<IOSSwitch checked={this.state.checked[0]} onChange={this.handleChangeToggle.bind(this, 0) } name="checkedB" />}/>
+                  <TextField className='inputData' required id="profile-paterno" label="Required" variant="outlined" defaultValue={profilePaterno} />
+                </div>
+                <div>
+                  <FormControlLabel control={<IOSSwitch checked={this.state.checked[0]} onChange={this.handleChangeToggle.bind(this, 0) } name="checkedB" />}/>
+                  <TextField className='inputData' required id="profile-materno" label="Required" variant="outlined" defaultValue={profileMaterno} />
+                </div>
+                <div>
+                  <FormControlLabel control={<IOSSwitch checked={this.state.checked[1]} onChange={this.handleChangeToggle.bind(this, 1)} name="checkedB" />}/>
+                  <TextField className='inputData' required id="profile-pais" label="Required" variant="outlined" defaultValue={profilePaisName} />
+                </div>
+                <div>
+                  <FormControlLabel control={<IOSSwitch checked={this.state.checked[2]} onChange={this.handleChangeToggle.bind(this, 2)} name="checkedB" />}/>
+                  <TextField className='inputData' required id="profile-genero" label="Required" variant="outlined" defaultValue={profileGenero} />
+                </div>
+                <div>
+                  <FormControlLabel control={<IOSSwitch checked={this.state.checked[3]} onChange={this.handleChangeToggle.bind(this, 3)} name="checkedB" />}/>
+                  <TextField className='inputData' required id="profile-edad" label="Required" variant="outlined" defaultValue={profileEdad} />
+                </div>
+                <div>
+                  <FormControlLabel control={<IOSSwitch checked={this.state.checked[4]} onChange={this.handleChangeToggle.bind(this, 4)} name="checkedB" />}/>
+                  <TextField className='inputData' required id="profile-email" label="Required" variant="outlined" defaultValue={profileEmail} />
+                </div>
+                <div>
+                  <FormControlLabel control={<IOSSwitch checked={this.state.checked[5]} onChange={this.handleChangeToggle.bind(this, 5)} name="checkedB" />}/>
+                  <TextField className='inputData' required id="profile-favorito" label="Required" variant="outlined" defaultValue={profileFavorito} />
+                </div>
+                <div>
+                  <button className='btn-SaveProfileData' onClick={this.handleSendData}>Enviar</button>
+                </div>
               </div>
             </div>
           </div>
         </section>
+      ) : (
+          <section className='UserData'>
+            <div className='UserData__container'>
+              <Card />
+              <div className='UserData__container--DataUser'>
+                <h1 className='DataUser__title'>Hola, {profileNombres + ' ' + profilePaterno}</h1>
+                <div className='DataUser__Edit'>
+                  <p>Se registro en 2018</p>
+                  <button onClick={this.handleEditProfile}>Editar perfil</button>
+                </div>
+                <div className='DataUser__Description'>
+                  <div><p>{profileNombres}</p></div>
+                  <div><p>{profilePaterno}</p></div>
+                  <div><p>{profileMaterno}</p></div>
+                  <div><p>{profilePaisName}</p></div>
+                  <div><p>{profileGenero}</p></div>
+                  <div><p>{profileEdad} años</p></div>
+                  <div><p>{profileEmail}</p></div>
+                  <div><p>{profileFavorito}</p></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )
+    } else {
+      return (
+        <section className='UserDataMob'>
+          <div className='UserDataMob-Header'>
+            <section className='UserDataMob-Header__Sections'>
+              <div className='elements'>
+                <Avatar />
+                <p className='aliasText'>APP02</p>
+              </div>
+            </section>
+            <section className='UserDataMob-Header__Sections'>
+              <button onClick={this.handleEditProfile}><img className='editProfileIcon' src={ require('../assets/images/editProfileMobile.png')} alt='icono'/></button>
+              <div className='SocialNetwork'>
+                <img className='SocialNetwork__icon' src={ require('../assets/images/fb-black.png')} alt='icono'/>
+                <img className='SocialNetwork__icon' src={ require('../assets/images/instagram-black.png')} alt='icono'/>
+              </div>
+            </section>
+          </div>
+          <div className='UserDataMob-Body'>
+            <h1 className='DataUser__title'>Hola, {profileNombres + ' ' + profilePaterno}</h1>
+            <div className='DataUser__date'>
+              <p>Se registro en 2018</p>
+            </div>
+            <div className='DataUser__semblanza'>
+              <p>{profileSemblanza}</p>
+            </div>
+            <div className='DataUser__Description'>
+              <div><p>{profileNombres}</p></div>
+              <div><p>{profilePaterno}</p></div>
+              <div><p>{profileMaterno}</p></div>
+              <div><p>{profilePaisName}</p></div>
+              <div><p>{profileGenero}</p></div>
+              <div><p>{profileEdad} años</p></div>
+              <div><p>{profileEmail}</p></div>
+              <div><p>{profileFavorito}</p></div>
+            </div>
+            <div className='DataUser__line'>
+              <hr></hr>
+            </div>
+          </div>
+        </section>
       )
+    }
   }
 }
 

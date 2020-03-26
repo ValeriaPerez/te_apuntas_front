@@ -4,6 +4,8 @@ const initialState = {
   profileInfo: null,
   loadingProfileInfo: false,
   error: null,
+  submitProfile: {},
+  loadingSubmitProfile: false,
 };
 
 const profileInfo = (state = initialState, action) => {
@@ -28,6 +30,30 @@ const profileInfo = (state = initialState, action) => {
         ...state,
         profileInfo: action.payload.data,
         loadingProfileInfo: action.payload.loading,
+        error: action.payload.error,
+      };
+
+    /* --------------       PATCH_PROFILE_DATA       -------------- */
+
+    case asyncActionTypes.PATCH_PROFILE_DATA.START:
+      return {
+        ...state,
+        submitProfile: action.payload.data,
+        loadingSubmitProfile: action.payload.loading,
+        error: action.payload.error,
+      };
+    case asyncActionTypes.PATCH_PROFILE_DATA.SUCCESS:
+      return {
+        ...state,
+        submitProfile: action.payload.data,
+        loadingSubmitProfile: action.payload.loading,
+        error: action.payload.error,
+      };
+    case asyncActionTypes.PATCH_PROFILE_DATA.FAIL:
+      return {
+        ...state,
+        submitProfile: action.payload.data,
+        loadingSubmitProfile: action.payload.loading,
         error: action.payload.error,
       };
     default:

@@ -37,11 +37,7 @@ class Profile extends Component {
           title='Home'
           alt='Logo'
           imageLogo={ require('../assets/images/teApuntasB.png') }/>
-        <section className='Body'>
-          <div className='Body__Columns LoginView'>
-            <UserInfo dataUser={this.props.profileInfo}/>
-          </div>
-        </section>
+          <UserInfo dataUser={this.props}/>
         <Footer />
       </div>
     );
