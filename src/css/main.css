@@ -390,6 +390,35 @@ body {
   100% {
     -webkit-transform: scale(1, 1);
     opacity: 0; } }
+.Card {
+  align-items: center;
+  border-radius: 1px solid #DDDDDD;
+  box-shadow: 0 3px 6px 0 rgba(80, 80, 80, 0.5);
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px;
+  width: 450px;
+  min-height: 400px; }
+  .Card .Info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px; }
+    .Card .Info .editImage {
+      padding-bottom: 20px; }
+  .Card .userAbout {
+    align-items: flex-end;
+    border-top: 1px solid #DDDDDD;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: justify; }
+    .Card .userAbout .editAbout {
+      padding-bottom: 15px; }
+    .Card .userAbout .editText {
+      padding-bottom: 15px; }
+
 .Footer {
   align-items: center;
   bottom: 0;
@@ -1157,43 +1186,24 @@ input[type=radio] {
         background: #081f2d; }
 
 .UserData {
+  align-items: center;
+  display: flex;
+  height: calc(100vh - 100px);
   width: 100%; }
   .UserData__container {
+    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%; }
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px; }
     @media (max-width: 750px) {
       .UserData__container {
         flex-direction: column; } }
-    .UserData__container--Card {
-      align-items: center;
-      border-radius: 1px solid #DDDDDD;
-      box-shadow: 0 3px 6px 0 rgba(80, 80, 80, 0.5);
-      display: flex;
-      flex-direction: column;
-      padding: 0px 20px;
-      width: 450px;
-      min-height: 300px; }
-      .UserData__container--Card .userInfo {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 20px; }
-        .UserData__container--Card .userInfo .editImage {
-          padding-bottom: 20px; }
-      .UserData__container--Card .userAbout {
-        align-items: flex-end;
-        border-top: 1px solid #DDDDDD;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        text-align: justify; }
-        .UserData__container--Card .userAbout .editAbout {
-          padding-bottom: 15px; }
-        .UserData__container--Card .userAbout .editText {
-          padding-bottom: 15px; }
     .UserData__container--DataUser {
       border-bottom: 1px solid #DDDDDD;
       display: flex;

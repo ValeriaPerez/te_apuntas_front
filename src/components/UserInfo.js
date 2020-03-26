@@ -110,9 +110,9 @@ class UserInfo extends React.Component {
     const edad = dataUser ? dataUser.edad : null;
     const email = dataUser ? dataUser.email : null;
     const favorito = dataUser ? dataUser.favorito : null;
-    // const foto = dataUser ? dataUser.foto : null;
+    const foto = dataUser ? dataUser.foto : null;
     const genero = dataUser ? dataUser.genero : null;
-    // const materno = dataUser ? dataUser.materno : null;
+    const materno = dataUser ? dataUser.materno : null;
     const nombres = dataUser ? dataUser.nombres : null;
     const pais = dataUser ? dataUser.pais : null;
     const paisCodigo = pais ? pais.code : null;
@@ -137,27 +137,35 @@ class UserInfo extends React.Component {
             <div className='DataUser__Description'>
               <div>
                 <FormControlLabel control={<IOSSwitch checked={this.state.checked[0]} onChange={this.handleChangeToggle.bind(this, 0) } name="checkedB" />}/>
-                <TextField className='inputData' required id="outlined-required" label="Required" variant="outlined" defaultValue={nombres} />
+                <TextField className='inputData' required id="profile-nombre" label="Required" variant="outlined" defaultValue={nombres} />
+              </div>
+              <div>
+                <FormControlLabel control={<IOSSwitch checked={this.state.checked[0]} onChange={this.handleChangeToggle.bind(this, 0) } name="checkedB" />}/>
+                <TextField className='inputData' required id="profile-nombre" label="Required" variant="outlined" defaultValue={paterno} />
+              </div>
+              <div>
+                <FormControlLabel control={<IOSSwitch checked={this.state.checked[0]} onChange={this.handleChangeToggle.bind(this, 0) } name="checkedB" />}/>
+                <TextField className='inputData' required id="profile-nombre" label="Required" variant="outlined" defaultValue={materno} />
               </div>
               <div>
                 <FormControlLabel control={<IOSSwitch checked={this.state.checked[1]} onChange={this.handleChangeToggle.bind(this, 1)} name="checkedB" />}/>
-                <TextField className='inputData' required id="outlined-required" label="Required" variant="outlined" defaultValue={paisName} />
+                <TextField className='inputData' required id="profile-pais" label="Required" variant="outlined" defaultValue={paisName} />
               </div>
               <div>
                 <FormControlLabel control={<IOSSwitch checked={this.state.checked[2]} onChange={this.handleChangeToggle.bind(this, 2)} name="checkedB" />}/>
-                <TextField className='inputData' required id="outlined-required" label="Required" variant="outlined" defaultValue={genero} />
+                <TextField className='inputData' required id="profile-genero" label="Required" variant="outlined" defaultValue={genero} />
               </div>
               <div>
                 <FormControlLabel control={<IOSSwitch checked={this.state.checked[3]} onChange={this.handleChangeToggle.bind(this, 3)} name="checkedB" />}/>
-                <TextField className='inputData' required id="outlined-required" label="Required" variant="outlined" defaultValue={edad + ' años'} />
+                <TextField className='inputData' required id="profile-edad" label="Required" variant="outlined" defaultValue={edad} />
               </div>
               <div>
                 <FormControlLabel control={<IOSSwitch checked={this.state.checked[4]} onChange={this.handleChangeToggle.bind(this, 4)} name="checkedB" />}/>
-                <TextField className='inputData' required id="outlined-required" label="Required" variant="outlined" defaultValue={email} />
+                <TextField className='inputData' required id="profile-email" label="Required" variant="outlined" defaultValue={email} />
               </div>
               <div>
                 <FormControlLabel control={<IOSSwitch checked={this.state.checked[5]} onChange={this.handleChangeToggle.bind(this, 5)} name="checkedB" />}/>
-                <TextField className='inputData' required id="outlined-required" label="Required" variant="outlined" defaultValue={favorito} />
+                <TextField className='inputData' required id="profile-favorito" label="Required" variant="outlined" defaultValue={favorito} />
               </div>
               <div>
                 <button onClick={this.handleSendData}>enviar</button>
@@ -169,17 +177,7 @@ class UserInfo extends React.Component {
     ) : (
         <section className='UserData'>
           <div className='UserData__container'>
-            <div className='UserData__container--Card'>
-              <div className='userInfo'>
-                <Avatar cssClass='AvatarL'/>
-                <p className='editImage'>Cambiar foto</p>
-                <p className='aliasText'>APP02</p>
-              </div>
-              <div className='userAbout'>
-                <p className='editAbout'>Editar semblanza</p>
-                <p className='editText'>{semblanza}</p>
-              </div>
-            </div>
+            <Card />
             <div className='UserData__container--DataUser'>
               <h1 className='DataUser__title'>Hola, {nombres + ' ' + paterno}</h1>
               <div className='DataUser__Edit'>
@@ -188,6 +186,8 @@ class UserInfo extends React.Component {
               </div>
               <div className='DataUser__Description'>
                 <div><p>{nombres}</p></div>
+                <div><p>{paterno}</p></div>
+                <div><p>{materno}</p></div>
                 <div><p>{paisName}</p></div>
                 <div><p>{genero}</p></div>
                 <div><p>{edad} años</p></div>
