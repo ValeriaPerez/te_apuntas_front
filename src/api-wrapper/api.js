@@ -2,7 +2,7 @@ import axios from 'axios';
 
 //  URL del API
 // const HOST = 'http://localhost:8000/';
-const HOST = 'http://1559edcc.ngrok.io/';
+const HOST = 'http://te-apuntas-deploy.herokuapp.com/';
 
 export async function doRequest(endpoint, headersRequest = null, requestMethod = 'GET', data = null) {
   try {

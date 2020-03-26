@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import SharedButtons from '../elements/shared';
+import Travelers from './travelers';
+import { getFechasDisponibles } from '../../utilities/utils';
 
 class Reservation extends Component {
   render() {
@@ -14,16 +16,19 @@ class Reservation extends Component {
           </div>
           <SharedButtons />
         </div>
+        <Travelers />
       </div>
     );
   }
 
   renderOptionsPayment() {
-    const options = [
-      'Nov 26 - Nov 30, 2019',
-      'Dic 27 - Ene 2, 2020',
-      'Ene 30 - Feb 5, 2020',
-    ];
+    const { destiny } = this.props;
+    const options = getFechasDisponibles(destiny);
+    // const options = [
+    //   'Nov 26 - Nov 30, 2019',
+    //   'Dic 27 - Ene 2, 2020',
+    //   'Ene 30 - Feb 5, 2020',
+    // ];
 
     return options.map((date, index) => {
       return (
