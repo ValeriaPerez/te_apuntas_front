@@ -8,9 +8,6 @@ const mapStateToProps = state => ({
   /* --- Home states --- */
   responseContactanos : state.Home.submitContactanos,
   loadingSubmitContactanos : state.Home.loadingSubmitContactanos,
-  loadingLogin: state.Login.loading,
-  responseLogin: state.Login.dataLogin,
-  errorLogin: state.Login.errorLogin,
 });
 class FollowUs extends React.Component {
   constructor(props) {
@@ -43,15 +40,16 @@ class FollowUs extends React.Component {
     }));
   }
 
-  handleSendInfo() {
-    const { dispatch, responseLogin } = this.props;
+  handleSendInfo(event) {
+    event.preventDefault();
+    const { dispatch } = this.props;
     const data = {
       nombre_completo: document.getElementById('inp-name').value,
       email: document.getElementById('inp-email').value,
       telefono: document.getElementById('inp-phone').value,
       razon: document.getElementById('inp-comment').value,
     }
-    dispatch(submitContactanos(data, responseLogin.access));
+    dispatch(submitContactanos(data));
   }
 
   resetForm() {

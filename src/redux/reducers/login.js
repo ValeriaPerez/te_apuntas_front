@@ -3,9 +3,10 @@ import asyncActionTypes from '../constants/action-types';
 const initialState = {
   dataLogin: {},
   errorLogin: null,
-  isLoading: false,  
+  isLoading: false,
   loadingLoging: false,
-
+  isLoading: false,
+  isLogin: false,
 };
 
 const home = (state = initialState, action) => {
@@ -17,6 +18,7 @@ const home = (state = initialState, action) => {
         dataLogin: action.payload.data,
         loadingLoging: action.payload.loading,
         errorLogin: action.payload.error,
+        isLogin: false,
         isLoading: false,
       };
     case asyncActionTypes.LOGIN.SUCCESS:
@@ -25,6 +27,7 @@ const home = (state = initialState, action) => {
         dataLogin: action.payload.data,
         loadingLoging: action.payload.loading,
         errorLogin: action.payload.error,
+        isLogin: true,
         isLoading: true,
       };
     case asyncActionTypes.LOGIN.FAIL:
@@ -33,6 +36,7 @@ const home = (state = initialState, action) => {
         dataLogin: action.payload.data,
         loadingLoging: action.payload.loading,
         errorLogin: action.payload.error,
+        isLogin: false,
         isLoading: false,
       };
 
