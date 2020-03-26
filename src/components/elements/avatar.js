@@ -20,8 +20,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function ImageAvatars(props) {
-  const classes = useStyles();
-
+  const classes = useStyles()
   return (
     <div className={ classes.root } onClick={ props.onClick }>
       <Avatar alt={ props.alt } src={ props.image }/>
@@ -32,7 +31,7 @@ function ImageAvatars(props) {
 
 ImageAvatars.defaultProps = {
   alt: '',
-  image:'',
+  image: '',
   showName: false,
   'name': '',
   'onClick': null,
