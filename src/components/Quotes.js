@@ -9,7 +9,7 @@ class Quotes extends React.Component {
         </p>
         <div className='Quotes__links'>
           <p className='Quotes__links--username'>Lolita Davis, México</p>
-          <img className='Quotes__links--icon' src={ require('../assets/images/homeWhiteIcon.png')} />
+          <img className='Quotes__links--icon' src={ require('../assets/images/homeWhiteIcon.png')} alt='icon' />
           <p className='Quotes__links--destiny'><span></span>Heliski, Canadá 2018</p>
         </div>
       </div>

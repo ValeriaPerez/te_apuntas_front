@@ -4,6 +4,8 @@ import { Button } from '@material-ui/core';
 import Avatar from '@material-ui/core/Avatar';
 import Tooltip from '@material-ui/core/Tooltip';
 import { AvatarGroup } from '@material-ui/lab';
+
+// TODO: 'destinyInfo' is defined but never used import destinyInfo from '../redux/reducers/destination';
 import MiniCalendarInfo from './MiniCalendarInfo'
 import { getImagesApuntados } from '../utilities/utils';
 
@@ -26,7 +28,6 @@ class Destination extends React.Component {
   render() {
     const { destinyInfo } = this.props;
     const apuntados = getImagesApuntados(destinyInfo);
-
     return (
       <div className='Destination'>
         { destinyInfo === null ? <h1>Cargando</h1> :
@@ -38,25 +39,20 @@ class Destination extends React.Component {
                 <h1>{`${destinyInfo.ciudad} ${destinyInfo.pais}`}</h1>
                 {/* <p>Privado</p> */}
               </div>
-        <p className='DestinationData__description--info'><span className='descriptionQuote'>{destinyInfo.descripcion}</span></p>
+              <p className='DestinationData__description--info'><span className='descriptionQuote'>{destinyInfo.descripcion}</span></p>
             </div>
           </div>
           <div className='DestinationPeople'>
             <div>
               <AvatarGroup className='DestinationPeople__container'>
                 { apuntados.map(apuntado => {
-                  return <Avatar
-                            className='DestinationPeople__container--avatar'
-                            alt={`${apuntado.nombres} ${apuntado.paterno}`}
-                            src={apuntado.foto}
-                            key={`avatar-${apuntado.id}`}/>
+                  return 
+                    <Avatar
+                      className='DestinationPeople__container--avatar'
+                      alt={`${apuntado.nombres} ${apuntado.paterno}`}
+                      src={apuntado.foto}
+                      key={`avatar-${apuntado.id}`}/>
                 })}
-                {/* <Avatar className='DestinationPeople__container--avatar' alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                <Avatar className='DestinationPeople__container--avatar' alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-                <Avatar className='DestinationPeople__container--avatar' alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-                <Avatar className='DestinationPeople__container--avatar' alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-                <Avatar className='DestinationPeople__container--avatar' alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-                <Avatar className='DestinationPeople__container--avatar' alt="Cindy Baker" src="/static/images/avatar/3.jpg" /> */}
                 <Tooltip className='DestinationPeople__container--avatar counter' title="Foo • Bar • Baz">
                   <Avatar>+3</Avatar>
                 </Tooltip>

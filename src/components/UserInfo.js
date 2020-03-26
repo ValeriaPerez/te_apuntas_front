@@ -36,7 +36,9 @@ class UserInfo extends React.Component {
   };
 
   handleSendData() {
-    let data = '';
+    // TODO: 'data' is assigned a value but never used
+    // eslint-disable-next-line
+    let data = ''; 
     console.log("enviar datos");
     doRequest(
       'http://7ee80e5c.ngrok.io/api/v1/perfil/1/',
