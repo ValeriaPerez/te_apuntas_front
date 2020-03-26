@@ -46,12 +46,11 @@ class Destination extends React.Component {
             <div>
               <AvatarGroup className='DestinationPeople__container'>
                 { apuntados.map(apuntado => {
-                  return 
-                    <Avatar
-                      className='DestinationPeople__container--avatar'
-                      alt={`${apuntado.nombres} ${apuntado.paterno}`}
-                      src={apuntado.foto}
-                      key={`avatar-${apuntado.id}`}/>
+                  return <Avatar
+                            className='DestinationPeople__container--avatar'
+                            alt={`${apuntado.nombres} ${apuntado.paterno}`}
+                            src={apuntado.foto}
+                            key={`avatar-${apuntado.id}`}/>
                 })}
                 <Tooltip className='DestinationPeople__container--avatar counter' title="Foo • Bar • Baz">
                   <Avatar>+3</Avatar>
