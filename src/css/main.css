@@ -1126,13 +1126,14 @@ input[type=radio] {
   display: flex;
   flex-direction: row;
   height: calc(100vh - 100px);
-  width: 100%;
-  padding: 0px 2em; }
+  width: 100%; }
+  @media (max-width: 1238px) {
+    .Body {
+      padding: 0px 2em; } }
   @media (max-width: 800px) {
     .Body {
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 6em 2em 0em 2em; } }
+      justify-content: flex-end; } }
   @media (max-width: 320px) {
     .Body {
       padding: 8em 2em 0em 2em; } }
@@ -1161,11 +1162,11 @@ input[type=radio] {
     flex: 1; }
     .Body .Body__Columns .WelcomeText {
       color: #FFFFFF;
-      font-size: 17px;
+      font-size: 14px;
       font-weight: 300;
       font-stretch: normal;
       font-style: normal;
-      line-height: 1.69;
+      line-height: 1.29;
       letter-spacing: 0.13px;
       width: 424px; }
       @media (max-width: 959px) {
@@ -1177,7 +1178,7 @@ input[type=radio] {
     .Body .Body__Columns.welcomeColumns {
       justify-content: flex-end; }
   .Body .Body__Columns:nth-of-type(2) {
-    align-items: center; }
+    align-items: flex-end; }
 
 .Header {
   height: 99px;
@@ -1493,7 +1494,7 @@ input[type=radio] {
       padding: 40px 0px; } }
   .Quotes__text {
     color: #FFFFFF;
-    font-size: 28px; }
+    font-size: 24px; }
     @media (max-width: 959px) {
       .Quotes__text {
         font-size: 18px; } }
