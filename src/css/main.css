@@ -1212,54 +1212,64 @@ input[type=radio] {
         transition: all 0.55s;
         max-width: 130px; } }
 
-.LoginView {
-  justify-content: center;
-  align-items: center !important; }
-  .LoginView .Login {
+.SignIn {
+  background-image: url("../assets/images/homeImage3-compressor.png"); }
+  .SignIn-container {
     align-items: center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+    background-size: cover;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%; }
-    .LoginView .Login__container {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      width: 100%; }
-      .LoginView .Login__container--Title {
-        color: white;
-        font-size: 24px;
-        margin-top: 20px;
-        margin-bottom: 40px; }
-      .LoginView .Login__container__SocialMedia {
+    height: 100vh;
+    justify-content: center; }
+    .SignIn-container .LoginView {
+      justify-content: center;
+      align-items: center !important;
+      width: 80%; }
+      .SignIn-container .LoginView .Login {
+        align-items: center;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
-        box-sizing: border-box;
         width: 100%; }
-        .LoginView .Login__container__SocialMedia div {
-          margin-right: 2%;
-          margin-left: 2%;
-          outline: 0; }
-          .LoginView .Login__container__SocialMedia div button {
-            background: transparent;
-            border-color: white;
-            border-radius: 50px;
+        .SignIn-container .LoginView .Login__container {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          width: 100%; }
+          .SignIn-container .LoginView .Login__container--Title {
             color: white;
-            height: 60px;
-            max-width: 60px;
-            min-width: 60px;
-            overflow: hidden;
-            outline: 0 !important;
-            padding: 5px;
-            width: 60px;
-            box-sizing: border-box; }
-            .LoginView .Login__container__SocialMedia div button .Login__icon {
-              width: 10px; }
-            .LoginView .Login__container__SocialMedia div button:hover {
-              border-color: #081f2d;
-              background: #081f2d;
-              color: #FFFFFF; }
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 40px; }
+          .SignIn-container .LoginView .Login__container__SocialMedia {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            box-sizing: border-box;
+            width: 100%; }
+            .SignIn-container .LoginView .Login__container__SocialMedia div {
+              margin-right: 2%;
+              margin-left: 2%;
+              outline: 0; }
+              .SignIn-container .LoginView .Login__container__SocialMedia div button {
+                background: transparent;
+                border-color: white;
+                border-radius: 50px;
+                color: white;
+                height: 60px;
+                max-width: 60px;
+                min-width: 60px;
+                overflow: hidden;
+                outline: 0 !important;
+                padding: 5px;
+                width: 60px;
+                box-sizing: border-box; }
+                .SignIn-container .LoginView .Login__container__SocialMedia div button .Login__icon {
+                  width: 10px; }
+                .SignIn-container .LoginView .Login__container__SocialMedia div button:hover {
+                  border-color: #081f2d;
+                  background: #081f2d;
+                  color: #FFFFFF; }
 
 .CalendarInfo {
   display: flex;

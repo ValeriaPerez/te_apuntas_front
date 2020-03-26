@@ -7,13 +7,13 @@ import Login from '../components/Login';
 export default class Home extends Component {
   render() {
     return (
-      <div className='Home'>
+      <div className='SignIn'>
         <div className='BG-img'>
-          <Header 
+          <Header
             title='Home'
             alt='Logo'
             imageLogo={ require('../assets/images/teApuntas.png') }/>
-          <section className='Body'>
+          <section className='SignIn-container'>
             <div className='Body__Columns LoginView'>
               <Login />
             </div>
