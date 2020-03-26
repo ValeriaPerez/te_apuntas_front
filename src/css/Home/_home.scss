@@ -42,15 +42,18 @@
 .Body {
   @include container();
   display: flex;
-    flex-direction: row;
+  flex-direction: row;
   height: calc(100vh - 100px);
   width: 100%;
-  padding: 0px 2em;
+
+
+  @media (max-width: 1238px) {
+    padding: 0px 2em;
+  }
 
   @media (max-width: 800px) {
     flex-direction: column;
     justify-content: flex-end;
-    padding: 6em 2em 0em 2em;
   }
 
   @media (max-width: $iphone5) {
@@ -88,11 +91,11 @@
 
     .WelcomeText {
       color: $white;
-      font-size: 17px;
+      font-size: 14px;
       font-weight: 300;
       font-stretch: normal;
       font-style: normal;
-      line-height: 1.69;
+      line-height: 1.29;
       letter-spacing: 0.13px;
       width: 424px;
 
@@ -110,6 +113,6 @@
   }
 
   .Body__Columns:nth-of-type(2) {
-    align-items: center;
+    align-items: flex-end;
   }
 }
