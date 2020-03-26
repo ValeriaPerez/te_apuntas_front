@@ -8,14 +8,12 @@ import Avatar from '../components/elements/avatar';
 import SharedButtons from '../components/elements/shared';
 import Slider from '../components/SliderImage';
 import Reservation from '../components/destination-detail/reservation';
-import Travelers from '../components/destination-detail/travelers';
-
-import { retrieveDestinyInfo } from '../redux/actions/destination';
 
 const mapStateToProps = state => ({
   /* --- Home states --- */
+  isLogin : state.Login.isLogin,
   destinyInfo : state.Destination.destinyInfo,
-  loadingDestinyInfo : state.Destination.loadingDestinyInfo,
+  indexPage: state.Destination.indexPage,
 });
 
 class DestinationDetail extends Component {
@@ -27,11 +25,6 @@ class DestinationDetail extends Component {
       showBullets: false
     };
     window.addEventListener("resize", this.update);
-  }
-
-  componentWillMount() {
-    const { dispatch } = this.props;
-    dispatch(retrieveDestinyInfo());
   }
 
   componentDidMount() {
@@ -46,17 +39,15 @@ class DestinationDetail extends Component {
   };
 
   render() {
-    const { destinyInfo } = this.props;
-    const images = [
-      'https://img.freepik.com/foto-gratis/horizonte-ciudad-toronto-noche-ontario-canada_131985-286.jpg?size=626&ext=jpg',
-      'https://img.freepik.com/foto-gratis/horizonte-ciudad-toronto-noche-ontario-canada_131985-286.jpg?size=626&ext=jpg,'
-    ];
-
-    console.log('destinyInfo', destinyInfo );
+    const { destinyInfo, indexPage, isLogin } = this.props;
+    const destiny = destinyInfo ? destinyInfo[indexPage ? indexPage : 0] : null;
+    const images = destiny ? destiny.imagenes.map(image => {
+      return {'url': image.imagen }
+    }) : [];
     return (
       <div className='destination-detail'>
         <Header
-          login={ true }
+          login={ isLogin }
           tokenId='1'
           title='Volver a Home'
           alt='Logo Header'
@@ -73,7 +64,7 @@ class DestinationDetail extends Component {
 
               <div className='description'>
                 { this.renderTravelersMobile() }
-                { this.renderDescriptionDestination() }
+                { this.renderDescriptionDestination(destiny) }
                 { this.renderList() }
               </div>
 
@@ -86,8 +77,7 @@ class DestinationDetail extends Component {
 
             </div>
             <div className='destination-detail__column'>
-              <Reservation />
-              <Travelers />
+              <Reservation destiny={destiny}/>
             </div>
           </div>
         </div>
@@ -97,18 +87,12 @@ class DestinationDetail extends Component {
     );
   }
 
-  renderDescriptionDestination() {
+  renderDescriptionDestination(destiny) {
     return (
       <div>
-        <h4 className='description__title'>HeliSki Canadá <span className='description__span'>7,980 € </span></h4>
+        <h4 className='description__title'>{`${destiny.ciudad} ${destiny.pais}`} <span className='description__span'>{destiny.precio} € </span></h4>
         <p className='description__text'>
-          “La experiencia definitiva: sin límites” - El HeliSki es la experiencia definitiva para cualquier esquiador/rider sin ningún lugar a dudas. Todo aquello que has soñado o visto en películas y catálogos, donde los esquiadores disfrutan de interminables bajadas en laderas vírgenes de nieve polvo o entre bosques con tanto “powder” que quedan enterrados en cada giro ¡ES VERDAD!
-        </p>
-        <p className='description__text'>
-          Te proponemos, de forma muy personalizada, una semana de HeliSki con alojamientos de lujo en mitad de las montañas canadienses, con los helicópteros en la puerta de la habitación y guías privados para cada grupo de 4 esquiadores.
-        </p>
-        <p className='description__text'>
-          ¡No hay límite de bajadas ni de metros verticales! Y, si algún día tenemos mal tiempo y los helicópteros no pueden volar, las quitanieves que usamos de “BackUp” nos estarán esperando para no perder ni una sola bajada.
+          { destiny.descripcion }
         </p>
         <button className="button-detailVideo">Ver video</button>
       </div>

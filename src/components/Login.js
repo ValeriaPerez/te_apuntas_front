@@ -41,7 +41,7 @@ class Login extends React.Component {
     const { dispatch } = this.props;
     const dataLogin = {
       username: 'enrique',
-      password: 'qwerty12345',
+      password: 'ConsultoraLos3',
     }
     dispatch(loginPost(dataLogin));
   }
