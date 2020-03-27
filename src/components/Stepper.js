@@ -57,7 +57,7 @@ const useStyles = makeStyles(theme => ({
 }));
 */
 
-function SwipeableTextMobileStepper() {
+function SwipeableTextMobileStepper(props) {
   // TODO:const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
@@ -82,7 +82,7 @@ function SwipeableTextMobileStepper() {
   return (
     <div className='Stepper'>
       <Paper square elevation={0} className='StepperHeader'>
-        <img className='closeModalIcon' src={require('../assets/images/close.png')} alt="imagen close"/>
+        <img className='closeModalIcon' src={require('../assets/images/close.png')} alt="imagen close" onClick={ props.handleClose }/>
       </Paper>
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -117,6 +117,11 @@ function SwipeableTextMobileStepper() {
     </div>
   );
 }
+
+SwipeableTextMobileStepper.defaultProps = {
+  'handleClose': null,
+}
+
 
 
 export default SwipeableTextMobileStepper;

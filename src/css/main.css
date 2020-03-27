@@ -946,7 +946,11 @@ body {
 }
 @media (min-width: 959px) {
   .destination-detail__column {
-    padding: 2em;
+    padding: 0 3em;
+  }
+  .destination-detail__column:nth-child(1) {
+    border-right: 1px solid rgba(8, 31, 45, 0.2);
+    margin: 2.5em 0;
   }
 }
 
@@ -1049,11 +1053,6 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
-@media (min-width: 959px) {
-  .travelers__list {
-    justify-content: flex-start;
-  }
-}
 .travelers__list div {
   width: 100%;
   max-width: 80px;
@@ -1116,6 +1115,12 @@ body {
   .reservation__container {
     padding: 2em 0;
   }
+}
+.reservation__box {
+  border-radius: 8px;
+  box-shadow: 0 3px 6px 0 rgba(8, 31, 45, 0.2);
+  background-color: #ffffff;
+  padding: 2em;
 }
 .reservation__title {
   font-size: 16px;
