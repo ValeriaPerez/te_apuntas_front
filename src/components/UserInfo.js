@@ -232,6 +232,27 @@ class UserInfo extends React.Component {
                   </div>
                 </div>
                 <div className='socialMediaProfile'>
+                  <div>
+                    <div class="round">
+                      <input type="checkbox" id="checkbox" />
+                      <label for="checkbox"></label>
+                    </div>
+                    <img className='socialMedia--icon' src={ require('../assets/images/twitter-black.png')} alt='icono'/>
+                  </div>
+                  <div>
+                    <div class="round">
+                      <input type="checkbox" id="checkbox" />
+                      <label for="checkbox"></label>
+                    </div>
+                    <img className='socialMedia--icon' src={ require('../assets/images/fb-black.png')} alt='icono'/>
+                  </div>
+                  <div>
+                    <div class="round">
+                      <input type="checkbox" id="checkbox" />
+                      <label for="checkbox"></label>
+                    </div>
+                    <img className='socialMedia--icon' src={ require('../assets/images/instagram-black.png')} alt='icono'/>
+                  </div>
                 </div>
                 <div className='options-Zone'>
                   <button className='btn-SaveProfileData' onClick={this.handleSendData}>Enviar</button>
