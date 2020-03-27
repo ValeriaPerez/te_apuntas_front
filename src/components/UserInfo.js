@@ -4,6 +4,7 @@ import Card from './Card'
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
+import Checkbox from '@material-ui/core/Checkbox';
 import { withStyles } from '@material-ui/core/styles';
 import { doRequest } from '../api-wrapper/api.js';
 
@@ -108,7 +109,7 @@ class UserInfo extends React.Component {
       track: {
         borderRadius: 26 / 2,
         border: `1px solid ${theme.palette.grey[400]}`,
-        backgroundColor: theme.palette.grey[50],
+        backgroundColor: '#FFFFFF',
         opacity: 1,
         transition: theme.transitions.create(['background-color', 'border']),
       },
@@ -158,42 +159,82 @@ class UserInfo extends React.Component {
               <h1 className='DataUser__title'>Hola, {dataUser.name}</h1>
               <div className='DataUser__Edit'>
                 <p>Se registro en 2018</p>
-                <button onClick={this.handleEditProfile}>Editar perfil</button>
               </div>
               <div className='DataUser__Description'>
-                <div>
+                <div className='ProfileData'>
+                  <img className='ProfileData__icon' src={ require('../assets/images/profileIcon-black.png')} alt='icono'/>
+                  <input type='text' className='inputData' required id="profile-nombre" label="Required" variant="outlined" defaultValue={profileNombres} />
                   <FormControlLabel control={<IOSSwitch checked={this.state.checked[0]} onChange={this.handleChangeToggle.bind(this, 0) } name="checkedB" />}/>
-                  <TextField className='inputData' required id="profile-nombre" label="Required" variant="outlined" defaultValue={profileNombres} />
                 </div>
-                <div>
-                  <FormControlLabel control={<IOSSwitch checked={this.state.checked[0]} onChange={this.handleChangeToggle.bind(this, 0) } name="checkedB" />}/>
-                  <TextField className='inputData' required id="profile-paterno" label="Required" variant="outlined" defaultValue={profilePaterno} />
+                <div className='ProfileData'>
+                  <img className='ProfileData__icon' src={ require('../assets/images/profileIcon-black.png')} alt='icono'/>
+                  <input type='text' className='inputData' required id="profile-paterno" label="Required" variant="outlined" defaultValue={profilePaterno} />
+                  <FormControlLabel control={<IOSSwitch checked={this.state.checked[1]} onChange={this.handleChangeToggle.bind(this, 1) } name="checkedB" />}/>
                 </div>
-                <div>
-                  <FormControlLabel control={<IOSSwitch checked={this.state.checked[0]} onChange={this.handleChangeToggle.bind(this, 0) } name="checkedB" />}/>
-                  <TextField className='inputData' required id="profile-materno" label="Required" variant="outlined" defaultValue={profileMaterno} />
+                <div className='ProfileData'>
+                  <img className='ProfileData__icon' src={ require('../assets/images/profileIcon-black.png')} alt='icono'/>
+                  <input type='text' className='inputData' required id="profile-materno" label="Required" variant="outlined" defaultValue={profileMaterno} />
+                  <FormControlLabel control={<IOSSwitch checked={this.state.checked[2]} onChange={this.handleChangeToggle.bind(this, 2) } name="checkedB" />}/>
                 </div>
-                <div>
-                  <FormControlLabel control={<IOSSwitch checked={this.state.checked[1]} onChange={this.handleChangeToggle.bind(this, 1)} name="checkedB" />}/>
-                  <TextField className='inputData' required id="profile-pais" label="Required" variant="outlined" defaultValue={profilePaisName} />
-                </div>
-                <div>
-                  <FormControlLabel control={<IOSSwitch checked={this.state.checked[2]} onChange={this.handleChangeToggle.bind(this, 2)} name="checkedB" />}/>
-                  <TextField className='inputData' required id="profile-genero" label="Required" variant="outlined" defaultValue={profileGenero} />
-                </div>
-                <div>
+                <div className='ProfileData'>
+                  <img className='ProfileData__icon' src={ require('../assets/images/profileIcon-black.png')} alt='icono'/>
+                  <input type='text' className='inputData' required id="profile-pais" label="Required" variant="outlined" defaultValue={profilePaisName} />
                   <FormControlLabel control={<IOSSwitch checked={this.state.checked[3]} onChange={this.handleChangeToggle.bind(this, 3)} name="checkedB" />}/>
-                  <TextField className='inputData' required id="profile-edad" label="Required" variant="outlined" defaultValue={profileEdad} />
                 </div>
-                <div>
+                <div className='ProfileData'>
+                  <img className='ProfileData__icon' src={ require('../assets/images/profileIcon-black.png')} alt='icono'/>
+                  <input type='text' className='inputData' required id="profile-genero" label="Required" variant="outlined" defaultValue={profileGenero} />
                   <FormControlLabel control={<IOSSwitch checked={this.state.checked[4]} onChange={this.handleChangeToggle.bind(this, 4)} name="checkedB" />}/>
-                  <TextField className='inputData' required id="profile-email" label="Required" variant="outlined" defaultValue={profileEmail} />
                 </div>
-                <div>
+                <div className='ProfileData'>
+                  <img className='ProfileData__icon' src={ require('../assets/images/profileIcon-black.png')} alt='icono'/>
+                  <input type='text' className='inputData' required id="profile-edad" label="Required" variant="outlined" defaultValue={profileEdad} />
                   <FormControlLabel control={<IOSSwitch checked={this.state.checked[5]} onChange={this.handleChangeToggle.bind(this, 5)} name="checkedB" />}/>
-                  <TextField className='inputData' required id="profile-favorito" label="Required" variant="outlined" defaultValue={profileFavorito} />
                 </div>
-                <div>
+                <div className='ProfileData'>
+                  <img className='ProfileData__icon' src={ require('../assets/images/googlePlus.png')} alt='icono'/>
+                  <input type='text' className='inputData' required id="profile-email" label="Required" variant="outlined" defaultValue={profileEmail} />
+                  <FormControlLabel control={<IOSSwitch checked={this.state.checked[6]} onChange={this.handleChangeToggle.bind(this, 6)} name="checkedB" />}/>
+                </div>
+                <div className='ProfileData'>
+                  <img className='ProfileData__icon' src={ require('../assets/images/airplane.png')} alt='icono'/>
+                  <input type='text' className='inputData' required id="profile-favorito" label="Required" variant="outlined" defaultValue={profileFavorito} />
+                  <FormControlLabel control={<IOSSwitch checked={this.state.checked[7]} onChange={this.handleChangeToggle.bind(this, 7)} name="checkedB" />}/>
+                </div>
+                <div className='ProfilePreference'>
+                  <div className='Options'>
+                    <button>
+                      <img className='ProfileData__icon' src={ require('../assets/images/preference1.png')} alt='icono'/>
+                    </button>
+                    <button>
+                      <img className='ProfileData__icon' src={ require('../assets/images/preference2.png')} alt='icono'/>
+                    </button>
+                    <button>
+                      <img className='ProfileData__icon' src={ require('../assets/images/preference3.png')} alt='icono'/>
+                    </button>
+                    <button>
+                      <img className='ProfileData__icon' src={ require('../assets/images/preference4.png')} alt='icono'/>
+                    </button>
+                  </div>
+                  <div className='Options'>
+                    <button>
+                      <img className='ProfileData__icon' src={ require('../assets/images/preference5.png')} alt='icono'/>
+                    </button>
+                    <button>
+                      <img className='ProfileData__icon' src={ require('../assets/images/preference6.png')} alt='icono'/>
+                    </button>
+                    <button>
+                      <img className='ProfileData__icon' src={ require('../assets/images/preference1.png')} alt='icono'/>
+                    </button>
+                    <button>
+                      <img className='ProfileData__icon' src={ require('../assets/images/preference2.png')} alt='icono'/>
+                    </button>
+                  </div>
+                </div>
+                <div className='socialMediaProfile'>
+                </div>
+                <div className='options-Zone'>
+                  <button className='btn-SaveProfileData' onClick={this.handleSendData}>Enviar</button>
                   <button className='btn-SaveProfileData' onClick={this.handleSendData}>Enviar</button>
                 </div>
               </div>
@@ -208,17 +249,41 @@ class UserInfo extends React.Component {
                 <h1 className='DataUser__title'>Hola, {profileNombres + ' ' + profilePaterno}</h1>
                 <div className='DataUser__Edit'>
                   <p>Se registro en 2018</p>
-                  <button onClick={this.handleEditProfile}>Editar perfil</button>
+                  <button className='editButton' onClick={this.handleEditProfile}>Editar perfil</button>
                 </div>
                 <div className='DataUser__Description'>
-                  <div><p>{profileNombres}</p></div>
-                  <div><p>{profilePaterno}</p></div>
-                  <div><p>{profileMaterno}</p></div>
-                  <div><p>{profilePaisName}</p></div>
-                  <div><p>{profileGenero}</p></div>
-                  <div><p>{profileEdad} años</p></div>
-                  <div><p>{profileEmail}</p></div>
-                  <div><p>{profileFavorito}</p></div>
+                  <div className='ProfileData'>
+                    <img className='ProfileData__icon' src={ require('../assets/images/profileIcon-black.png')} alt='icono'/>
+                    <p>{profileNombres}</p>
+                  </div>
+                  <div className='ProfileData'>
+                    <img className='ProfileData__icon' src={ require('../assets/images/profileIcon-black.png')} alt='icono'/>
+                    <p>{profilePaterno}</p>
+                  </div>
+                  <div className='ProfileData'>
+                    <img className='ProfileData__icon' src={ require('../assets/images/profileIcon-black.png')} alt='icono'/>
+                    <p>{profileMaterno}</p>
+                  </div>
+                  <div className='ProfileData'>
+                    <img className='ProfileData__icon' src={ require('../assets/images/profileIcon-black.png')} alt='icono'/>
+                    <p>{profilePaisName}</p>
+                  </div>
+                  <div className='ProfileData'>
+                    <img className='ProfileData__icon' src={ require('../assets/images/profileIcon-black.png')} alt='icono'/>
+                    <p>{profileGenero}</p>
+                  </div>
+                  <div className='ProfileData'>
+                    <img className='ProfileData__icon' src={ require('../assets/images/profileIcon-black.png')} alt='icono'/>
+                    <p>{profileEdad} años</p>
+                  </div>
+                  <div className='ProfileData'>
+                    <img className='ProfileData__icon' src={ require('../assets/images/googlePlus.png')} alt='icono'/>
+                    <p>{profileEmail}</p>
+                  </div>
+                  <div className='ProfileData'>
+                    <img className='ProfileData__icon' src={ require('../assets/images/airplane.png')} alt='icono'/>
+                    <p>{profileFavorito}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -256,7 +321,7 @@ class UserInfo extends React.Component {
               <div><p>{profileMaterno}</p></div>
               <div><p>{profilePaisName}</p></div>
               <div><p>{profileGenero}</p></div>
-              <div><p>{profileEdad} años</p></div>
+              <div><p>{profileEdad}</p></div>
               <div><p>{profileEmail}</p></div>
               <div><p>{profileFavorito}</p></div>
             </div>
