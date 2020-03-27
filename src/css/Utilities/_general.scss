@@ -30,15 +30,15 @@
 }
 
 .show-mobile {
-  display: block;
+  display: block !important;
   @media (min-width: $tablet) {
-    display: none;
+    display: none !important;
   }
 }
 
 .show-desktop {
-  display: none;
+  display: none !important;
   @media (min-width: $tablet) {
-    display: block;
+    display: block !important;
   }
 }

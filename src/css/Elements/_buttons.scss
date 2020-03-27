@@ -33,3 +33,16 @@
     max-width: 200px;
   }
 }
+
+.Button-Destination {
+  color: white;
+  text-align: center;
+  margin: 1em 0;
+
+  @media (min-width:$tablet){
+    @include button(transparent, white, white, white, white, black);
+    max-width: 150px;
+    padding: 1em 1.5em;
+    margin: 0;
+  }
+}

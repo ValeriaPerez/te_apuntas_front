@@ -20,7 +20,12 @@
   &__column {
     width: 100%;
     @media (min-width: $tablet){
-      padding: 2em;
+      padding: 0 3em;
+
+      &:nth-child(1) {
+        border-right: 1px solid rgba(8, 31, 45, 0.2);
+        margin: 2.5em 0;
+      }
     }
   }
 }
