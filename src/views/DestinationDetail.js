@@ -9,6 +9,8 @@ import SharedButtons from '../components/elements/shared';
 import Slider from '../components/SliderImage';
 import Reservation from '../components/destination-detail/reservation';
 
+import ModalPayment from '../components/modal/modal-payment';
+
 const mapStateToProps = state => ({
   /* --- Home states --- */
   isLogin : state.Login.isLogin,
@@ -22,7 +24,8 @@ class DestinationDetail extends Component {
     this.state = {
       height: 500,
       width: 0,
-      showBullets: false
+      showBullets: false,
+      openModalPayment: false
     };
     window.addEventListener("resize", this.update);
   }
@@ -100,19 +103,23 @@ class DestinationDetail extends Component {
   }
 
   renderTravelersMobile() {
+    const { openModalPayment } = this.state; 
     return (
       <div className='description__travelers show-mobile'>
-        <button className="button-detailTravel">Ver fechas disponibles</button>
+        <button className="button-detailTravel" onClick={ () => this.handleOpenModal() }>Ver fechas disponibles</button>
         <div className="description__flex">
           <p className="description__flex__title">Apuntados al viaje</p>
           <div className="description__flex description__flex--avatars">
             <Avatar image='https://gal.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fgal.2Fvar.2Fgal.2Fstorage.2Fimages.2Fmedia.2Fmultiupload_du_11_octobre_2011.2Fsteve.2F1766087-1-fre-FR.2Fsteve.2Ejpg/480x480/quality/80/steve-jobs-les-raisons-de-son-deces.jpg' />
             <Avatar image="/static/images/avatar/1.jpg" />
             <Avatar />
-            <Avatar />
-            <Avatar />
+            <Avatar image="/static/images/avatar/1.jpg" />
+            <Avatar image="/static/images/avatar/1.jpg" />
            </div>
         </div>
+        <ModalPayment 
+          open={ openModalPayment }
+          handleClose={ () => this.handleOpenModal() } />
       </div>
     );
   }
@@ -168,6 +175,13 @@ class DestinationDetail extends Component {
         title='destination location'
       />
     );
+  }
+
+  handleOpenModal(){
+    console.log('entre');
+    this.setState(state => ({
+     openModalPayment: !this.state.openModalPayment
+    }));
   }
 }
 
