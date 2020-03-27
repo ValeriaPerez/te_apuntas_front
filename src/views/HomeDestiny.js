@@ -27,6 +27,7 @@ class HomeDestiny extends Component {
       height: 0,
       width: 0,
       showBullets: false,
+      openModalTutorial: true,
     };
     window.addEventListener("resize", this.update);
   }
@@ -34,6 +35,12 @@ class HomeDestiny extends Component {
   componentWillMount() {
     const { dispatch } = this.props;
     dispatch(retrieveDestinyInfo());
+
+    setTimeout(()=>{
+      this.setState(state => ({
+       openModalTutorial: false
+      }));
+    }, 12000);
   }
 
   componentDidMount() {
@@ -49,6 +56,7 @@ class HomeDestiny extends Component {
 
   render() {
     const { destinyInfo, imagesDestiny, indexPage, loadingDestinyInfo, isLogin } = this.props;
+    const { openModalTutorial } = this.state;
     return (
       <div className='home-destiny'>
         <div className='home-destiny__background-image'>
@@ -69,7 +77,10 @@ class HomeDestiny extends Component {
             imageLogo={ require('../assets/images/teApuntas.png') }/>
           {}
           <section className='home-destiny__body'>
-            <Modal />
+            <Modal 
+              open={ openModalTutorial }
+              handleClose={ () => this.setModalTutorial() }
+            />
             <div className='home-destiny__columns welcomeColumns'>
               <Destination destinyInfo={indexPage !== null ? destinyInfo[indexPage] : null}/>
             </div>
@@ -77,6 +88,12 @@ class HomeDestiny extends Component {
         </div>
       </div>
     )
+  }
+
+  setModalTutorial() {
+    this.setState(state => ({
+     openModalTutorial: false
+    }));
   }
 }
 

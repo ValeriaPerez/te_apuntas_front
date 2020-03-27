@@ -47,7 +47,7 @@ class DestinationDetail extends Component {
     return (
       <div className='destination-detail'>
         <Header
-          login={ isLogin }
+          login={ !isLogin }
           tokenId='1'
           title='Volver a Home'
           alt='Logo Header'
