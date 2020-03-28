@@ -92,7 +92,7 @@ class HomeDestiny extends Component {
 
   setModalTutorial() {
     this.setState(state => ({
-     openModalTutorial: false
+      openModalTutorial: false
     }));
   }
 }
