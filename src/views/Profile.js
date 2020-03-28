@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 
 // Components
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/base/header';
+import Footer from '../components/base/footer';
 import UserInfo from '../components/UserInfo';
 
 import { retrieveProfileInfo } from '../redux/actions/profile';

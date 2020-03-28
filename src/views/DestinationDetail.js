@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // Components
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/base/header';
+import Footer from '../components/base/footer';
 import Avatar from '../components/elements/avatar';
 import SharedButtons from '../components/elements/shared';
 import Slider from '../components/SliderImage';

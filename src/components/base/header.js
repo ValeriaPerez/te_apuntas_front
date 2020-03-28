@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Avatar from '../components/elements/avatar';
+import Avatar from '../elements/avatar';
 
 function Header(props){
   if (props.login) {

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 
 // Components
-import Header from '../components/Header';
+import Header from '../components/base/header';
 import ModalTutorial from '../components/modal/modal-tutorial';
 import Destination from '../components/Destination';
 import Slider from '../components/SliderImage';
