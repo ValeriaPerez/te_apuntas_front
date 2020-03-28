@@ -60,7 +60,6 @@ class FollowUs extends React.Component {
   }
 
   render() {
-    console.log('home', this.props);
     return (
       <div className='FollowUs'>
         <div className='FollowUs__container'>

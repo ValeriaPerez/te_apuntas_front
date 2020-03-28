@@ -86,7 +86,6 @@ class Travelers extends Component {
   }
 
   getProfileModal(e) {
-    console.log('event', e);
     this.setState(state => ({
      open: !this.state.open
     }));

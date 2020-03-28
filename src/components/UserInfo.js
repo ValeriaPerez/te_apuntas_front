@@ -134,7 +134,6 @@ class UserInfo extends React.Component {
 
     const { dataUser } = this.props;
     const widthPage = this.state.width;
-    console.log(widthPage);
 
     // const codigo = dataUser ? dataUser.codigo : null;
     const profileEdad = dataUser.profileInfo ? dataUser.profileInfo.edad : null;
