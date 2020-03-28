@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 // Components
 import Header from '../components/Header';
-import Modal from '../components/Modal';
+import ModalTutorial from '../components/modal/modal-tutorial';
 import Destination from '../components/Destination';
 import Slider from '../components/SliderImage';
 import Loader from '../components/elements/loader';
@@ -77,7 +77,7 @@ class HomeDestiny extends Component {
             imageLogo={ require('../assets/images/teApuntas.png') }/>
           {}
           <section className='home-destiny__body'>
-            <Modal 
+            <ModalTutorial 
               open={ openModalTutorial }
               handleClose={ () => this.setModalTutorial() }
             />

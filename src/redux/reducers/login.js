@@ -5,7 +5,6 @@ const initialState = {
   errorLogin: null,
   isLoading: false,
   loadingLoging: false,
-  isLoading: false,
   isLogin: false,
 };
 
