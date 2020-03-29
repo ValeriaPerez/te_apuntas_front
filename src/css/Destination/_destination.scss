@@ -1,4 +1,4 @@
-.Destination {
+ƒ.Destination {
   color: $white;
   display: flex;
   flex-direction: row;
@@ -46,7 +46,7 @@
           letter-spacing: normal;
           text-align: left;
           color: #ffffff;
-          margin-bottom: 1em;
+          margin-bottom: 0.8em;
           @media (min-width:$tablet){
             font-size: 45px;
           }
@@ -88,6 +88,8 @@
 
     @media (min-width:$tablet){
       width: 25%;
+      display: flex;
+      justify-content: center;
     }
 
     &__container {

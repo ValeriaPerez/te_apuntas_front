@@ -36,44 +36,9 @@ const tutorialSteps = [
   }
 ];
 
-/* TODO:
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  header: {
-    display: 'flex',
-    alignItems: 'center',
-    height: 50,
-    paddingLeft: theme.spacing(4),
-    backgroundColor: theme.palette.background.default,
-  },
-  img: {
-    height: 255,
-    display: 'block',
-    overflow: 'hidden',
-    width: '100%',
-  },
-}));
-*/
-
 function SwipeableTextMobileStepper(props) {
-  // TODO:const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  // TODO: const maxSteps = tutorialSteps.length;
-
-  /* TODO:
-  const handleNext = () => {
-    setActiveStep(prevActiveStep => prevActiveStep + 1);
-  };
-  */
-
-  /* TODO:
-  const handleBack = () => {
-    setActiveStep(prevActiveStep => prevActiveStep - 1);
-  };
-  */
 
   const handleStepChange = step => {
     setActiveStep(step);
@@ -104,9 +69,6 @@ function SwipeableTextMobileStepper(props) {
           </div>
         ))}
       </AutoPlaySwipeableViews>
-      {
-        // Dots
-      }
       <MobileStepper
         variant="dots"
         steps={4}
@@ -121,7 +83,5 @@ function SwipeableTextMobileStepper(props) {
 SwipeableTextMobileStepper.defaultProps = {
   'handleClose': null,
 }
-
-
 
 export default SwipeableTextMobileStepper;
