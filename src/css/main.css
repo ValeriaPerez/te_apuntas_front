@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* Colors */
 /* screen */
 /* font */
@@ -831,7 +830,7 @@ body {
   border-bottom: 0;
 }
 
-ƒ.Destination {
+.Destination {
   color: #FFFFFF;
   display: flex;
   flex-direction: row;
@@ -840,36 +839,36 @@ body {
   padding: 2em 0;
 }
 @media (min-width: 959px) {
-  ƒ.Destination {
+  .Destination {
     padding: 2em 0 4em 0;
   }
 }
-ƒ.Destination .DestinationData {
+.Destination .DestinationData {
   width: 100%;
 }
 @media (min-width: 959px) {
-  ƒ.Destination .DestinationData {
+  .Destination .DestinationData {
     width: 50%;
   }
 }
 @media (min-width: 959px) {
-  ƒ.Destination .DestinationData__container {
+  .Destination .DestinationData__container {
     display: flex;
     justify-content: space-between;
   }
 }
-ƒ.Destination .DestinationData__info {
+.Destination .DestinationData__info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 150px;
   margin-bottom: 50px;
 }
-ƒ.Destination .DestinationData__description--title {
+.Destination .DestinationData__description--title {
   display: flex;
   flex-direction: row;
 }
-ƒ.Destination .DestinationData__description--title h1 {
+.Destination .DestinationData__description--title h1 {
   font-size: 18px;
   font-weight: bold;
   font-stretch: normal;
@@ -881,11 +880,11 @@ body {
   margin-bottom: 0.8em;
 }
 @media (min-width: 959px) {
-  ƒ.Destination .DestinationData__description--title h1 {
+  .Destination .DestinationData__description--title h1 {
     font-size: 45px;
   }
 }
-ƒ.Destination .DestinationData__description--title p {
+.Destination .DestinationData__description--title p {
   align-items: center;
   background: #3f96b4;
   border-radius: 8px;
@@ -893,10 +892,10 @@ body {
   padding: 5px 10px;
   margin-left: 10px;
 }
-ƒ.Destination .DestinationData__description--status {
+.Destination .DestinationData__description--status {
   margin-bottom: 10px;
 }
-ƒ.Destination .DestinationData__description--info {
+.Destination .DestinationData__description--info {
   font-size: 13px;
   font-weight: normal;
   font-stretch: normal;
@@ -907,39 +906,39 @@ body {
   color: #ffffff;
 }
 @media (min-width: 959px) {
-  ƒ.Destination .DestinationData__description--info {
+  .Destination .DestinationData__description--info {
     font-size: 17px;
   }
 }
-ƒ.Destination .DestinationPeople {
+.Destination .DestinationPeople {
   display: flex;
   flex-direction: column;
 }
 @media (min-width: 959px) {
-  ƒ.Destination .DestinationPeople {
+  .Destination .DestinationPeople {
     width: 25%;
     display: flex;
     justify-content: center;
   }
 }
 @media (min-width: 959px) {
-  ƒ.Destination .DestinationPeople__container {
+  .Destination .DestinationPeople__container {
     margin-bottom: 50px;
     margin-left: 7px;
   }
 }
-ƒ.Destination .DestinationPeople__container--avatar {
+.Destination .DestinationPeople__container--avatar {
   background: transparent;
   border: 1px solid #DDDDDD;
 }
-ƒ.Destination .DestinationPeople__container--avatar.counter {
+.Destination .DestinationPeople__container--avatar.counter {
   background: transparent;
   border: 0;
 }
-ƒ.Destination .DestinationPeople__link {
+.Destination .DestinationPeople__link {
   text-decoration: none;
 }
-ƒ.Destination .DestinationPeople__link .btn--grey {
+.Destination .DestinationPeople__link .btn--grey {
   text-decoration: none;
 }
 

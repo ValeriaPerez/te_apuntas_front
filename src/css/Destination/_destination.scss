@@ -1,10 +1,11 @@
-ƒ.Destination {
+.Destination {
   color: $white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width:100%;
   padding: 2em 0;
+
   @media (min-width:$tablet){
     padding: 2em 0 4em 0;
   }
