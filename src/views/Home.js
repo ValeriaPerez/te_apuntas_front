@@ -71,7 +71,7 @@ class Home extends Component {
             /> : <Loader />
           }
           { widthPage > 800 ?
-            <section className='Body'>
+            <section className='Body BodyR'>
               <div className='Body__Columns'>
                 <p className='WelcomeText'>
                  Bienvenido a Te Apuntas, si has llegado sin invitación escríbenos y cuéntanos por qué quieres ser parte de esto para que podamos enviarte una invitación personalizada.
@@ -82,7 +82,7 @@ class Home extends Component {
                 <Quotes />
               </div>
             </section>
-            : <section className='Body'>
+            : <section className='Body BodyR'>
               <div className='HomeContainer'>
                 <p className='WelcomeText'>
                  Bienvenido a Te Apuntas, si has llegado sin invitación escríbenos y cuéntanos por qué quieres ser parte de esto para que podamos enviarte una invitación personalizada.
