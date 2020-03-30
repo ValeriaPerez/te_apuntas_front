@@ -234,22 +234,22 @@ class UserInfo extends React.Component {
                 <div className='socialMediaProfile'>
                   <div>
                     <div class="round">
-                      <input type="checkbox" id="checkbox" />
-                      <label for="checkbox"></label>
+                      <input type="checkbox" id="checkboxTwitter" />
+                      <label for="checkboxTwitter"></label>
                     </div>
                     <img className='socialMedia--icon' src={ require('../assets/images/twitter-black.png')} alt='icono'/>
                   </div>
                   <div>
                     <div class="round">
-                      <input type="checkbox" id="checkbox" />
-                      <label for="checkbox"></label>
+                      <input type="checkbox" id="checkboxFacebook" />
+                      <label for="checkboxFacebook"></label>
                     </div>
                     <img className='socialMedia--icon' src={ require('../assets/images/fb-black.png')} alt='icono'/>
                   </div>
                   <div>
                     <div class="round">
-                      <input type="checkbox" id="checkbox" />
-                      <label for="checkbox"></label>
+                      <input type="checkbox" id="checkboxInstagram" />
+                      <label for="checkboxInstagram"></label>
                     </div>
                     <img className='socialMedia--icon' src={ require('../assets/images/instagram-black.png')} alt='icono'/>
                   </div>
