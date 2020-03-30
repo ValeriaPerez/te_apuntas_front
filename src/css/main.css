@@ -1646,7 +1646,7 @@ input[type=radio] {
 }
 
 .header {
-  height: 99px;
+  height: 50px;
   color: #FFFFFF;
   font-size: 18px;
   padding: 0 2em;
@@ -1660,6 +1660,7 @@ input[type=radio] {
 }
 @media (min-width: 959px) {
   .header {
+    height: 99px;
     padding: 0 1em;
   }
 }
@@ -1676,12 +1677,12 @@ input[type=radio] {
 .header__icon {
   display: block;
   width: 100%;
-  max-width: 130px;
+  max-width: 100px;
+  transition: all 0.55s;
 }
-@media (max-width: 959px) {
+@media (min-width: 959px) {
   .header__icon {
-    transition: all 0.55s;
-    max-width: 130px;
+    max-width: 150px;
   }
 }
 

@@ -49,12 +49,7 @@ class DestinationDetail extends Component {
     }) : [];
     return (
       <div className='destination-detail'>
-        <Header
-          login={ !isLogin }
-          tokenId='1'
-          title='Volver a Home'
-          alt='Logo Header'
-          imageLogo={ require('../assets/images/teApuntasB.png') }/>
+        <Header isDestinyDetail={ true } isLogin={ !isLogin } imageLogo={ require('../assets/images/teApuntasB.png') }/>
         <Slider
           width={this.state.width}
           height='60vh'

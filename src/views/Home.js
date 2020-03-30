@@ -55,12 +55,7 @@ class Home extends Component {
     return (
       <div className='Home'>
         <div className='BG-img'>
-          <Header
-            title='Home'
-            alt='Logo'
-            login={ false }
-            isLoading={ isLoading }
-            imageLogo={ require('../assets/images/teApuntas.png') }/>
+          <Header isLogin={ false } imageLogo={ require('../assets/images/teApuntas.png') }/>
           { !loadingImagesHome?
             <Slider
               width={this.state.width}

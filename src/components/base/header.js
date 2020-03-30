@@ -5,34 +5,34 @@ import cx from 'classnames';
 
 function Header(props) {
 
+  const { imageLogo, alt, title, isLogin, tokenid, isDestinyDetail, isProfile } = props;
   const headerClasses = cx({
     'header': true,
-    'isLogged': true,
+    'isLogged': isDestinyDetail || isProfile,
   });
 
   return (
     <div className={ headerClasses }>
       <div className='header__container'>
         <Link to="/">
-          <img className='header__icon' src={ props.imageLogo } alt={ props.alt } title={ props.title } />
+          <img className='header__icon' src={ imageLogo } alt={ alt } title={ title } />
         </Link>
-        <Link to="/Profile" tokenid={props.tokenid}>
-          { props.login ? <Avatar image='https://picsum.photos/200/300'/> : null }
+        <Link to="/Profile" tokenid={ tokenid }>
+          { isLogin ? <Avatar image='https://picsum.photos/200/300'/> : null }
         </Link>
       </div>
     </div>
   );
 }
 
-
 Header.defaultProps = {
-  title: 'header',
-  alt: 'Logo Header',
-  imageLogo:'',
-  login: false,
+  title: 'Logo te Apuntas',
+  alt: 'Logo te Apuntas',
+  imageLogo: '',
+  isLogin: false,
   tokenid: 1,
-  'isTransparent': false,
-  'homeDestiny': false,
+  isProfile: false,
+  isDestinyDetail: false,
 }
 
 export default Header

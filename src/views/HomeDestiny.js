@@ -60,22 +60,16 @@ class HomeDestiny extends Component {
     return (
       <div className='home-destiny'>
         <div className='home-destiny__background-image'>
-         { loadingDestinyInfo ? <Loader /> : 
-            <Slider
-              width={this.state.width}
-              height={this.state.height}
-              images={imagesDestiny.length > 0 && indexPage !== null ? imagesDestiny[indexPage] : []}
-              showBullets={this.state.showBullets}
-            />
-         } 
-          <Header
-            title='Home'
-            alt='Logo'
-            login={ isLogin }
-            isTransparent={ true }
-            homeDestiny={ true }
-            imageLogo={ require('../assets/images/teApuntas.png') }/>
-          {}
+          { 
+            loadingDestinyInfo ? <Loader /> : 
+              <Slider 
+                width={this.state.width}
+                height={this.state.height}
+                images={imagesDestiny.length > 0 && indexPage !== null ? imagesDestiny[indexPage] : []}
+                showBullets={this.state.showBullets}
+              />
+          } 
+          <Header isLogin={ !isLogin } imageLogo={ require('../assets/images/teApuntas.png') }/>
           <section className='home-destiny__body'>
             <ModalTutorial 
               open={ openModalTutorial }
@@ -87,7 +81,7 @@ class HomeDestiny extends Component {
           </section>
         </div>
       </div>
-    )
+    );
   }
 
   setModalTutorial() {

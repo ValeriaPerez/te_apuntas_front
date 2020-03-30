@@ -12,6 +12,7 @@ const mapStateToProps = state => ({
   /* --- Profile states --- */
   profileInfo : state.Profile.profileInfo,
   loadingProfileInfo : state.Profile.loadingProfileInfo,
+  isLogin : state.Login.isLogin,
 });
 
 class Profile extends Component {
@@ -30,13 +31,10 @@ class Profile extends Component {
   }
 
   render() {
+    const { isLogin } = this.props;
     return (
       <div className='Home'>
-        <Header
-          login={ true }
-          title='Home'
-          alt='Logo'
-          imageLogo={ require('../assets/images/teApuntasB.png') }/>
+        <Header isProfile={ true } isLogin={ !isLogin } imageLogo={ require('../assets/images/teApuntasB.png') }/>
           <UserInfo dataUser={this.props}/>
         <Footer />
       </div>

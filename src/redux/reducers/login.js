@@ -35,7 +35,7 @@ const home = (state = initialState, action) => {
         dataLogin: action.payload.data,
         loadingLoging: action.payload.loading,
         errorLogin: action.payload.error,
-        isLogin: false,
+        isLogin: true,
         isLoading: false,
       };
 
