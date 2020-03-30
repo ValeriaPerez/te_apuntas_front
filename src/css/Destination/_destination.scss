@@ -5,6 +5,7 @@
   justify-content: space-between;
   width:100%;
   padding: 2em 0;
+
   @media (min-width:$tablet){
     padding: 2em 0 4em 0;
   }
@@ -46,7 +47,7 @@
           letter-spacing: normal;
           text-align: left;
           color: #ffffff;
-          margin-bottom: 1em;
+          margin-bottom: 0.8em;
           @media (min-width:$tablet){
             font-size: 45px;
           }
@@ -88,6 +89,8 @@
 
     @media (min-width:$tablet){
       width: 25%;
+      display: flex;
+      justify-content: center;
     }
 
     &__container {

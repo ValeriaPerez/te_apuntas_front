@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 
 // Components
-import Header from '../components/Header';
+import Header from '../components/base/header';
 import Quotes from '../components/Quotes';
 import FollowUs from '../components/FollowUs';
-import Footer from '../components/Footer';
+import Footer from '../components/base/footer';
 import Slider from '../components/SliderImage';
 import Loader from '../components/elements/loader';
 
@@ -55,12 +55,7 @@ class Home extends Component {
     return (
       <div className='Home'>
         <div className='BG-img'>
-          <Header
-            title='Home'
-            alt='Logo'
-            login={ false }
-            isLoading={ isLoading }
-            imageLogo={ require('../assets/images/teApuntas.png') }/>
+          <Header isLogin={ false } imageLogo={ require('../assets/images/teApuntas.png') }/>
           { !loadingImagesHome?
             <Slider
               width={this.state.width}

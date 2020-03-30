@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // Components
-import Header from '../components/Header';
+import Header from '../components/base/header';
 import Login from '../components/Login';
 
 export default class Home extends Component {

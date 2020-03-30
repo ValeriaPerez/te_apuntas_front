@@ -8,6 +8,7 @@
     display: flex;
     justify-content: flex-end;
     padding: 20px;
+
     .closeModalIcon {
       height: 10px;
       width: 10px;
@@ -21,7 +22,15 @@
     color: $white;
     display: flex;
     height: 300px;
-    width: 500px;
+    width: 350px;
+
+    & .react-swipeable-view-container {
+      width: inherit;
+    }
+    
+    @media (min-width:$tablet) {
+      width: 500px;
+    }
 
     &__Container {
       align-items: center;

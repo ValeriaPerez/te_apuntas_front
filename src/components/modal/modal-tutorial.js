@@ -2,12 +2,7 @@ import React from 'react';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
-import Stepper from './Stepper';
-import Slide from '@material-ui/core/Slide';
-
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
+import Stepper from '../Stepper';
 
 function ModalTutorial(props) {
   return (

@@ -1,9 +1,8 @@
 import React from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import Slide from '@material-ui/core/Slide';
-import CardProfile from '../Card';
-
-import Reservation from '../destination-detail/reservation';
+// import CardProfile from '../Card';
+// import Reservation from '../destination-detail/reservation';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;

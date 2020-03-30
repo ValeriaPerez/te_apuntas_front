@@ -9,7 +9,6 @@ class MiniCalendarInfo extends React.Component {
     const { data, destinyInfo } = this.props;
     const apuntados = getImagesApuntados(destinyInfo);
     const isMax = apuntados.length > 5 ? true : false;
-    console.log('is max', isMax);
     return (
       <div className='CalendarInfo'>
         <div className='CalendarInfo__icons'>

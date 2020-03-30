@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 
 // Components
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/base/header';
+import Footer from '../components/base/footer';
 import UserInfo from '../components/UserInfo';
 
 import { retrieveProfileInfo } from '../redux/actions/profile';
@@ -12,6 +12,7 @@ const mapStateToProps = state => ({
   /* --- Profile states --- */
   profileInfo : state.Profile.profileInfo,
   loadingProfileInfo : state.Profile.loadingProfileInfo,
+  isLogin : state.Login.isLogin,
 });
 
 class Profile extends Component {
@@ -30,13 +31,10 @@ class Profile extends Component {
   }
 
   render() {
+    const { isLogin } = this.props;
     return (
       <div className='Home'>
-        <Header
-          login={ true }
-          title='Home'
-          alt='Logo'
-          imageLogo={ require('../assets/images/teApuntasB.png') }/>
+        <Header isProfile={ true } isLogin={ !isLogin } imageLogo={ require('../assets/images/teApuntasB.png') }/>
           <UserInfo dataUser={this.props}/>
         <Footer />
       </div>

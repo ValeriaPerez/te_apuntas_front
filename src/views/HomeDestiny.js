@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 
 // Components
-import Header from '../components/Header';
-import Modal from '../components/Modal';
+import Header from '../components/base/header';
+import ModalTutorial from '../components/modal/modal-tutorial';
 import Destination from '../components/Destination';
 import Slider from '../components/SliderImage';
 import Loader from '../components/elements/loader';
@@ -60,24 +60,18 @@ class HomeDestiny extends Component {
     return (
       <div className='home-destiny'>
         <div className='home-destiny__background-image'>
-         { loadingDestinyInfo ? <Loader /> : 
-            <Slider
-              width={this.state.width}
-              height={this.state.height}
-              images={imagesDestiny.length > 0 && indexPage !== null ? imagesDestiny[indexPage] : []}
-              showBullets={this.state.showBullets}
-            />
-         } 
-          <Header
-            title='Home'
-            alt='Logo'
-            login={ isLogin }
-            isTransparent={ true }
-            homeDestiny={ true }
-            imageLogo={ require('../assets/images/teApuntas.png') }/>
-          {}
+          { 
+            loadingDestinyInfo ? <Loader /> : 
+              <Slider 
+                width={this.state.width}
+                height={this.state.height}
+                images={imagesDestiny.length > 0 && indexPage !== null ? imagesDestiny[indexPage] : []}
+                showBullets={this.state.showBullets}
+              />
+          } 
+          <Header isLogin={ !isLogin } imageLogo={ require('../assets/images/teApuntas.png') }/>
           <section className='home-destiny__body'>
-            <Modal 
+            <ModalTutorial 
               open={ openModalTutorial }
               handleClose={ () => this.setModalTutorial() }
             />
@@ -87,12 +81,12 @@ class HomeDestiny extends Component {
           </section>
         </div>
       </div>
-    )
+    );
   }
 
   setModalTutorial() {
     this.setState(state => ({
-     openModalTutorial: false
+      openModalTutorial: false
     }));
   }
 }

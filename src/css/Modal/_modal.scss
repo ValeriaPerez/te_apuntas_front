@@ -4,6 +4,12 @@
   justify-content: center;
 
   &__body {
+  	 max-width: 360px;
+
+  	 @media (min-width:$tablet) {
+  	 	max-width: 500px;
+  	 }
+
     &:focus {
       outline: 0 !important;
     }

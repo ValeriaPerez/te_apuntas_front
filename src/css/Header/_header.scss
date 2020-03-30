@@ -1,5 +1,5 @@
-.Header {
-  height: $desktop-header;
+.header {
+  height: 50px;
   color: $white;
   font-size: 18px;
   padding: 0 2em;
@@ -13,6 +13,7 @@
   }
 
   @media (min-width: $tablet){
+    height: $desktop-header;
     padding: 0 1em;
   }
 
@@ -25,11 +26,11 @@
 
   &__icon {
     @include setImg();
-    max-width: 130px;
+    max-width: 100px;
+    transition: all 0.55s;
 
-    @media (max-width: $tablet){
-      transition: all 0.55s;
-      max-width: 130px;
+    @media (min-width: $tablet){
+      max-width: 150px;
     }
   }
 }

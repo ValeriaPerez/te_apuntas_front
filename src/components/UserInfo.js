@@ -1,12 +1,12 @@
 import React from 'react';
 import Avatar from '../components/elements/avatar';
 import Card from './Card'
-import TextField from '@material-ui/core/TextField';
+// import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
-import Checkbox from '@material-ui/core/Checkbox';
+// import Checkbox from '@material-ui/core/Checkbox';
 import { withStyles } from '@material-ui/core/styles';
-import { doRequest } from '../api-wrapper/api.js';
+// import { doRequest } from '../api-wrapper/api.js';
 
 import { submitProfileInfo } from '../redux/actions/profile';
 
@@ -49,7 +49,7 @@ class UserInfo extends React.Component {
 
   handleEditProfile() {
     this.setState(state => ({
-     isEditable: true,
+      isEditable: true,
     }));
   }
 
@@ -63,7 +63,7 @@ class UserInfo extends React.Component {
   };
 
   handleSendData() {
-    const { dispatch, dataUser } = this.props;
+    const { dispatch } = this.props;
     const data = {
       edad: document.getElementById('profile-edad').value,
       email: document.getElementById('profile-email').value,
@@ -134,18 +134,17 @@ class UserInfo extends React.Component {
 
     const { dataUser } = this.props;
     const widthPage = this.state.width;
-    console.log(widthPage);
 
     // const codigo = dataUser ? dataUser.codigo : null;
     const profileEdad = dataUser.profileInfo ? dataUser.profileInfo.edad : null;
     const profileEmail = dataUser.profileInfo ? dataUser.profileInfo.email : null;
     const profileFavorito = dataUser.profileInfo ? dataUser.profileInfo.favorito : null;
-    const profileFoto = dataUser.profileInfo ? dataUser.profileInfo.foto : null;
+    // TODO : const profileFoto = dataUser.profileInfo ? dataUser.profileInfo.foto : null;
     const profileGenero = dataUser.profileInfo ? dataUser.profileInfo.genero : null;
     const profileMaterno = dataUser.profileInfo ? dataUser.profileInfo.materno : null;
     const profileNombres = dataUser.profileInfo ? dataUser.profileInfo.nombres : null;
-    const profilePais = dataUser.profileInfo ? dataUser.profileInfo.pais : null;
-    const profilePaisCodigo = dataUser.profileInfo ? dataUser.profileInfo.code : null;
+    // TODO : const profilePais = dataUser.profileInfo ? dataUser.profileInfo.pais : null;
+    // TODO : const profilePaisCodigo = dataUser.profileInfo ? dataUser.profileInfo.code : null;
     const profilePaisName = dataUser.profileInfo ? dataUser.profileInfo.name : null;
     const profilePaterno = dataUser.profileInfo ? dataUser.profileInfo.paterno : null;
     const profileSemblanza = dataUser.profileInfo ? dataUser.profileInfo.semblanza : null;
