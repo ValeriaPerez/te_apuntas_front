@@ -49,7 +49,7 @@ class UserInfo extends React.Component {
 
   handleEditProfile() {
     this.setState(state => ({
-     isEditable: true,
+      isEditable: true,
     }));
   }
 

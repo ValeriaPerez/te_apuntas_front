@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
-const mapStateToProps = state => ({ });
 
 class FooterComponent extends Component {
   render() {
@@ -92,7 +89,5 @@ class FooterComponent extends Component {
   }
 
 }
-
-FooterComponent = connect(mapStateToProps)(FooterComponent);
 
 export default FooterComponent;

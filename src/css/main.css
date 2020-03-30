@@ -1645,7 +1645,7 @@ input[type=radio] {
   width: 40px;
 }
 
-.Header {
+.header {
   height: 99px;
   color: #FFFFFF;
   font-size: 18px;
@@ -1655,15 +1655,15 @@ input[type=radio] {
   width: 100%;
   z-index: 100;
 }
-.Header.isLogged {
+.header.isLogged {
   background: #FFFFFF;
 }
 @media (min-width: 959px) {
-  .Header {
+  .header {
     padding: 0 1em;
   }
 }
-.Header__container {
+.header__container {
   box-sizing: border-box;
   position: relative;
   margin: 0 auto;
@@ -1673,13 +1673,13 @@ input[type=radio] {
   align-items: center;
   justify-content: space-between;
 }
-.Header__icon {
+.header__icon {
   display: block;
   width: 100%;
   max-width: 130px;
 }
 @media (max-width: 959px) {
-  .Header__icon {
+  .header__icon {
     transition: all 0.55s;
     max-width: 130px;
   }
