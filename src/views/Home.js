@@ -50,7 +50,7 @@ class Home extends Component {
     const { imagesHome, isLoading, loadingImagesHome } = this.props;
     const images = imagesHome.map(image => {
       return {'url': image.imagen};
-    })
+    });
 
     return (
       <div className='Home'>
@@ -74,7 +74,9 @@ class Home extends Component {
                 { isLoading ? null : <FollowUs />}
               </div>
               <div className='Body__Columns'>
-                <Quotes />
+                { !loadingImagesHome && imagesHome.length > 0 ? 
+                  <Quotes data={imagesHome[0]}/> : null
+                } {/* Cambiar segun el id de la imagen*/}
               </div>
             </section>
             : <section className='Body BodyR'>
@@ -82,7 +84,9 @@ class Home extends Component {
                 <p className='WelcomeText'>
                  Bienvenido a Te Apuntas, si has llegado sin invitación escríbenos y cuéntanos por qué quieres ser parte de esto para que podamos enviarte una invitación personalizada.
                 </p>
-                <Quotes />
+                { !loadingImagesHome && imagesHome.length > 0 ? 
+                  <Quotes data={imagesHome[0]}/> : null
+                } {/* Cambiar segun el id de la imagen*/}
                 { isLoading ? null : <FollowUs />}
               </div>
             </section>}
