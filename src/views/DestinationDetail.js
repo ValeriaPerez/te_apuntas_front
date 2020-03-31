@@ -47,6 +47,12 @@ class DestinationDetail extends Component {
     const images = destiny ? destiny.imagenes.map(image => {
       return {'url': image.imagen }
     }) : [];
+    const incluye = destiny ? destiny.cat_incluye.filter(obj => {
+      return obj.activo;
+    }) : [];
+    const noIncluye = destiny ? destiny.cat_incluye.filter(obj => {
+      return !obj.activo;
+    }) : [];
     return (
       <div className='destination-detail'>
         <Header isDestinyDetail={ true } isLogin={ !isLogin } imageLogo={ require('../assets/images/teApuntasB.png') }/>
@@ -63,7 +69,7 @@ class DestinationDetail extends Component {
               <div className='description'>
                 { this.renderTravelersMobile() }
                 { this.renderDescriptionDestination(destiny) }
-                { this.renderList() }
+                { this.renderList(incluye, noIncluye) }
               </div>
 
               <div className='location'>
@@ -92,6 +98,14 @@ class DestinationDetail extends Component {
         <p className='description__text'>
           { destiny.descripcion }
         </p>
+        <h4 className='description__title'>Grandes momentos</h4>
+        <p className='description__text'>
+          { destiny.grandes_momentos }
+        </p>
+        <h4 className='description__title'>Notas sobre el viaje</h4>
+        <p className='description__text'>
+          { destiny.notas }
+        </p>
         <button className="button-detailVideo">Ver video</button>
       </div>
     );
@@ -119,38 +133,32 @@ class DestinationDetail extends Component {
     );
   }
 
-  renderList() {
+  renderList(incluye, noIncluye) {
     return (
       <div>
         <div className='description__list'>
           <h4 className='description__list__title'>Incluye</h4>
-          <div className='description__list__item'>
-            <img src={ require('../assets/images/icon-default.png') } alt='services include' className='icon' />
-            <p className='item-description'>6 noches de alojamiento</p>
-          </div>
-          <div className='description__list__item'>
-            <img src={ require('../assets/images/icon-default.png') } alt='services include' className='icon' />
-            <p className='item-description'>6 noches de alojamiento</p>
-          </div>
-          <div className='description__list__item'>
-            <img src={ require('../assets/images/icon-default.png') } alt='services include' className='icon' />
-            <p className='item-description'>6 noches de alojamiento</p>
-          </div>
-          <div className='description__list__item'>
-            <img src={ require('../assets/images/icon-default.png') } alt='services include' className='icon' />
-            <p className='item-description'>6 noches de alojamiento</p>
-          </div>
-          <div className='description__list__item'>
-            <img src={ require('../assets/images/icon-default.png') } alt='services include' className='icon' />
-            <p className='item-description'>6 noches de alojamiento</p>
-          </div>
+          {
+            incluye.map(dato => {
+              return (
+                <div className='description__list__item'>
+                  <img src={ require('../assets/images/icon-default.png') } alt='services include' className='icon' />
+                  <p className='item-description'>{dato.descripcion}</p>
+                </div>)
+            })
+          }
         </div>
         <div className='description__list'>
-          <h4 className='description__list__title'>Incluye</h4>
-          <div className='description__list__item'>
-            <img src={ require('../assets/images/icon-default.png') } alt='services include' className='icon' />
-            <p className='item-description'>6 noches de alojamiento</p>
-          </div>
+          <h4 className='description__list__title'>No incluye</h4>
+          {
+            noIncluye.map(dato => {
+              return (
+                <div className='description__list__item'>
+                  <img src={ require('../assets/images/icon-default.png') } alt='services include' className='icon' />
+                  <p className='item-description'>{dato.descripcion}</p>
+                </div>)
+            })
+          }
         </div>
         <a className='description__list__link' href='https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' filename='Plan_de_viaje' title='file Plan_de_viaje' download>Plan de viaje</a>
         <button className='button-travelRequest'>Solicitar viaje privado</button>

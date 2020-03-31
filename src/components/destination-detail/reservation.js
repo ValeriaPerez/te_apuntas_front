@@ -4,6 +4,15 @@ import Travelers from './travelers';
 import { getFechasDisponibles } from '../../utilities/utils';
 
 class Reservation extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      optionSelected: null,
+    }
+    this.handleClickOptionPAyment = this.handleClickOptionPayment.bind(this);
+  }
+
   render() {
     return (
       <div className='reservation'>
@@ -15,6 +24,8 @@ class Reservation extends Component {
   }
 
   renderSelectPaymentMethod() {
+    const { optionSelected } = this.state;
+    const { destiny } = this.props;
     return (
       <div>
         <div className='reservation__box'>
@@ -25,7 +36,7 @@ class Reservation extends Component {
             { this.renderOptionsPayment() }
           </div>
         </div>
-        <Travelers />
+        <Travelers optionSelected={optionSelected} maxUsers={destiny.max_pasajeros}/>
         <SharedButtons />
       </div>
     );
@@ -38,8 +49,8 @@ class Reservation extends Component {
       return (
         <div className='reservation__option' key={ index }>
           <div class="reservation__input">
-            <input type='radio' id={ index } name={ date } value={ index } class="reservation__radio"/>
-            <label for={ index } class="input--radio">
+            <input onClick={ () => this.handleClickOptionPayment(index) } type='radio' id={ index } name={ date } value={ index } class="reservation__radio"/>
+            <label htmlFor={ index } class="input--radio">
               <span class="radio"></span> { date }
             </label>
           </div>
@@ -70,6 +81,13 @@ class Reservation extends Component {
         </div>
       </div>
     );
+  }
+
+  handleClickOptionPayment(index) {
+    const { destiny } = this.props;
+    this.setState({
+      optionSelected: destiny.fechasdisponibles_set[index],
+    });
   }
 
 }
