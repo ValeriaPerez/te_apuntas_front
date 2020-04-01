@@ -9,18 +9,39 @@ class Reservation extends Component {
     super(props);
     this.state = {
       optionSelected: null,
+      step: 'step',
     }
     this.handleClickOptionPAyment = this.handleClickOptionPayment.bind(this);
+    this.handleClicksection = this.handleClicksection.bind(this);
   }
 
   render() {
     return (
       <div className='reservation'>
         <div className='reservation__container'>
-          { this.renderSelectPaymentMethod() }
+          { this.renderStep(this.state.step) }
         </div>
       </div>
     );
+  }
+
+  renderStep(step) {
+    switch (step) {
+      default:
+        return this.renderSelectPaymentMethod();
+
+      case 'step':
+        return this.renderSelectPaymentMethod();
+
+      case 'step-2':
+        return this.rederPaymentDetail();
+
+      case 'step-3':
+        return this.renderInfoDetailPayment();
+
+      case 'step-payment':
+        return this.renderPaymentResponse();
+    }
   }
 
   renderSelectPaymentMethod() {
@@ -35,9 +56,9 @@ class Reservation extends Component {
           <div className='reservation__options'>
             { this.renderOptionsPayment() }
           </div>
+          <SharedButtons onClick={ () => this.handleClicksection('step-2') }/>
         </div>
-        <Travelers optionSelected={optionSelected} maxUsers={destiny.max_pasajeros}/>
-        <SharedButtons />
+        <Travelers optionSelected={optionSelected} maxUsers={destiny.max_pasajeros} />
       </div>
     );
   }
@@ -61,23 +82,73 @@ class Reservation extends Component {
 
   rederPaymentDetail() {
     return (
-      <div>
+      <div className='reservation-resume'>
         <div className='reservation__box'>
-          <h4 className='reservation__title show-desktop'>Reservación</h4>
-          <div className='reservation__icon'></div>
-          <p className='reservation__title-total'>Total a Pagar</p>
-          <h4 className='reservation__price'>€50.00</h4>
-          <div className='reservation__resume'>
-            <div className='reservation__item'>
+          <h4 className='reservation-resume__title show-desktop'>Reservación</h4>
+          <div className='reservation-resume__icon'></div>
+          <p className='reservation-resume__title-total'>Total a Pagar</p>
+          <h4 className='reservation-resume__price'>€50.00</h4>
+          <div className='reservation-resume__resume'>
+            <div className='reservation-resume__item'>
               <span>Lorem Ipsum</span><strong>€46.00</strong>
             </div>
-            <div className='reservation__item'>
+            <div className='reservation-resume__item'>
               <span>Lorem Ipsum</span><strong>€46.00</strong>
             </div>
           </div>
-          <div className='reservation__total'>
+          <div className='reservation-resume__total'>
             <span>total</span><strong>$50.00</strong>
           </div>
+        </div>
+        <button onClick={ () => this.handleClicksection('step-3') } className='button-shared button-shared--black'>Continuar</button>
+      </div>
+    );
+  }
+
+  renderInfoDetailPayment() {
+    const address = '497 Evergreen Rd. Roseville 497 Evergreen Rd. Roseville 497 Evergreen Rd. Rosevill';
+    return (
+      <div className='reservation-info-detail'>
+        <div className='reservation-info-detail__box'>
+          <h4 className='reservation-info-detail__title'>Reservación</h4>
+          <div className='reservation-info-detail__select'>
+            <h4>VISA</h4>
+          </div>
+          <div className='reservation-info-detail__table'>
+            <div className='reservation-info-detail__item'>
+              <strong>John Doe</strong><span>CARDHOLDER NAME</span>
+            </div>
+            <div className='reservation-info-detail__item'>
+              <strong>1234 - 5678 - 3459 - 2456</strong><span>CARD NUMBER</span>
+            </div>
+            <div className='reservation-info-detail__item'>
+              <strong>05   /   21</strong><span>EXPIRE DATE</span>
+            </div>
+            <div className='reservation-info-detail__item'>
+              <strong>123</strong><span>€46.00</span>
+            </div>
+            <div className='reservation-info-detail__item'>
+              <strong>{ address.substring(1, 10) }</strong><span>ADDRESS</span>
+            </div>
+          </div>
+        </div>
+        <button onClick={ () => this.handleClicksection('step-payment') } className='button-shared button-shared--black'>Pagar</button>
+      </div>
+    );
+  }
+
+  renderPaymentResponse() {
+    const response = true;
+    const data = response ? { 'icon': '', 'title': '¡Pago exitoso!', 'description': 'Empieza la cuenta atrás para la gran escapada', 'button': 'Volver al inicio'} : { 'icon': '', 'title': '¡Pago rechazado!', 'description': 'Parece que ha ocurrido un error, inténtalo de nuevo', 'button': 'Reintentar'}
+    return (
+      <div>
+        <div className=''>
+          <h4 className='reservation__title'>Reservación</h4>
+          <div className='reservation__response'>
+            <h3 className='reservation__response__title'>{ data.title }</h3>
+            <p className='reservation__response__text'>{ data.description }</p>
+          </div>
+          <button onClick={ response ? () => this.handleClicksection('step') : () => this.handleClicksection('step-3') } className='button-shared button-shared--black'>{ data.button }</button>
         </div>
       </div>
     );
@@ -87,6 +158,13 @@ class Reservation extends Component {
     const { destiny } = this.props;
     this.setState({
       optionSelected: destiny.fechasdisponibles_set[index],
+    });
+  }
+
+  handleClicksection(step) {
+    const newStep = step;
+    this.setState({
+      step: newStep,
     });
   }
 

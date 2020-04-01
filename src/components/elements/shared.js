@@ -4,11 +4,16 @@ function Shared(props) {
   return (
     <div className='shared'>
       <div className='shared__container'>
-        <button className='button-shared'>Compartir</button>
-        <button className='button-shared button-shared--black'>Me Apunto</button>
+        <button onClick={ props.onClickShared } className='button-shared'>Compartir</button>
+        <button onClick={ props.onClick } className='button-shared button-shared--black'>Me Apunto</button>
       </div>
     </div>
   );
+}
+
+Shared.defaultProps = {
+  onClickShared: null,
+  onClick: null,
 }
 
 export default Shared
