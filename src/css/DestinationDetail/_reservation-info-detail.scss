@@ -1,4 +1,5 @@
 .reservation-info-detail {
+
   &__box {
     border-radius: 8px;
     box-shadow: 0 3px 6px 0 rgba(8, 31, 45, 0.2);
@@ -34,7 +35,7 @@
     border: 1px solid rgba(112, 112, 112, 0.6);
     padding: 1em;
     cursor: pointer;
-    transition: all 0.55s;
+    // transition: all 0.55s;
 
     &:hover {
       background: #f1efef;
@@ -53,7 +54,7 @@
     display: flex;
     justify-content: space-between;
     margin: 0.6em 0;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
@@ -65,10 +66,17 @@
     padding: 1em;
     transition: all 0.55s;
 
+    @media (min-width: $tablet){
+      font-size: 20px;
+    }
+
     & span {
-      font-size: 17px;
+      font-size: 12px;
       font-weight: 300;
       text-transform: uppercase;
+      @media (min-width: $tablet){
+        font-size: 17px;
+      }
     }
   }	
 }

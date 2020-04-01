@@ -10,6 +10,7 @@ class Reservation extends Component {
     this.state = {
       optionSelected: null,
       step: 'step',
+      response: true,
     }
     this.handleClickOptionPAyment = this.handleClickOptionPayment.bind(this);
     this.handleClicksection = this.handleClicksection.bind(this);
@@ -138,7 +139,7 @@ class Reservation extends Component {
   }
 
   renderPaymentResponse() {
-    const response = true;
+    const { response } = this.state;
     const data = response ? { 'icon': '', 'title': '¡Pago exitoso!', 'description': 'Empieza la cuenta atrás para la gran escapada', 'button': 'Volver al inicio'} : { 'icon': '', 'title': '¡Pago rechazado!', 'description': 'Parece que ha ocurrido un error, inténtalo de nuevo', 'button': 'Reintentar'}
     return (
       <div>
@@ -148,7 +149,7 @@ class Reservation extends Component {
             <h3 className='reservation__response__title'>{ data.title }</h3>
             <p className='reservation__response__text'>{ data.description }</p>
           </div>
-          <button onClick={ response ? () => this.handleClicksection('step') : () => this.handleClicksection('step-3') } className='button-shared button-shared--black'>{ data.button }</button>
+          <button onClick={ response ? () => this.setState({ response: false, step: 'step' }) : () => this.handleClicksection('step') } className='button-shared button-shared--black'>{ data.button }</button>
         </div>
       </div>
     );

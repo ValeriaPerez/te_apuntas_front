@@ -1369,6 +1369,11 @@ input[type=radio] {
   text-align: left;
   color: #081f2d;
 }
+@media (min-width: 959px) {
+  .description__list__title {
+    margin: 1em 0;
+  }
+}
 .description__list__item {
   display: flex;
   align-items: center;
@@ -1446,7 +1451,6 @@ input[type=radio] {
   border: 1px solid rgba(112, 112, 112, 0.6);
   padding: 1em;
   cursor: pointer;
-  transition: all 0.55s;
 }
 .reservation-info-detail__select:hover {
   background: #f1efef;
@@ -1462,7 +1466,7 @@ input[type=radio] {
   display: flex;
   justify-content: space-between;
   margin: 0.6em 0;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -1474,10 +1478,20 @@ input[type=radio] {
   padding: 1em;
   transition: all 0.55s;
 }
+@media (min-width: 959px) {
+  .reservation-info-detail__item {
+    font-size: 20px;
+  }
+}
 .reservation-info-detail__item span {
-  font-size: 17px;
+  font-size: 12px;
   font-weight: 300;
   text-transform: uppercase;
+}
+@media (min-width: 959px) {
+  .reservation-info-detail__item span {
+    font-size: 17px;
+  }
 }
 
 .reservation-resume__icon {

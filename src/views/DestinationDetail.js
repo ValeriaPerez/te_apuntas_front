@@ -86,7 +86,7 @@ class DestinationDetail extends Component {
           </div>
         </div>
         <Footer section='destination-detail'/>
-        <SharedButtons />
+        <SharedButtons isMobile={ true } />
       </div>
     );
   }
