@@ -32,6 +32,7 @@ body {
 /* - - - - - Links - - - - - */
 .Link {
   text-decoration: none;
+  z-index: 2;
 }
 
 /* - - - - - Input - - - - - */
@@ -695,6 +696,7 @@ body {
   color: #FFFFFF;
   line-height: 1.69;
   letter-spacing: 0.13px;
+  z-index: 2;
 }
 .Footer__login--text button {
   font-size: 1em;
@@ -707,6 +709,7 @@ body {
   letter-spacing: 0.13px;
   padding: 0px 5px;
   text-decoration: none;
+  z-index: 2;
 }
 @media (min-width: 959px) {
   .Footer__login--text button {
@@ -775,6 +778,7 @@ body {
   text-align: center;
   color: #FFFFFF;
   margin: 1em 0;
+  z-index: 2;
 }
 .footer__text--margin-right {
   margin-right: 1em;
@@ -1566,21 +1570,20 @@ input[type=radio] {
   right: 0;
   display: block;
   content: "";
-  background-color: black;
+  background-color: black !important;
   z-index: 0;
   opacity: 0.3;
 }
-.BG-img .image-slider button {
-  z-index: 10;
-}
 
+.Home .image-slider div div:nth-child(2) {
+  z-index: 1 !important;
+}
 .Home .image-slider button {
   z-index: 100;
 }
 .Home .image-slider button img {
   width: 40px;
 }
-
 .Body {
   box-sizing: border-box;
   position: relative;
@@ -1650,6 +1653,7 @@ input[type=radio] {
   line-height: 1.29;
   letter-spacing: 0.13px;
   width: 424px;
+  z-index: 2;
 }
 @media (max-width: 959px) {
   .Body .Body__Columns .WelcomeText {
@@ -2492,6 +2496,7 @@ input[type=radio] {
 
 .Quotes {
   width: 450px;
+  z-index: 2;
 }
 @media (max-width: 959px) {
   .Quotes {
