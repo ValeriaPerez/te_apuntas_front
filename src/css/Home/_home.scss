@@ -1,5 +1,5 @@
 .BG-img {
-  background: linear-gradient(to right,rgba(0,0,0,.4) 0%,rgba(0,0,0,.4) 100%);
+  // background: linear-gradient(to right,rgba(0,0,0,.4) 0%,rgba(0,0,0,.4) 100%);
   background-size: cover;
 
   &.welcomeContainer {
@@ -12,23 +12,27 @@
       @include absoluteFullContainer();
       display: block;
       content: '';
-      background-color: black;
+      background-color: black !important;
       z-index: 0;
       opacity: 0.3;
-    }
-
-    & button {
-      z-index: 10;
     }
   }
 }
 
 .Home {
-  .image-slider {
+  & .image-slider div {
+    div:nth-child(2) {
+      z-index: 1 !important;
+    }
+  }
+  .image-slider {        
     button {
       z-index: 100;
       img {
         width: 40px;
+      }
+
+      &.image-slider-bullets {
       }
     }
   }
@@ -45,13 +49,11 @@
     @media (max-width: $tablet) {
       height: calc(100vh - 100px);
     }
-
   }
 
   @media (max-width: 1238px) {
     padding: 0px 2em;
   }
-
 
   @media (max-width: 800px) {
     flex-direction: column;
@@ -71,7 +73,6 @@
     @media (max-width: $tablet) {
       align-items: center;
       justify-content: space-between;
-
     }
 
     .WelcomeText {
@@ -82,6 +83,7 @@
       font-style: normal;
       line-height: 1.69;
       letter-spacing: 0.13px;
+      z-index: 2;
     }
   }
 
@@ -101,6 +103,7 @@
       line-height: 1.29;
       letter-spacing: 0.13px;
       width: 424px;
+      z-index: 2;
 
       @media (max-width:$tablet) {
         font-size: 15px;

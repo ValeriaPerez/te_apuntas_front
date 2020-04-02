@@ -12,7 +12,8 @@
 
   .DestinationData {
     width: 100%;
-
+    z-index: 2;
+    
     @media (min-width:$tablet){
       width: 50%;
     }
@@ -33,6 +34,7 @@
     }
 
     &__description {
+      z-index: 2;
 
       &--title {
         display: flex;
@@ -48,6 +50,8 @@
           text-align: left;
           color: #ffffff;
           margin-bottom: 0.8em;
+          z-index: 2;
+
           @media (min-width:$tablet){
             font-size: 45px;
           }
@@ -60,6 +64,7 @@
           display: flex;
           padding: 5px 10px;
           margin-left: 10px;
+          z-index: 2;
         }
       }
 
@@ -75,6 +80,7 @@
         letter-spacing: normal;
         text-align: left;
         color: #ffffff;
+        z-index: 2;
 
         @media (min-width:$tablet){
           font-size: 17px;
@@ -86,6 +92,7 @@
   .DestinationPeople {
     display: flex;
     flex-direction: column;
+    z-index: 2;
 
     @media (min-width:$tablet){
       width: 25%;

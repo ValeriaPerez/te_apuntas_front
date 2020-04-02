@@ -1,5 +1,6 @@
 .Quotes {
   width: 450px;
+  z-index: 2;
   @media (max-width: $tablet) {
     width: 85%;
     padding: 40px 0px;

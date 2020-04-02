@@ -57,8 +57,8 @@ class DestinationDetail extends Component {
       <div className='destination-detail'>
         <Header isDestinyDetail={ true } isLogin={ !isLogin } imageLogo={ require('../assets/images/teApuntasB.png') }/>
         <Slider
-          width={this.state.width}
-          height='60vh'
+          width={ this.state.width }
+          height={ '60vh'}
           images={images}
           showBullets={this.state.showBullets}
            />

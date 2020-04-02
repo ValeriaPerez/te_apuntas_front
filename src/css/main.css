@@ -32,6 +32,7 @@ body {
 /* - - - - - Links - - - - - */
 .Link {
   text-decoration: none;
+  z-index: 2;
 }
 
 /* - - - - - Input - - - - - */
@@ -841,6 +842,7 @@ body {
 }
 .Destination .DestinationData {
   width: 100%;
+  z-index: 2;
 }
 @media (min-width: 959px) {
   .Destination .DestinationData {
@@ -860,6 +862,9 @@ body {
   width: 150px;
   margin-bottom: 50px;
 }
+.Destination .DestinationData__description {
+  z-index: 2;
+}
 .Destination .DestinationData__description--title {
   display: flex;
   flex-direction: row;
@@ -874,6 +879,7 @@ body {
   text-align: left;
   color: #ffffff;
   margin-bottom: 0.8em;
+  z-index: 2;
 }
 @media (min-width: 959px) {
   .Destination .DestinationData__description--title h1 {
@@ -887,6 +893,7 @@ body {
   display: flex;
   padding: 5px 10px;
   margin-left: 10px;
+  z-index: 2;
 }
 .Destination .DestinationData__description--status {
   margin-bottom: 10px;
@@ -900,6 +907,7 @@ body {
   letter-spacing: normal;
   text-align: left;
   color: #ffffff;
+  z-index: 2;
 }
 @media (min-width: 959px) {
   .Destination .DestinationData__description--info {
@@ -909,6 +917,7 @@ body {
 .Destination .DestinationPeople {
   display: flex;
   flex-direction: column;
+  z-index: 2;
 }
 @media (min-width: 959px) {
   .Destination .DestinationPeople {
@@ -939,7 +948,7 @@ body {
 }
 
 .destination-detail .image-slider {
-  height: calc(60vh + 99px) !important;
+  max-height: 600px;
 }
 .destination-detail__container {
   box-sizing: border-box;
@@ -1550,7 +1559,6 @@ input[type=radio] {
 }
 
 .BG-img {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
   background-size: cover;
 }
 .BG-img.welcomeContainer {
@@ -1567,21 +1575,20 @@ input[type=radio] {
   right: 0;
   display: block;
   content: "";
-  background-color: black;
+  background-color: black !important;
   z-index: 0;
   opacity: 0.3;
 }
-.BG-img .image-slider button {
-  z-index: 10;
-}
 
+.Home .image-slider div div:nth-child(2) {
+  z-index: 1 !important;
+}
 .Home .image-slider button {
   z-index: 100;
 }
 .Home .image-slider button img {
   width: 40px;
 }
-
 .Body {
   box-sizing: border-box;
   position: relative;
@@ -1634,6 +1641,7 @@ input[type=radio] {
   font-style: normal;
   line-height: 1.69;
   letter-spacing: 0.13px;
+  z-index: 2;
 }
 .Body .Body__Columns {
   align-items: flex-start;
@@ -1651,6 +1659,7 @@ input[type=radio] {
   line-height: 1.29;
   letter-spacing: 0.13px;
   width: 424px;
+  z-index: 2;
 }
 @media (max-width: 959px) {
   .Body .Body__Columns .WelcomeText {
@@ -1667,13 +1676,11 @@ input[type=radio] {
   align-items: flex-end;
 }
 
-* {
-  margin: 0;
-  padding: 0;
+.home-destiny .image-slider div div:nth-child(2) {
+  z-index: 1 !important;
 }
 
 .home-destiny__background-image {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
   background-size: cover;
 }
 .home-destiny__background-image.welcomeContainer {
@@ -1734,6 +1741,7 @@ input[type=radio] {
   line-height: 1.69;
   letter-spacing: 0.13px;
   width: 424px;
+  z-index: 2;
 }
 @media (max-width: 959px) {
   .home-destiny__columns .WelcomeText {
@@ -1742,13 +1750,6 @@ input[type=radio] {
     margin-bottom: 20px;
     width: 350px;
   }
-}
-
-.home-destiny .image-slider button {
-  z-index: 100;
-}
-.home-destiny .image-slider button img {
-  width: 40px;
 }
 
 .header {
@@ -1763,6 +1764,9 @@ input[type=radio] {
 }
 .header.isLogged {
   background: #FFFFFF;
+}
+.header.isDestiny {
+  background-color: #ffffffbf !important;
 }
 @media (min-width: 959px) {
   .header {
@@ -1793,20 +1797,33 @@ input[type=radio] {
 }
 
 .SignIn {
-  background-image: url("../assets/images/homeImage3-compressor.png");
+  background-image: url("https://kiperbucket.s3.us-east-2.amazonaws.com/teapuntas/img7-min.jpg");
+  background-size: cover;
+  background-position: center center;
 }
 .SignIn-container {
   align-items: center;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
-  background-size: cover;
   display: flex;
   height: 100vh;
   justify-content: center;
+}
+.SignIn-container:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+  content: "";
+  background-color: black;
+  z-index: 0;
+  opacity: 0.3;
 }
 .SignIn-container .LoginView {
   justify-content: center;
   align-items: center !important;
   width: 80%;
+  z-index: 1;
 }
 .SignIn-container .LoginView .Login {
   align-items: center;
@@ -2481,6 +2498,7 @@ input[type=radio] {
 
 .Quotes {
   width: 450px;
+  z-index: 2;
 }
 @media (max-width: 959px) {
   .Quotes {
