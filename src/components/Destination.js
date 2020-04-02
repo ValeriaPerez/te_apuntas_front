@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Avatar from '@material-ui/core/Avatar';
+import Avatar from './elements/avatar';
 import Tooltip from '@material-ui/core/Tooltip';
 import { AvatarGroup } from '@material-ui/lab';
 import Loader from './elements/loader';
@@ -49,11 +49,11 @@ class Destination extends React.Component {
             <div className='show-desktop'>
               <AvatarGroup className='DestinationPeople__container'>
                 { apuntados.map(apuntado => {
-                  return <Avatar
+                  return <Avatar 
                             className='DestinationPeople__container--avatar'
-                            alt={`${apuntado.nombres} ${apuntado.paterno}`}
-                            src={apuntado.foto}
-                            key={`avatar-${apuntado.id}`}/>
+                            image='https://picsum.photos/200/300'
+                            alt={ `${apuntado.nombres} ${apuntado.paterno}` } />
+                    
                 })}
                 { isMax ? 
                   <Tooltip className='DestinationPeople__container--avatar counter' title="Foo • Bar • Baz">
