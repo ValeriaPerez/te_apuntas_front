@@ -52,6 +52,16 @@ class Home extends Component {
       return {'url': image.imagen};
     });
 
+    /*
+    const imagesMock = [
+      { url: 'https://kiperbucket.s3.us-east-2.amazonaws.com/teapuntas/img2-min.jpg'},
+      { url: 'https://kiperbucket.s3.us-east-2.amazonaws.com/teapuntas/img3-min.jpg'},
+      { url: 'https://kiperbucket.s3.us-east-2.amazonaws.com/teapuntas/img4-min.jpg'},
+      { url: 'https://kiperbucket.s3.us-east-2.amazonaws.com/teapuntas/img5-min.jpg'},
+      { url: 'https://kiperbucket.s3.us-east-2.amazonaws.com/teapuntas/img6-min.jpg'},
+    ];
+    */
+
     return (
       <div className='Home'>
         <div className='BG-img'>
@@ -61,7 +71,6 @@ class Home extends Component {
               width={this.state.width}
               height={this.state.height}
               images={images}
-              showBullets={this.state.showBullets}
               isLoading={isLoading}
             /> : <Loader />
           }

@@ -9,6 +9,7 @@ function Header(props) {
   const headerClasses = cx({
     'header': true,
     'isLogged': isDestinyDetail || isProfile,
+    'isDestiny': isDestinyDetail,
   });
 
   return (
