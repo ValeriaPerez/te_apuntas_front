@@ -1559,6 +1559,7 @@ input[type=radio] {
 }
 
 .BG-img {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
   background-size: cover;
 }
 .BG-img.welcomeContainer {
@@ -1681,6 +1682,7 @@ input[type=radio] {
 }
 
 .home-destiny__background-image {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
   background-size: cover;
 }
 .home-destiny__background-image.welcomeContainer {

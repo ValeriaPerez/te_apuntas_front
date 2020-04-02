@@ -1,6 +1,6 @@
 import React from 'react';
 import Tooltip from '@material-ui/core/Tooltip';
-import Avatar from '@material-ui/core/Avatar';
+import Avatar from './elements/avatar';
 import { AvatarGroup } from '@material-ui/lab';
 import { getImagesApuntados } from '../utilities/utils';
 
@@ -28,11 +28,11 @@ class MiniCalendarInfo extends React.Component {
         <div>
           <AvatarGroup className='DestinationPeople__container show-mobile'>
             { apuntados.map(apuntado => {
-              return <Avatar
+              return <Avatar 
                         className='DestinationPeople__container--avatar'
-                        alt={`${apuntado.nombres} ${apuntado.paterno}`}
-                        src={apuntado.foto}
-                        key={`avatar-${apuntado.id}`}/>
+                        image='https://picsum.photos/200/300'
+                        alt={ `${apuntado.nombres} ${apuntado.paterno}` } />
+                
             })}
             { isMax ? 
               <Tooltip className='DestinationPeople__container--avatar counter' title="Foo • Bar • Baz">
