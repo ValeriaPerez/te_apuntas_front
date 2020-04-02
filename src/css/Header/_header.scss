@@ -12,6 +12,10 @@
     background: $white;
   }
 
+  &.isDestiny {
+    background-color: #ffffffbf !important;
+  }
+
   @media (min-width: $tablet){
     height: $desktop-header;
     padding: 0 1em;

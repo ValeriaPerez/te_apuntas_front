@@ -696,7 +696,6 @@ body {
   color: #FFFFFF;
   line-height: 1.69;
   letter-spacing: 0.13px;
-  z-index: 2;
 }
 .Footer__login--text button {
   font-size: 1em;
@@ -709,7 +708,6 @@ body {
   letter-spacing: 0.13px;
   padding: 0px 5px;
   text-decoration: none;
-  z-index: 2;
 }
 @media (min-width: 959px) {
   .Footer__login--text button {
@@ -778,7 +776,6 @@ body {
   text-align: center;
   color: #FFFFFF;
   margin: 1em 0;
-  z-index: 2;
 }
 .footer__text--margin-right {
   margin-right: 1em;
@@ -943,7 +940,7 @@ body {
 }
 
 .destination-detail .image-slider {
-  height: calc(60vh + 99px) !important;
+  max-height: 600px;
 }
 .destination-detail__container {
   box-sizing: border-box;
@@ -1765,6 +1762,9 @@ input[type=radio] {
 }
 .header.isLogged {
   background: #FFFFFF;
+}
+.header.isDestiny {
+  background-color: #ffffffbf !important;
 }
 @media (min-width: 959px) {
   .header {

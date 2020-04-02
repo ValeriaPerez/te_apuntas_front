@@ -39,7 +39,6 @@
       color: $white;
       line-height: 1.69;
       letter-spacing: 0.13px;
-      z-index: 2;
 
       button {
         @include fontSize(14px);
@@ -52,7 +51,6 @@
         letter-spacing: 0.13px;
         padding: 0px 5px;
         text-decoration: none;
-        z-index: 2;
 
         @media (min-width: $tablet){
           @include fontSize(14px);
@@ -129,7 +127,6 @@
     text-align: center;
     color: $white;
     margin: 1em 0;
-    z-index: 2;
 
     &--margin-right {
       margin-right: 1em;

@@ -1,7 +1,7 @@
 .destination-detail {
 
   .image-slider {
-    height: calc(60vh + 99px) !important;
+    max-height: 600px;
   }
 
   &__container {
