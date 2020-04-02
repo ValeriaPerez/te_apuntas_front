@@ -1550,7 +1550,6 @@ input[type=radio] {
 }
 
 .BG-img {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
   background-size: cover;
 }
 .BG-img.welcomeContainer {
@@ -1673,7 +1672,6 @@ input[type=radio] {
 }
 
 .home-destiny__background-image {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
   background-size: cover;
 }
 .home-destiny__background-image.welcomeContainer {
@@ -1793,20 +1791,33 @@ input[type=radio] {
 }
 
 .SignIn {
-  background-image: url("../assets/images/homeImage3-compressor.png");
+  background-image: url("https://kiperbucket.s3.us-east-2.amazonaws.com/teapuntas/img7-min.jpg");
+  background-size: cover;
+  background-position: center center;
 }
 .SignIn-container {
   align-items: center;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
-  background-size: cover;
   display: flex;
   height: 100vh;
   justify-content: center;
+}
+.SignIn-container:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+  content: "";
+  background-color: black;
+  z-index: 0;
+  opacity: 0.3;
 }
 .SignIn-container .LoginView {
   justify-content: center;
   align-items: center !important;
   width: 80%;
+  z-index: 1;
 }
 .SignIn-container .LoginView .Login {
   align-items: center;
