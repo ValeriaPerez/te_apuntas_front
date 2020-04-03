@@ -53,28 +53,30 @@ class FollowUs extends React.Component {
   render() {
     return (
       <div className='form-contact'>
-        <h1 className='form-contact__title'>Me interesa</h1>
-        <p className='form-contact__description'>Si te interesa viajar con nosotros déjanos tus datos y nos pondremos en contacto contigo.</p>
-        <form className='form-contact__form' noValidate autoComplete="off">
-          <TextField
-            required
-            className='InputComponent'
-            id='inp-name'
-            label='Nombre Completo' />
-          <TextField className='InputComponent' id='inp-email' label='Correo Electrónico' />
-          <TextField className='InputComponent' id='inp-phone' label='Teléfono' />
-          <TextField
-            className='TextAreaComponent'
-            id='inp-comment'
-            label='Por qué quieres ser parte de Te Apuntas?'
-            multiline
-            rows='4'
-            variant='outlined'
-          />
-          <button className='button-Home' variant='outlined' color='primary' onClick={this.handleSendInfo}>
-            Enviar
-          </button>
-        </form>
+        <div className='form-contact__container'>
+          <form className='form-contact__form' noValidate autoComplete="off">
+            <h1 className='form-contact__title'>Me interesa</h1>
+            <p className='form-contact__description'>Si te interesa viajar con nosotros déjanos tus datos y nos pondremos en contacto contigo.</p>
+            <TextField
+              required
+              className='InputComponent'
+              id='inp-name'
+              label='Nombre Completo' />
+            <TextField className='InputComponent' id='inp-email' label='Correo Electrónico' />
+            <TextField className='InputComponent' id='inp-phone' label='Teléfono' />
+            <TextField
+              className='TextAreaComponent'
+              id='inp-comment'
+              label='Por qué quieres ser parte de Te Apuntas?'
+              multiline
+              rows='4'
+              variant='outlined'
+            />
+            <button className='button-Home' variant='outlined' color='primary' onClick={this.handleSendInfo}>
+              Enviar
+            </button>
+          </form>
+        </div>
       </div>
     )
   }

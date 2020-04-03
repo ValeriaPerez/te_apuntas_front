@@ -6,11 +6,13 @@
   @media (min-width: $tablet) {
     width: 450px;
     padding: 40px 0px;
+    text-align: left;
   }
 
   &__text {
     color: $white;
     font-size: 24px;
+
     @media (max-width: $tablet) {
       font-size: 18px;
     }
@@ -18,30 +20,36 @@
     @media (max-width: $iphoneX) {
       font-size: 14px;
     }
-
   }
+
   &__links {
     align-items: center;
     display: flex;
     flex-direction: row;
     margin-top: 5px;
+    justify-content: center;
+
+    @media (min-width: $tablet) {
+      justify-content: end;
+    }
 
     &--username {
       color: $white;
       font-size: 12px;
-
     }
 
     &--destiny {
       color: $white;
       font-size: 12px;
       font-weight: bolder;
+
       span {
         background: $white;
         height: 10px;
         width: 10px;
       }
     }
+
     &--icon {
       margin-right: 5px;
       margin-left: 5px;

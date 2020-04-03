@@ -1,11 +1,12 @@
 .Footer {
-  align-items: center;
-  bottom: 0;
   box-sizing: border-box;
   display: flex;
+  align-items: center;
   justify-content: flex-start;
   padding: 0px 35px 0px;
   width: 100%;
+  position: absolute;
+  bottom: 6em;
 
   &.isLogged {
     background: $darkGrey;

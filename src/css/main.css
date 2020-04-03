@@ -650,13 +650,14 @@ body {
 }
 
 .Footer {
-  align-items: center;
-  bottom: 0;
   box-sizing: border-box;
   display: flex;
+  align-items: center;
   justify-content: flex-start;
   padding: 0px 35px 0px;
   width: 100%;
+  position: absolute;
+  bottom: 6em;
 }
 .Footer.isLogged {
   background: #333333;
@@ -788,8 +789,11 @@ body {
 }
 
 .form-contact {
-  width: 80%;
-  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (min-width: 959px) {
   .form-contact {
@@ -797,17 +801,23 @@ body {
   }
 }
 .form-contact__container {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
   padding: 0 2em;
 }
 @media (min-width: 959px) {
   .form-contact__container {
-    padding: 2em 2em 2em 0em;
+    padding: 0;
   }
 }
 .form-contact__title {
   color: #FFFFFF;
   font-size: 24px;
   margin: 0;
+  z-index: 2;
 }
 .form-contact__description {
   color: #FFFFFF;
@@ -816,10 +826,19 @@ body {
   line-height: 1.29;
   letter-spacing: 0.17px;
   margin: 10px 10px 25px 0px;
+  z-index: 2;
 }
 .form-contact__form {
+  width: 80%;
+  margin: auto;
   display: flex;
   flex-direction: column;
+}
+@media (min-width: 959px) {
+  .form-contact__form {
+    max-width: 500px;
+    margin: 0;
+  }
 }
 .form-contact__form .MuiInputBase-root {
   color: #FFFFFF;
@@ -1686,6 +1705,7 @@ input[type=radio] {
   background-position: 50% 50%;
 }
 .home__content {
+  width: 100%;
   height: 100%;
 }
 .home__container {
@@ -1696,13 +1716,14 @@ input[type=radio] {
   max-width: 1200px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 2em;
   height: calc(100% - 100px);
 }
 @media (min-width: 959px) {
   .home__container {
-    flex-wrap: nowrap;
+    flex-direction: row;
+    padding: 0;
   }
 }
 .home__text {
@@ -1718,6 +1739,7 @@ input[type=radio] {
 }
 @media (min-width: 959px) {
   .home__text {
+    width: 70%;
     font-size: 17px;
     line-height: 1.29;
     letter-spacing: 0.17px;
@@ -1729,9 +1751,20 @@ input[type=radio] {
   flex-direction: column;
   justify-content: center;
 }
+@media (min-width: 959px) {
+  .home__columns {
+    width: 50%;
+  }
+}
 .home__columns--quote {
   align-items: center;
   margin: 0 0 4em 0;
+}
+@media (min-width: 959px) {
+  .home__columns--quote {
+    margin: 0;
+    align-items: flex-end;
+  }
 }
 
 .home .image-slider div div:nth-child(2) {
@@ -2573,6 +2606,7 @@ input[type=radio] {
   .Quotes {
     width: 450px;
     padding: 40px 0px;
+    text-align: left;
   }
 }
 .Quotes__text {
@@ -2594,6 +2628,12 @@ input[type=radio] {
   display: flex;
   flex-direction: row;
   margin-top: 5px;
+  justify-content: center;
+}
+@media (min-width: 959px) {
+  .Quotes__links {
+    justify-content: end;
+  }
 }
 .Quotes__links--username {
   color: #FFFFFF;
