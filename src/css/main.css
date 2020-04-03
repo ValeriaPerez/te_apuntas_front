@@ -834,7 +834,7 @@ body {
   justify-content: space-between;
   width: 100%;
   z-index: 2;
-  margin: 2.5em 0;
+  margin: 2.5em 0 5.5em 0;
 }
 @media (min-width: 959px) {
   .Destination {
@@ -884,6 +884,7 @@ body {
 @media (min-width: 959px) {
   .Destination .DestinationData__description--title h1 {
     font-size: 45px;
+    margin: 0;
   }
 }
 .Destination .DestinationData__description--title p {
@@ -923,7 +924,8 @@ body {
   .Destination .DestinationPeople {
     width: 25%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    padding: 4em 0;
   }
 }
 @media (min-width: 959px) {
@@ -1885,18 +1887,18 @@ input[type=radio] {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 1em;
+  align-items: center;
+}
+@media (min-width: 959px) {
+  .CalendarInfo {
+    margin-bottom: 0;
+  }
 }
 .CalendarInfo__icons {
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
-@media (min-width: 959px) {
-  .CalendarInfo__icons {
-    margin-bottom: 2em;
-  }
 }
 .CalendarInfo__section {
   align-items: center;

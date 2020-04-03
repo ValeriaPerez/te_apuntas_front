@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 1em;
+  align-items: center;
 
-  @media (max-width:$tablet){
-
+  @media (min-width:$tablet){
+    margin-bottom: 0;
   }
 
   &__icons {
@@ -13,10 +13,6 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-
-    @media (min-width:$tablet){
-      margin-bottom: 2em;
-    }
   }
 
   &__section {
@@ -29,6 +25,7 @@
     .Icon--pais {
       width: 10px;
       margin-right: 0.5em;
+
       @media (min-width: $tablet){
         width: 15px;
       }
@@ -77,15 +74,14 @@
         &.counter {
           background: transparent;
           border: 0;
-
         }
       }
     }
 
     &__link {
       text-decoration: none;
+      
       .btn--grey {
-
         text-decoration: none;
       }
     }
