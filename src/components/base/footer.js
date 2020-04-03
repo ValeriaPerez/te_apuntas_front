@@ -29,8 +29,8 @@ class FooterComponent extends Component {
       <footer className='Footer'>
         <div className='Footer__container'>
           <div className='Footer__login'>
-            <Link className='Link' to="/SignIn">
-              <p className='Footer__login--text'>¿Ya eres usuario?<button>Inicia Sesión</button></p>
+            <Link className='Footer__link' to="/SignIn">
+              <p className='Footer__login--text'>¿Ya eres usuario? <span>Inicia Sesión</span></p>
             </Link>
           </div>
         </div>

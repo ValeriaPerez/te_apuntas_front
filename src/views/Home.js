@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-
 // Components
 import Header from '../components/base/header';
 import Quotes from '../components/Quotes';
@@ -8,11 +7,9 @@ import FollowUs from '../components/FollowUs';
 import Footer from '../components/base/footer';
 import Slider from '../components/SliderImage';
 import Loader from '../components/elements/loader';
-
 import { retrieveImagesHome } from '../redux/actions/home';
 
 const mapStateToProps = state => ({
-  /* --- Home states --- */
   imagesHome : state.Home.imagesHome,
   loadingImagesHome : state.Home.loadingImagesHome,
   isLoading: state.Login.isLoading,
@@ -24,8 +21,10 @@ class Home extends Component {
     this.state = {
       height: 0,
       width: 0,
-      showBullets: false
+      showBullets: false,
+      showForm: false,
     };
+    this.handleOpenForm = this.handleOpenForm.bind(this);
     window.addEventListener("resize", this.update);
   }
 
@@ -46,13 +45,7 @@ class Home extends Component {
   }
 
   render() {
-    const widthPage = this.state.width;
-    const { imagesHome, isLoading, loadingImagesHome } = this.props;
-    const images = imagesHome.map(image => {
-      return {'url': image.imagen};
-    });
-
-    /*
+    /* mock paaraa irreegulalridad de imagenes
     const imagesMock = [
       { url: 'https://kiperbucket.s3.us-east-2.amazonaws.com/teapuntas/img2-min.jpg'},
       { url: 'https://kiperbucket.s3.us-east-2.amazonaws.com/teapuntas/img3-min.jpg'},
@@ -61,49 +54,64 @@ class Home extends Component {
       { url: 'https://kiperbucket.s3.us-east-2.amazonaws.com/teapuntas/img6-min.jpg'},
     ];
     */
-
     return (
-      <div className='Home'>
-        <div className='BG-img'>
-          <Header isLogin={ false } imageLogo={ require('../assets/images/teApuntas.png') }/>
-          { !loadingImagesHome?
-            <Slider
-              width={this.state.width}
-              height={this.state.height}
-              images={images}
-              isLoading={isLoading}
-            /> : <Loader />
-          }
-          { widthPage > 800 ?
-            <section className='Body BodyR'>
-              <div className='Body__Columns'>
-                <p className='WelcomeText'>
-                 Bienvenido a Te Apuntas, si has llegado sin invitación escríbenos y cuéntanos por qué quieres ser parte de esto para que podamos enviarte una invitación personalizada.
-                </p>
-                { isLoading ? null : <FollowUs />}
-              </div>
-              <div className='Body__Columns'>
-                { !loadingImagesHome && imagesHome.length > 0 ? 
-                  <Quotes data={imagesHome[0]}/> : null
-                } {/* Cambiar segun el id de la imagen*/}
-              </div>
-            </section>
-            : <section className='Body BodyR'>
-              <div className='HomeContainer'>
-                <p className='WelcomeText'>
-                 Bienvenido a Te Apuntas, si has llegado sin invitación escríbenos y cuéntanos por qué quieres ser parte de esto para que podamos enviarte una invitación personalizada.
-                </p>
-                { !loadingImagesHome && imagesHome.length > 0 ? 
-                  <Quotes data={imagesHome[0]}/> : null
-                } {/* Cambiar segun el id de la imagen*/}
-                { isLoading ? null : <FollowUs />}
-              </div>
-            </section>}
-
-          <Footer />
-        </div>
+      <div className='home'>
+        { this.renderSlider() }
+        { this.renderContent() }
       </div>
     );
+  }
+
+  renderSlider() {
+    const { imagesHome, isLoading, loadingImagesHome } = this.props;
+    const { width, height } = this.state;
+    const images = imagesHome.map(image => {
+      return {'url': image.imagen};
+    });
+
+    return !loadingImagesHome ?
+      <div className='home__image-background'>
+        <Slider
+          style={{ position: 'absolute',}}
+          width={ width }
+          height={ height }
+          images={ images }
+          isLoading={ isLoading }
+        />
+       </div> 
+     : <Loader />;
+  }
+
+  renderContent() {
+    return (
+      <div className='home__content'>
+        <Header isLogin={ false } imageLogo={ require('../assets/images/teApuntas.png') }/>
+        { !this.state.showForm ?  this.renderBody() : <FollowUs /> }
+        <Footer />
+      </div>
+    );
+  }
+
+  renderBody() {
+    const { loadingImagesHome, imagesHome } = this.props;
+    return (
+      <div className='home__container'>
+        <div className='home__columns'>
+          <p className='home__text'>Bienvenido a Te Apuntas, si has llegado sin invitación escríbenos y cuéntanos por qué quieres ser parte de esto para que podamos enviarte una invitación personalizada.</p>
+          <button className='button-Home button-Home--contact show-desktop' onClick={ this.handleOpenForm }>Contáctanos</button>
+        </div>
+        <div className='home__columns home__columns--quote'>
+          { !loadingImagesHome && imagesHome.length > 0 ? <Quotes data={imagesHome[0]}/> : null} {/* Cambiar segun el id de la imagen*/}
+        </div>
+        <button className='button-Home show-mobile' onClick={ this.handleOpenForm }>Contáctanos</button>
+      </div>
+    );
+  }
+
+  handleOpenForm() {
+    this.setState(state => ({
+      showForm: true
+    }));
   }
 }
 

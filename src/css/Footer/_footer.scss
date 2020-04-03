@@ -4,9 +4,7 @@
   box-sizing: border-box;
   display: flex;
   justify-content: flex-start;
-  height: 100px;
   padding: 0px 35px 0px;
-  position: absolute;
   width: 100%;
 
   &.isLogged {
@@ -38,23 +36,33 @@
       @include fontSize(13px);
       color: $white;
       line-height: 1.69;
+      cursor: pointer;
       letter-spacing: 0.13px;
+      transition: all 0.55s;
 
-      button {
+      span {
         @include fontSize(14px);
         background: transparent;
         border: 0;
         color: $white;
-        cursor: poinet;
         font-weight: 600;
         line-height: 1.69;
         letter-spacing: 0.13px;
         padding: 0px 5px;
         text-decoration: none;
+        transition: all 0.55s;
+
+        &:hover {
+          color: $greyBlue;
+        }
 
         @media (min-width: $tablet){
           @include fontSize(14px);
         }
+      }
+
+      &:hover {
+        color: $greyBlue;
       }
     }
 
@@ -112,9 +120,6 @@
   &__icons {
     display: flex;
     justify-content: space-around;
-
-    @media (min-width: $tablet){
-    }
   }
 
   &__text {
