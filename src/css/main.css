@@ -797,6 +797,7 @@ body {
 @media (min-width: 959px) {
   .form-contact {
     width: 100%;
+    height: calc(100% - 100px);
   }
 }
 .form-contact__container {
