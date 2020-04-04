@@ -1,112 +1,83 @@
-.BG-img {
-  background: linear-gradient(to right,rgba(0,0,0,.4) 0%,rgba(0,0,0,.4) 100%);
-  background-size: cover;
-
-  &.welcomeContainer {
-    position: relative;
-  }
-  .image-slider {
-    position: absolute;
-
-    &:after {
-      @include absoluteFullContainer();
-      display: block;
-      content: '';
-      background-color: black !important;
-      z-index: 0;
-      opacity: 0.3;
-    }
-  }
-}
-
 .home {
-  
-  .image-slider {        
-    button {
-      z-index: 100;
-      img {
-        width: 40px;
-      }
-
-      &.image-slider-bullets {
-      }
-    }
-  }
-}
-
-.Body {
-  @include container();
-  display: flex;
-  flex-direction: row;
   height: 100vh;
-  width: 100%;
-  padding: 2em;
 
-  &.BodyR {
-    @media (max-width: $tablet) {
-      height: calc(100vh - 100px);
-    }
+  & .image-slider {
+    position: fixed;
   }
 
-  @media (min-width: $tablet) {
-    padding: 0px 2em;
+  &__image-background {
+    @include fullBackground();
   }
 
-  .HomeContainer {
+  &__content {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__container {
+    @include container();
     display: flex;
     flex-direction: column;
-    height: 400px;
-    width: 100%;
+    justify-content: center;
+    padding: 2em;
+    height: calc(100% - 200px);
 
-    @media (mi-width: $tablet) {
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .WelcomeText {
-      color: $white;
-      font-size: 13px;
-      font-weight: 300;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.69;
-      letter-spacing: 0.13px;
-      z-index: 2;
+    @media (min-width: $tablet){
+      flex-direction: row;
+      padding: 0;
     }
   }
 
-  .Body__Columns {
+  &__text {
+    color: $white;
+    font-size: 13px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.69;
+    letter-spacing: 0.13px;
+    text-align: left;
+    z-index: 2;
+
+    @media (min-width: $tablet){
+      width: 70%;
+      font-size: 17px;
+      line-height: 1.29;
+      letter-spacing: 0.17px;
+    }
+  }
+
+  &__columns {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex: 1;
 
-    .WelcomeText {
-      color: $white;
-      font-size: 14px;
-      font-weight: 300;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.29;
-      letter-spacing: 0.13px;
-      width: 424px;
-      z-index: 2;
+    @media (min-width: $tablet){
+      width: 50%;
+    }
 
-      @media (max-width:$tablet) {
-        font-size: 15px;
-        line-height: 1.3;
-        margin-bottom: 20px;
-        width: 350px;
+    &--quote {
+      align-items: center;
+      margin: 0 0 4em 0;
+
+      @media (min-width: $tablet){
+        margin: 0;
+        align-items: flex-end; 
       }
     }
+  }	
+}
 
-    &.welcomeColumns {
-      justify-content: flex-end;
+.home {
+  & .image-slider div {
+    div:nth-child(2) {
+      left: 53% !important;
+      z-index: 1 !important;
+      > button {
+        width: 10px !important;
+        height: 10px !important;
+      }
     }
-  }
-
-  .Body__Columns:nth-of-type(2) {
-    align-items: flex-end;
   }
 }
