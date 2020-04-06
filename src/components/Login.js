@@ -49,7 +49,7 @@ class Login extends React.Component {
   componentWillReceiveProps(nextProps) {
     const {responseLogin, loadingLogin } = this.props;
     if( loadingLogin && !nextProps.loadingLogin && Object.keys(responseLogin).length === 0 && Object.keys(nextProps.responseLogin).length > 0) {
-      window.location.pathname = '/HomeDestiny'
+      window.location.pathname = '/destino'
     }
   }
 
@@ -90,7 +90,6 @@ class Login extends React.Component {
                 <p>P</p>
               </Button>
             </div>
-
           </div>
         </div>
       </div>

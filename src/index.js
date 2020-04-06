@@ -10,7 +10,7 @@ import './css/main.css';
 
 // Views
 import Home from './views/Home';
-import SignIn from './views/SignIn';
+import Login from './views/Login';
 import Profile from './views/Profile';
 import HomeDestiny from './views/HomeDestiny';
 import DestinationDetail from './views/DestinationDetail';
@@ -19,11 +19,11 @@ const routing = (
   <Provider store={store}>
     <Router>
       <div id="siteWrapper">
-        <Route exact path="/" component={Home} />
-        <Route path="/SignIn" component={SignIn} />
-        <Route path="/HomeDestiny" component={HomeDestiny} />
-        <Route path="/Travel" component={DestinationDetail} />
-        <Route path="/Profile" component={Profile} />
+        <Route exact path="/" component={ Home } />
+        <Route path="/iniciar-sesion" component={ Login } />
+        <Route path="/destino" component={ HomeDestiny } />
+        <Route path="/detalle-del-viaje" component={ DestinationDetail } />
+        <Route path="/perfil" component={ Profile } />
       </div>
     </Router>
   </Provider>

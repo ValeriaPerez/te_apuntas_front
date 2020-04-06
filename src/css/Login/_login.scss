@@ -23,59 +23,59 @@
       align-items: center !important;
       width: 80%;
       z-index: 1;
+    }
+  }
+}
 
-      .Login {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        &__container {
-          align-items: center;
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-          &--Title {
-            color: white;
-            font-size: 24px;
-            margin-top: 20px;
-            margin-bottom: 40px;
+.Login {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  &__container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &--Title {
+      color: white;
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+    &__SocialMedia {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      box-sizing: border-box;
+      width:100%;
+      div {
+        margin-right: 2%;
+        margin-left: 2%;
+        outline: 0;
+        button {
+          background: transparent;
+          border-color: white;
+          border-radius: 50px;
+          color: white;
+          height: 60px;
+          max-width: 60px;
+          min-width: 60px;
+          overflow: hidden;
+          outline: 0 !important;
+          padding: 5px;
+          width: 60px;
+          box-sizing: border-box;
+
+          .Login__icon {
+            width: 10px;
           }
-          &__SocialMedia {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            box-sizing: border-box;
-            width:100%;
-            div {
-              margin-right: 2%;
-              margin-left: 2%;
-              outline: 0;
-              button {
-                background: transparent;
-                border-color: white;
-                border-radius: 50px;
-                color: white;
-                height: 60px;
-                max-width: 60px;
-                min-width: 60px;
-                overflow: hidden;
-                outline: 0 !important;
-                padding: 5px;
-                width: 60px;
-                box-sizing: border-box;
 
-                .Login__icon {
-                  width: 10px;
-                }
-
-                &:hover {
-                  border-color: #081f2d;
-                  background: #081f2d;
-                  color: $white;
-                }
-              }
-            }
+          &:hover {
+            border-color: #081f2d;
+            background: #081f2d;
+            color: $white;
           }
         }
       }

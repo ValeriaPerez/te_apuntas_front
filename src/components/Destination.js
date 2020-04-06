@@ -62,7 +62,7 @@ class Destination extends React.Component {
                 }
               </AvatarGroup>
             </div>
-            <Link className='Button-Destination' to="/Travel" destinyInfo={destinyInfo}>Ver Más</Link>
+            <Link className='Button-Destination' to="/detalle-del-viaje" destinyInfo={destinyInfo}>Ver Más</Link>
           </div>
         </div>
       }

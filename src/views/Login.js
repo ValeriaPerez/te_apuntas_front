@@ -9,10 +9,7 @@ export default class Home extends Component {
     return (
       <div className='SignIn'>
         <div className='BG-img'>
-          <Header
-            title='Home'
-            alt='Logo'
-            imageLogo={ require('../assets/images/teApuntas.png') }/>
+          <Header imageLogo={ require('../assets/images/teApuntas.png') }/>
           <section className='SignIn-container'>
             <div className='Body__Columns LoginView'>
               <Login />
