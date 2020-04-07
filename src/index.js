@@ -4,10 +4,8 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store/index';
 import * as serviceWorker from './serviceWorker';
-
 // CSS
 import './css/main.css';
-
 // Views
 import Home from './views/Home';
 import Login from './views/Login';
