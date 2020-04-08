@@ -101,6 +101,25 @@
     -webkit-appearance: none;
     position: relative;
     width: 100%;
+
+    &--radio{
+      margin: 0 4.5em 0 0.5em;
+      @media (min-width: $tablet){
+        margin: 0 5.5em 0 0.5em;
+      }
+    }
+  }
+
+  &__radio {
+    visibility: hidden;
+    &:checked ~ label{
+      .radio{
+        border-color: #000;
+        &:before{
+          background-color: #000;
+        }
+      }
+    }
   }
 
   .radio {
@@ -128,18 +147,6 @@
       position: absolute;
       left: 5px;
       top: 5px;
-    }
-  }
-
-  &__radio {
-    visibility: hidden;
-    &:checked ~ label{
-      .radio{
-        border-color: #000;
-        &:before{
-          background-color: #000;
-        }
-      }
     }
   }
   

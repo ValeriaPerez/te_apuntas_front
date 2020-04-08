@@ -70,10 +70,10 @@ class Reservation extends Component {
     return options.map((date, index) => {
       return (
         <div className='reservation__option' key={ index }>
-          <div class="reservation__input">
-            <input onClick={ () => this.handleClickOptionPayment(index) } type='radio' id={ index } name={ date } value={ index } class="reservation__radio"/>
-            <label htmlFor={ index } class="input--radio">
-              <span class="radio"></span> { date }
+          <div className='reservation__input'>
+            <input onClick={ () => this.handleClickOptionPayment(index) } type='radio' id={ index } name={ date } value={ index } className="reservation__radio"/>
+            <label for={ index } className='reservation__input--radio'>
+              <span className='radio'></span> { date }
             </label>
           </div>
         </div>

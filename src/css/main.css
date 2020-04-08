@@ -1248,6 +1248,23 @@ body {
   position: relative;
   width: 100%;
 }
+.reservation__input--radio {
+  margin: 0 4.5em 0 0.5em;
+}
+@media (min-width: 959px) {
+  .reservation__input--radio {
+    margin: 0 5.5em 0 0.5em;
+  }
+}
+.reservation__radio {
+  visibility: hidden;
+}
+.reservation__radio:checked ~ label .radio {
+  border-color: #000;
+}
+.reservation__radio:checked ~ label .radio:before {
+  background-color: #000;
+}
 .reservation .radio {
   transition: black 0.25s;
   box-sizing: border-box;
@@ -1273,15 +1290,6 @@ body {
   position: absolute;
   left: 5px;
   top: 5px;
-}
-.reservation__radio {
-  visibility: hidden;
-}
-.reservation__radio:checked ~ label .radio {
-  border-color: #000;
-}
-.reservation__radio:checked ~ label .radio:before {
-  background-color: #000;
 }
 .reservation__response {
   min-height: 300px;
@@ -1618,6 +1626,7 @@ input[type=radio] {
   .home__container {
     flex-direction: row;
     padding: 0;
+    height: calc(100% - 100px);
   }
 }
 .home__text {
@@ -1826,14 +1835,18 @@ input[type=radio] {
   height: 100%;
 }
 .login__title {
-  font-size: 37px;
+  font-size: 20px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.22;
+  line-height: 1.2;
   letter-spacing: normal;
-  text-align: left;
   color: #ffffff;
+}
+@media (min-width: 959px) {
+  .login__title {
+    font-size: 37px;
+  }
 }
 .login__icons {
   display: flex;

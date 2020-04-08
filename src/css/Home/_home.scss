@@ -25,6 +25,7 @@
     @media (min-width: $tablet){
       flex-direction: row;
       padding: 0;
+      height: calc(100% - 100px);
     }
   }
 
