@@ -15,10 +15,10 @@ class FooterComponent extends Component {
       case '/':
         return this.getFooterHome();
 
-      case '/Travel':
+      case '/detalle-del-viaje':
         return this.getFooterDestinationDetail();
 
-      case '/Profile':
+      case '/perfil':
         return this.getFooterProfile();
 
     }
@@ -29,8 +29,8 @@ class FooterComponent extends Component {
       <footer className='Footer'>
         <div className='Footer__container'>
           <div className='Footer__login'>
-            <Link className='Link' to="/SignIn">
-              <p className='Footer__login--text'>¿Ya eres usuario?<button>Inicia Sesión</button></p>
+            <Link className='Footer__link' to="/iniciar-sesion">
+              <p className='Footer__login--text'>¿Ya eres usuario? <span>Inicia Sesión</span></p>
             </Link>
           </div>
         </div>
@@ -71,7 +71,7 @@ class FooterComponent extends Component {
           <div className='footer__content'>
             <div className='footer__content show-desktop'>
               <Link className='footer__text footer__text--margin-right' to="/">Home</Link>
-              <Link className='footer__text' to="/Profile">Profile</Link>
+              <Link className='footer__text' to="/perfil">Profile</Link>
             </div>
             <div className='footer__icons'>
               <a title='social' className='footer__text footer__text--margin-right' href='/'>Twitter</a>
