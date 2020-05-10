@@ -18,7 +18,7 @@ function Header(props) {
         <Link to="/">
           <img className='header__icon' src={ imageLogo } alt={ alt } title={ title } />
         </Link>
-        <Link to="/Profile" tokenid={ tokenid }>
+        <Link to="/perfil" tokenid={ tokenid }>
           { isLogin ? <Avatar image='https://picsum.photos/200/300'/> : null }
         </Link>
       </div>

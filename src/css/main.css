@@ -650,15 +650,13 @@ body {
 }
 
 .Footer {
-  align-items: center;
-  bottom: 0;
   box-sizing: border-box;
   display: flex;
+  align-items: center;
   justify-content: flex-start;
-  height: 100px;
   padding: 0px 35px 0px;
-  position: absolute;
   width: 100%;
+  margin-bottom: 16em;
 }
 .Footer.isLogged {
   background: #333333;
@@ -695,24 +693,32 @@ body {
   font-size: 0.9285714286em;
   color: #FFFFFF;
   line-height: 1.69;
+  cursor: pointer;
   letter-spacing: 0.13px;
+  transition: all 0.55s;
 }
-.Footer__login--text button {
+.Footer__login--text span {
   font-size: 1em;
   background: transparent;
   border: 0;
   color: #FFFFFF;
-  cursor: poinet;
   font-weight: 600;
   line-height: 1.69;
   letter-spacing: 0.13px;
   padding: 0px 5px;
   text-decoration: none;
+  transition: all 0.55s;
+}
+.Footer__login--text span:hover {
+  color: #3f96b4;
 }
 @media (min-width: 959px) {
-  .Footer__login--text button {
+  .Footer__login--text span {
     font-size: 1em;
   }
+}
+.Footer__login--text:hover {
+  color: #3f96b4;
 }
 .Footer__login__section {
   color: #FFFFFF;
@@ -781,49 +787,70 @@ body {
   margin-right: 1em;
 }
 
-.FollowUs {
-  width: 80%;
+.form-contact {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 90px);
 }
-@media (max-width: 959px) {
-  .FollowUs {
+@media (min-width: 959px) {
+  .form-contact {
     width: 100%;
   }
 }
+.form-contact__container {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2em;
+}
 @media (min-width: 959px) {
-  .FollowUs__container {
-    padding: 2em 2em 2em 0em;
+  .form-contact__container {
+    padding: 0;
   }
 }
-.FollowUs__container--title {
+.form-contact__title {
   color: #FFFFFF;
   font-size: 24px;
+  margin: 0;
+  z-index: 2;
 }
-.FollowUs__container--description {
+.form-contact__description {
   color: #FFFFFF;
   font-size: 17px;
   font-weight: 300;
   line-height: 1.29;
   letter-spacing: 0.17px;
   margin: 10px 10px 25px 0px;
+  z-index: 2;
 }
-@media (max-width: 768px) {
-  .FollowUs__container .button-Home {
-    max-width: 100%;
-    width: 100%;
-  }
-}
-.FollowUs__container__Form {
+.form-contact__form {
+  width: 100%;
+  margin: auto;
   display: flex;
   flex-direction: column;
 }
-.FollowUs__container__Form .InputComponent .MuiFormLabel-root, .FollowUs__container__Form .TextAreaComponent .MuiFormLabel-root {
+@media (min-width: 959px) {
+  .form-contact__form {
+    max-width: 500px;
+    margin: 0;
+  }
+}
+.form-contact__form .MuiInputBase-root {
+  color: #FFFFFF;
+}
+.form-contact__form .InputComponent .MuiFormLabel-root, .form-contact__form .TextAreaComponent .MuiFormLabel-root {
   color: #DDDDDD;
   font-size: 12px;
 }
-.FollowUs__container__Form .InputComponent .MuiFormLabel-root:hover, .FollowUs__container__Form .TextAreaComponent .MuiFormLabel-root:hover {
+.form-contact__form .InputComponent .MuiFormLabel-root:hover, .form-contact__form .TextAreaComponent .MuiFormLabel-root:hover {
   border-bottom: 0;
 }
-.FollowUs__container__Form .MuiInput-underline:before {
+.form-contact__form .MuiInput-underline:before {
   border-bottom: 0;
 }
 
@@ -834,7 +861,7 @@ body {
   justify-content: space-between;
   width: 100%;
   z-index: 2;
-  margin: 2.5em 0;
+  margin: 2.5em 0 5.5em 0;
 }
 @media (min-width: 959px) {
   .Destination {
@@ -884,6 +911,7 @@ body {
 @media (min-width: 959px) {
   .Destination .DestinationData__description--title h1 {
     font-size: 45px;
+    margin: 0;
   }
 }
 .Destination .DestinationData__description--title p {
@@ -923,7 +951,8 @@ body {
   .Destination .DestinationPeople {
     width: 25%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    padding: 4em 0;
   }
 }
 @media (min-width: 959px) {
@@ -1219,6 +1248,23 @@ body {
   position: relative;
   width: 100%;
 }
+.reservation__input--radio {
+  margin: 0 4.5em 0 0.5em;
+}
+@media (min-width: 959px) {
+  .reservation__input--radio {
+    margin: 0 5.5em 0 0.5em;
+  }
+}
+.reservation__radio {
+  visibility: hidden;
+}
+.reservation__radio:checked ~ label .radio {
+  border-color: #000;
+}
+.reservation__radio:checked ~ label .radio:before {
+  background-color: #000;
+}
 .reservation .radio {
   transition: black 0.25s;
   box-sizing: border-box;
@@ -1244,15 +1290,6 @@ body {
   position: absolute;
   left: 5px;
   top: 5px;
-}
-.reservation__radio {
-  visibility: hidden;
-}
-.reservation__radio:checked ~ label .radio {
-  border-color: #000;
-}
-.reservation__radio:checked ~ label .radio:before {
-  background-color: #000;
 }
 .reservation__response {
   min-height: 300px;
@@ -1558,83 +1595,41 @@ input[type=radio] {
   color: #4a4f54;
 }
 
-.BG-img {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+.home {
+  height: 100vh;
+}
+.home .image-slider {
+  position: fixed;
+}
+.home__image-background {
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
-.BG-img.welcomeContainer {
-  position: relative;
+.home__content {
+  width: 100%;
+  height: 100%;
 }
-.BG-img .image-slider {
-  position: absolute;
-}
-.BG-img .image-slider:after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: block;
-  content: "";
-  background-color: black !important;
-  z-index: 0;
-  opacity: 0.3;
-}
-
-.Home .image-slider div div:nth-child(2) {
-  z-index: 1 !important;
-}
-.Home .image-slider button {
-  z-index: 100;
-}
-.Home .image-slider button img {
-  width: 40px;
-}
-.Body {
+.home__container {
   box-sizing: border-box;
   position: relative;
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
   display: flex;
-  flex-direction: row;
-  height: 100vh;
-  width: 100%;
-}
-@media (max-width: 959px) {
-  .Body.BodyR {
-    height: calc(100vh - 100px);
-  }
-}
-@media (max-width: 1238px) {
-  .Body {
-    padding: 0px 2em;
-  }
-}
-@media (max-width: 800px) {
-  .Body {
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-}
-@media (max-width: 320px) {
-  .Body {
-    padding: 8em 2em 0em 2em;
-  }
-}
-.Body .HomeContainer {
-  display: flex;
   flex-direction: column;
-  height: 400px;
-  width: 100%;
+  justify-content: center;
+  padding: 2em;
+  height: calc(100% - 200px);
 }
-@media (max-width: 959px) {
-  .Body .HomeContainer {
-    align-items: center;
-    justify-content: space-between;
+@media (min-width: 959px) {
+  .home__container {
+    flex-direction: row;
+    padding: 0;
+    height: calc(100% - 100px);
   }
 }
-.Body .HomeContainer .WelcomeText {
+.home__text {
   color: #FFFFFF;
   font-size: 13px;
   font-weight: 300;
@@ -1642,39 +1637,46 @@ input[type=radio] {
   font-style: normal;
   line-height: 1.69;
   letter-spacing: 0.13px;
+  text-align: left;
   z-index: 2;
 }
-.Body .Body__Columns {
+@media (min-width: 959px) {
+  .home__text {
+    width: 70%;
+    font-size: 17px;
+    line-height: 1.29;
+    letter-spacing: 0.17px;
+  }
+}
+.home__columns {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex: 1;
 }
-.Body .Body__Columns .WelcomeText {
-  color: #FFFFFF;
-  font-size: 14px;
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.29;
-  letter-spacing: 0.13px;
-  width: 424px;
-  z-index: 2;
-}
-@media (max-width: 959px) {
-  .Body .Body__Columns .WelcomeText {
-    font-size: 15px;
-    line-height: 1.3;
-    margin-bottom: 20px;
-    width: 350px;
+@media (min-width: 959px) {
+  .home__columns {
+    width: 50%;
   }
 }
-.Body .Body__Columns.welcomeColumns {
-  justify-content: flex-end;
+.home__columns--quote {
+  align-items: center;
+  margin: 0 0 4em 0;
 }
-.Body .Body__Columns:nth-of-type(2) {
-  align-items: flex-end;
+@media (min-width: 959px) {
+  .home__columns--quote {
+    margin: 0;
+    align-items: flex-end;
+  }
+}
+
+.home .image-slider div div:nth-child(2) {
+  left: 53% !important;
+  z-index: 1 !important;
+}
+.home .image-slider div div:nth-child(2) > button {
+  width: 10px !important;
+  height: 10px !important;
 }
 
 .home-destiny .image-slider div div:nth-child(2) {
@@ -1798,18 +1800,13 @@ input[type=radio] {
   }
 }
 
-.SignIn {
+.login {
   background-image: url("https://kiperbucket.s3.us-east-2.amazonaws.com/teapuntas/img7-min.jpg");
   background-size: cover;
   background-position: center center;
-}
-.SignIn-container {
-  align-items: center;
-  display: flex;
   height: 100vh;
-  justify-content: center;
 }
-.SignIn-container:after {
+.login:after {
   position: absolute;
   top: 0;
   left: 0;
@@ -1821,44 +1818,49 @@ input[type=radio] {
   z-index: 0;
   opacity: 0.3;
 }
-.SignIn-container .LoginView {
-  justify-content: center;
-  align-items: center !important;
-  width: 80%;
+.login__container {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
   z-index: 1;
 }
-.SignIn-container .LoginView .Login {
-  align-items: center;
+.login__social-media {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
-}
-.SignIn-container .LoginView .Login__container {
   align-items: center;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  height: 100%;
 }
-.SignIn-container .LoginView .Login__container--Title {
-  color: white;
-  font-size: 24px;
-  margin-top: 20px;
-  margin-bottom: 40px;
+.login__title {
+  font-size: 20px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: #ffffff;
 }
-.SignIn-container .LoginView .Login__container__SocialMedia {
+@media (min-width: 959px) {
+  .login__title {
+    font-size: 37px;
+  }
+}
+.login__icons {
   display: flex;
   flex-direction: row;
   justify-content: center;
   box-sizing: border-box;
   width: 100%;
 }
-.SignIn-container .LoginView .Login__container__SocialMedia div {
+.login__icons div {
   margin-right: 2%;
   margin-left: 2%;
   outline: 0;
 }
-.SignIn-container .LoginView .Login__container__SocialMedia div button {
+.login__icons div button {
   background: transparent;
   border-color: white;
   border-radius: 50px;
@@ -1871,11 +1873,12 @@ input[type=radio] {
   padding: 5px;
   width: 60px;
   box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
 }
-.SignIn-container .LoginView .Login__container__SocialMedia div button .Login__icon {
+.login__icons div button .login__icons__icon {
   width: 10px;
 }
-.SignIn-container .LoginView .Login__container__SocialMedia div button:hover {
+.login__icons div button:hover {
   border-color: #081f2d;
   background: #081f2d;
   color: #FFFFFF;
@@ -1885,18 +1888,18 @@ input[type=radio] {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 1em;
+  align-items: center;
+}
+@media (min-width: 959px) {
+  .CalendarInfo {
+    margin-bottom: 0;
+  }
 }
 .CalendarInfo__icons {
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
-@media (min-width: 959px) {
-  .CalendarInfo__icons {
-    margin-bottom: 2em;
-  }
 }
 .CalendarInfo__section {
   align-items: center;
@@ -2499,19 +2502,15 @@ input[type=radio] {
 }
 
 .Quotes {
-  width: 450px;
+  width: 95%;
+  text-align: center;
   z-index: 2;
 }
-@media (max-width: 959px) {
+@media (min-width: 959px) {
   .Quotes {
-    width: 85%;
+    width: 450px;
     padding: 40px 0px;
-  }
-}
-@media (max-width: 320px) {
-  .Quotes {
-    width: 95%;
-    padding: 40px 0px;
+    text-align: left;
   }
 }
 .Quotes__text {
@@ -2533,6 +2532,12 @@ input[type=radio] {
   display: flex;
   flex-direction: row;
   margin-top: 5px;
+  justify-content: center;
+}
+@media (min-width: 959px) {
+  .Quotes__links {
+    justify-content: end;
+  }
 }
 .Quotes__links--username {
   color: #FFFFFF;
